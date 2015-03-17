@@ -1,0 +1,12 @@
+{
+    "name" : "vtour",
+    "version" : "0.1.0",
+    "description" : "Virtual Tour server code",
+    "dependencies" : {
+        "express" : "latest",
+        "body-parser" : "latest",
+        "ejs" : "latest",
+        "mongodb" : "latest",
+        "mongoose" : "latest"
+    }
+}
