@@ -1,26 +1,11 @@
-var app = angular.module('myApp', []);
+var app = angular.module('app',['ngSanitize']);
 
-function MenuObj($http) {
-    this.getMenu = function(menuName, callback) {
-        $http.get('/menu', {params: {menuName: menuName}})
-        .success(function(data, status, headers, config) {
-            callback(null, data);
-        })
-        .error(function(data, status, headers, config) {
-            callback(true, null);
-        });
-    };
-}
-
-app.service('srv', ['$http', MenuObj]);
-
-app.controller('menuController', ['$scope', '$http', 'srv'],
-    function($scope, $http, $srv) {
-        $http.get('/menu', {params: {menuName: 'main'}})
+app.controller('menu', ['$scope', "$http", function($scope, $http) {
+    $http.get('/menu', {params: {menuName:'main'}})
         .success(function(data, status, headers, config) {
             $scope.menu = data;
-        })
-        .error(function(data, status, headers, config) {
-            $scope.menu = null;
-        });
-});
+            console.log($scope.menu);
+    }).error(function(data, status, headers, config) {
+            console.log("error getting menu: " + status);
+    });
+}]);

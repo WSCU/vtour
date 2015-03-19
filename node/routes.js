@@ -1,8 +1,8 @@
 var express = require('express');
 
 module.exports = function(app) {
-    app.use('/static', express.static('../static')).
-        use('/images', express.static('../img'));
+    app.use('/static', express.static('./static')).
+        use('/images', express.static('./img'));
 
     app.get('/', function(req, res) {
         res.render('index');
