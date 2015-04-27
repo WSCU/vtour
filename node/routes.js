@@ -2,16 +2,25 @@ var express = require('express');
 
 module.exports = function(app) {
     app.use('/static', express.static('./static')).
-        use('/images', express.static('./img'));
+        use('/images', express.static('./img')).
+        use('static', express.static('./static'));
 
     app.get('/', function(req, res) {
         res.render('index');
     });
-//    var pages = require('./controllers/page_controller.js');
-//    app.get('/page', pages.getPage);
 
     var menus = require('./controllers/menu_controller.js');
     app.get('/menu', menus.getMenu);
+
+    var images = require('./controllers/images_controller.js');
+    app.get('/images', images.getImages);
+    app.get('/image', images.getImage);
+
+    var maps = require('./controllers/maps_controller.js');
+    app.get('/map/circle', maps.getCircle);
+    app.get('/map/circles', maps.getCirlces);
+    app.get('/map/marker', maps.getMarker);
+
 
     //Error Handling
     app.get('*', function(req, res, next) {

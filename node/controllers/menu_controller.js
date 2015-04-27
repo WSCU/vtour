@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
     MenuItem = mongoose.model('MenuItem');
 
 exports.getMenu = function(req, res) {
-    Menu.findOne({name: req.query.menuName})
+    Menu.findOne({name: req.query.name})
     .exec(function(err, menu){
         if (!err) {
             res.json(menu);

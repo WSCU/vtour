@@ -7,10 +7,13 @@ var Menu = mongoose.model('Menu'),
     MenuItem = mongoose.model('MenuItem');
 
 Menu.remove().exec(function() {
-    var menu = new Menu({name: 'main', text: "Main Menu"});
+    var menu = new Menu({name: 'main', text: "Menu"});
+    var mi = new MenuItem({text: 'hello'});
+    menu.items.push(mi);
     for(var i = 0; i < 10; i++) {
-        menu.items.push(new MenuItem({text: ""+i,
-                                      href: "#"+i }));
+        mi.items.push(new MenuItem({text: ""+i,
+                                    icon: "fa fa-arrow",
+                                    href: "#"+i }));
     }
     menu.save();
 });
