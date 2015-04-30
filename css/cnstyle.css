@@ -1,0 +1,180 @@
+body.contextual_navigation
+{
+    background: #6F737A;
+    margin: 0px;
+}
+
+.map{
+    position: fixed;
+    width:200px;
+    height:300px;
+    float:right;
+    border-style: ridge;
+    border-color: #6F737A;
+    opacity:0.75;
+    -webkit-transition-duration: 3s; /* Safari */
+    transition-duration: 3s;
+    transform: translate(400px);
+    overflow: hidden;
+}
+
+.contextual_assets{
+    position: fixed;
+    width: 100%;
+    height: 83%;
+    max-height: 83%;
+    max-width: 100%;
+    z-index: -1;
+    /*overflow: hidden;*/
+}
+
+.contextual_assets img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+section {
+    position: fixed;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-out;
+    -ms-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -khtml-transition: opacity 1s ease-out;
+    -webkit-transition: opacity 1s ease-out;
+    height: 0;
+    overflow: hidden;
+}
+
+section:target, .show{
+    opacity: 1;
+    height: 90%;
+    position: fixed;
+}
+
+.show {
+    postion: fixed;
+    left:45%;
+    top: 50%;
+}
+
+.right_arrow {
+    position: absolute;
+    z-index:1;
+    bottom:70%;
+    right:45%;
+    max-width: 10%;
+    border: 0;
+}
+
+.forward_arrow {
+    position: absolute;
+    z-index:1;
+    bottom:10%;
+    right:48%;
+    max-width: 10%;
+    max-height: 40%;
+    border: 0;
+}
+
+.back_left_arrow{
+    position: absolute;
+    z-index:1;
+    bottom:23%;
+    right:43%;
+    max-width: 10%;
+    border: 0;
+}
+
+.back_arrow{
+    position: fixed;
+    z-index:1;
+    bottom: 16%;
+    right:40%;
+    max-width: 10%;
+    border: 0;
+}
+
+.beginButton {
+    position: relative;
+    margin-top: 20%;
+    -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
+    -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
+    background:-moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:-webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:-o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:-ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24437',GradientType=0);
+    background-color:#c62d1f;
+    -moz-border-radius:18px;
+    -webkit-border-radius:18px;
+    border-radius:18px;
+    border:1px solid #d02718;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:arial;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #810e05;
+}
+
+.beginButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+    background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
+    background-color:#f24437;
+}
+
+.beginButton:active {
+    position:relative;
+    top:1px;
+}
+
+@media screen and (max-width: 1024px){
+    img { max-width: 100% }
+}
+
+.icon-clear {
+
+}
+
+.icon-clear2:hover {
+    fill: #999999;
+    cursor: pointer;
+}
+.icon-shadow {
+    fill: black;
+    pointer-events: none;
+}
+
+.tooltip {
+    display:none;
+    position:absolute;
+    border:1px solid #333;
+    background-color:#161616;
+    border-radius:5px;
+    padding:10px;
+    color:#fff;
+    font-size:12px Arial;
+}
+

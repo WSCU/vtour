@@ -1,2 +1,5 @@
 /nbproject
 node_modules
+*.swp
+tags
+/imgs

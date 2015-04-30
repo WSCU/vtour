@@ -1,0 +1,14 @@
+.blue .dd-wrapper {background: t; color: white; font: bold 100% Arial, sans-serif;}
+.blue .dd-menu { background:rgba(0,0,0,0.01);}
+.blue .dd-menu a {background:rgba(0,0,0,0.01); height: 100%; text-decoration: none; padding: 3% 3% 3% 5%; display: block; color: white; }
+.blue .dd-menu ul a {background:rgba(0,0,0,0.01); height: 100%;}
+.blue .dd-menu a:hover {background: rgba(255,255,255,.5); color: black;}
+.blue .dd-menu li.dd-parent a:hover {color: black;}
+.blue .dd-menu li.dd-parent a.active .dd-icon {}
+.blue .dd-menu li.dd-parent a.active {color: #ccc; background: black }
+.blue .dd-header ul {width: 100%; overflow: hidden; line-height: 0; padding: 2% 4%;}
+.blue .dd-header li a {text-decoration: none; float: left; display: block; padding: 1% 5% 1% 2%; color: #fff;}
+.blue .dd-header li a:hover {color: white; text-decoration: underline;}
+.blue .dd-header a.link-back {text-decoration: none; display: block; position:absolute;left: 0; top:0; color: black;}
+.blue .dd-header a.link-back:hover {text-decoration: none; color:white; }
+
