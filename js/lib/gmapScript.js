@@ -74,7 +74,7 @@ var wwM = new google.maps.Marker({
 var glibM = new google.maps.Marker({
     position: new google.maps.LatLng(38.547010, -106.928533),
     title: "Gunnison Library",
-    //icon: '/js/lib/lib.jpg',
+    icon: 'js/lib/lib.jpg',
     type: 'Cult'
 });
 
