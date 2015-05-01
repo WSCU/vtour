@@ -21,7 +21,7 @@ var FieldHouseAquaCenter = new CarouselItem(["Fieldhouse"], FieldHouseAquaCenter
 						href=\'/http://www.western.edu/current-students/campus-recreation/aquatic-center'&gt;Click here to learn more information about the Aquatic Center&lt;/a&gt;\">\
  		<img src='imgs/FieldHouse_Thumb/FieldHouse_AquaCenterCarThumb.png' alt=\"\" /></a>");
 
-		
+
 var FieldHouseClimbingWallFull = new Image("FieldHouse_ClimbingWallFull", "FieldHouse_ClimbingWallFull.png");
 var FieldHouseClimbingWallThumb = new Image("FieldHouse_ClimbingWallThumb", "FieldHouse_ClimbingWallThumb.png");
 var FieldHouseClimbingWall = new CarouselItem(["Fieldhouse"], FieldHouseClimbingWallThumb,
@@ -36,7 +36,7 @@ var FieldHouseFitCenter = new CarouselItem(["Fieldhouse"], FieldHouseFitCenterTh
 
 var FieldhouseHaaPLabFull = new Image("Fieldhouse_HaaPLabFull", "Fieldhouse_HaaPLabFull.png");
 var FieldhouseHaaPLabThumb = new Image("Fieldhouse_HaaPLabThumb", "Fieldhouse_HaaPLabThumb.png");
-var FieldhouseHaaPLab = new CarouselItem(["Fieldhouse"], FieldhouseHaaPLabThumb, 
+var FieldhouseHaaPLab = new CarouselItem(["Fieldhouse"], FieldhouseHaaPLabThumb,
 											"HaaPLab",   "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_HaaPLabCarFull.png\" rel=\"lightbox[painting]\" \
         rel=\"lightbox[painting]\" title=\"&lt;a target='_self'\
 		onClick=&quot;window.location.href=&#x27;https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab&#x27;&quot; \  href='https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab'&gt;Click here to learn more information about the HAPLab \here&lt;/a&gt;\">\
@@ -44,53 +44,53 @@ var FieldhouseHaaPLab = new CarouselItem(["Fieldhouse"], FieldhouseHaaPLabThumb,
 
 var FieldhouseInfoGymFishEyeFull = new Image("Fieldhouse_InfoGymFishEyeFull", "Fieldhouse_InfoGymFishEyeFull.png");
 var FieldhouseInfoGymFishEyeThumb = new Image("Fieldhouse_InfoGymFishEyeThumb", "Fieldhouse_InfoGymFishEyeThumb.png");
-var FieldhouseInfoGymFishEye = new CarouselItem(["Fieldhouse"], FieldhouseInfoGymFishEye, 
+var FieldhouseInfoGymFishEye = new CarouselItem(["Fieldhouse"], FieldhouseInfoGymFishEye,
 											"InfoGymFishEye", "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_InfoGymFishEyeFull.png\"\
         rel=\"lightbox[painting]\" href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;\">\
  		<img src='imgs/FieldHouse_Thumb/FieldHouse_InfoGymFishEyeThumb.png' alt=\"\" /></a>");
 
 //********************Hurst****************************
-var HurstQuinFull = new Image("Hurst_QuinFull", "Hurst_QuinFull.png");
+var HurstQuinFull = new Image("Hurst_QuinFull", "Hurst_QuinnFull.png");
 var HurstQuinThumb = new Image("Hurst_QuinnThumb", "Hurst_QuinnThumb.png");
 var HurstQuin = new CarouselItem(["#hurst"], HurstQuinThumb,
                                             "QuinTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Hurst_QuinnFull.png\"\
         rel=\"lightbox[painting]\"  title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27; http://www.western.edu/profile/student/rebecca-and-quinn-bryant;\
 		 href='\ http://www.western.edu/profile/student/rebecca-and-quinn-bryant;Click Here to Read More...&lt;/a&gt;\">\
          <img src=\"imgs/Hurst_QuinnThumb.png\" alt=\"\" /></a>");
-        
+
 var HurstKendricEvansFull = new Image("Hurst_STKendricEvans", "Hurst_STKendricEvans.png");
 var HurstKendricEvansThumb = new Image("Hurst_STKendricEvansThumb", "Hurst_KendricEvansThumb.png");
-var HurstKendricEvans = new CarouselItem(["#hurst"], HurstKendricEvansThumb, 
+var HurstKendricEvans = new CarouselItem(["#hurst"], HurstKendricEvansThumb,
                                             "KendricEvansTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Hurst_STKendricEvansFull.png\"\
         rel=\"lightbox[painting]\" title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kendric-evans;   href='http://www.western.edu/profile/alumnus/kendric-evans;Click Here to Read More...&lt;/a&gt;\">\
-         <img src=\"imgs/Hurst_STKendricEvans.png\" alt=\"\" /></a>");
+         <img src=\"imgs/Hurst_KendricEvansThumb.png\" alt=\"\" /></a>");
 
 var HurstRobotsFull = new Image("Hurst_RobotsFull", "Hurst_RobotsFull.png");
 var HurstRobotsThumb = new Image("Hurst_RobotsThumb", "Hurst_RobotsThumb.png");
-var HurstRobots = new CarouselItem(["#hurst"], HurstRobotsThumb, 
+var HurstRobots = new CarouselItem(["#hurst"], HurstRobotsThumb,
                                             "WesternRobotics", "<a class=\"gallery_thumbs\" href=\"imgs/Hurst_RobotsFull.png\"\
         rel=\"lightbox[painting]\" title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/students-build-robot-compete-sand-dunes; href='http://www.western.edu/news/students-build-robot-compete-sand-dunes;Click here to learn more information...&lt;/a&gt;\">\
          <img src=\"imgs/Hurst_RobotsThumb.png\" alt=\"\" /></a>");
-        
+
 
 var HurstSTAlanClearyFull = new Image("Hurst_STAlanClearyFull", "Hurst_STAlanClearyFull.png");
 var HurstSTAlanClearyThumb = new Image("Hurst_STAlanClearyThumbs", "Hurst_STAlanClearyThumbs.png");
 var HurstSTAlanCleary = new CarouselItem(["#hurst"], HurstSTAlanClearyThumb,
                                             "AlanClearyTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Hurst_STAlanClearyFull.png\"\
         rel=\"lightbox[painting]\" title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27; http://www.western.edu/profile/alumnus/alan-cleary ;   href=' http://www.western.edu/profile/alumnus/alan-cleary;Click Here to Read More...&lt;/a&gt;\">\
-         <img src=\"imgs/Hurst_STAlanClearyThumb.png\" alt=\"\" /></a>");
-        
-var HurstSTKevinSearsFull = new Image("Hurst_STKevinSearsFull", "Hurst_STKevinSearsFull.png");
+         <img src=\"imgs/Hurst_STAlanClearyThumbs.png\" alt=\"\" /></a>");
+
+var HurstSTKevinSearsFull = new Image("Hurst_STKevinSearsFull", "Hurst-STKevinSears.png");
 var HurstSTKevinSearsThumb = new Image("Hurst_STKevinSearsThumb", "Hurst_STKevinSearsThumb.png");
-var HurstSTKevinSears = new CarouselItem(["#hurst"], HurstSTKevinSearsThumb, 
-                                            "KevinSearsTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Hurst_STKevinSearsFull.png\"\
-        rel=\"lightbox[painting]\"  title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kevin-sears;  href=http://www.western.edu/profile/alumnus/kevin-sears;Click Here to Read More...&lt;/a&gt;\">\
-         <img src=\"imgs/Hurst_STKevinSears.png\" alt=\"\" /></a>");
+var HurstSTKevinSears = new CarouselItem(["#hurst"], HurstSTKevinSearsThumb,
+                                            "KevinSearsTestimonial", "<div class=\"owl-item\"> <a class=\"gallery_thumbs\" href=\"imgs/Hurst-STKevinSears.png\"\
+        rel=\"lightbox[painting]\"  title=\"<a target='_self' onClick=\"window.location.href=\'http://www.western.edu/profile/alumnus/kevin-sears\'\"  href=\'http://www.western.edu/profile/alumnus/kevin-sears\'> Click Here to Read More...&lt;/a&gt;\">\
+         <img src=\"imgs/Hurst_STKevinSearsThumb.png\" alt /></a></div>");
 
 //********************Taylor****************************
 var TaylorJohnMasonFull = new Image("Taylor_JohnMasonFull", "Taylor_JohnMasonFull.png");
 var TaylorJohnMasonThumb = new Image("Taylor_JohnMasonThumb", "Taylor_JohnMasonThumb.png");
-var TaylorJohnMason = new CarouselItem(["#taylor"], TaylorJohnMasonThumb, 
+var TaylorJohnMason = new CarouselItem(["#taylor"], TaylorJohnMasonThumb,
                                             "JohnMason", "<a class=\"gallery_thumbs\" href=\"imgs/Taylor_JohnMasonFull.png\"\
         rel=\"lightbox[painting]\" \
 title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;\
@@ -99,14 +99,14 @@ https://www.western.edu/profile/faculty/dr-john-mason; href='https://www.western
 
 var TaylorSTAnnaBoyleFull = new Image("Taylor_STAnnaBoyleFull", "Taylor_JSTAnnaBoyleFull.png");
 var TaylorSTAnnaBoyleThumb = new Image("Taylor_STAnnaBoyleThumb", "Taylor_STAnnaBoyleThumbs.png");
-var TaylorSTAnnaBoyle = new CarouselItem(["#taylor"], TaylorSTAnnaBoyleThumb, 
+var TaylorSTAnnaBoyle = new CarouselItem(["#taylor"], TaylorSTAnnaBoyleThumb,
                                             "AnnaBoyleTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Taylor_JSTAnnaBoyleFull.png\"\
         rel=\"lightbox[painting]\" title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27; https://www.western.edu/profile/staff-student/anna-boyle; href=' https://www.western.edu/profile/staff-student/anna-boyle;Click Here to Read More...&lt;/a&gt;\">\
          <img src=\"imgs/Taylor_STAnnaBoyleThumbs.png\" alt=\"\" /></a>");
-        
+
 var TaylorSTBradArcherFull = new Image("Taylor_STBradArcherFull", "Taylor_STBradArcherFull.png");
 var TaylorSTBradArcherThumb = new Image("Taylor_STBradArcherThumb", "Taylor_STBradArcherThumb.png");
-var TaylorSTBradArcher = new CarouselItem(["#taylor"], TaylorSTBradArcherThumb, 
+var TaylorSTBradArcher = new CarouselItem(["#taylor"], TaylorSTBradArcherThumb,
                                             "BradArcherTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Taylor_STBradArcherFull.png\"\
         rel=\"lightbox[painting]\" \
 title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/students-build-robot-compete-sand-dunes; href='http://www.western.edu/news/students-build-robot-compete-sand-dunes;Click Here to Read More...&lt;/a&gt;\">\
@@ -114,7 +114,7 @@ title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www
 
 var TaylorSTChristinaFull = new Image("Taylor_STChristinaFull", "Taylor_STChristinaFull.png");
 var TaylorSTChristinaThumb = new Image("Taylor_STChristinaThumb", "Taylor_STChristinaThumb.png");
-var TaylorSTChristina = new CarouselItem(["#taylor"], TaylorSTChristinaThumb, 
+var TaylorSTChristina = new CarouselItem(["#taylor"], TaylorSTChristinaThumb,
                                             "ChristinaTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Taylor_STChristinaFull.png\"\
         rel=\"lightbox[painting]\" \
 title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27; https://www.western.edu/future-students/student-testimonials-and-profiles; href=' https://www.western.edu/future-students/student-testimonials-and-profiles;Click Here to Read More...&lt;/a&gt;\">\
@@ -122,7 +122,7 @@ title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27; https://w
 
 var TaylorSTZoeSmithFull = new Image("Taylor_ZoeSmithFull", "Taylor_ZoeSmithFull.png");
 var TaylorSTZoeSmithThumb = new Image("Taylor_ZoeSmithThumb", "Taylor_ZoeSmithThumb.png");
-var TaylorSTZoeSmith = new CarouselItem(["#taylor"], TaylorSTZoeSmithThumb, 
+var TaylorSTZoeSmith = new CarouselItem(["#taylor"], TaylorSTZoeSmithThumb,
                                             "ZoeSmithTestimonial", "<a class=\"gallery_thumbs\" href=\"imgs/Taylor_ZoeSmithFull.png\"\
         rel=\"lightbox[painting]\" title=\"&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/students-build-robot-compete-sand-dunes; href='http://www.western.edu/news/students-build-robot-compete-sand-dunes;Click Here to Read More...&lt;/a&gt;\">\
          <img src=\"imgs/Taylor_ZoeSmithThumb.png\" alt=\"\" /></a>");
@@ -140,11 +140,10 @@ function getCIs(locationTag) /*Carousel Items*/{
         }
         var CIsDiv = "#owl-demo";
         $(CIsDiv).html(inner_html);
-    $("#owl-demo").owlCarousel({
-        autoPlay: 2000,
-        itemsDesktop : [1250,6],
-        itemsDesktopSmall : [979,4],
-        items : 9
-    });
+    //$("#owl-demo").owlCarousel({
+    //    autoPlay: 2000,
+    //    itemsDesktop : [1250,6],
+    //    itemsDesktopSmall : [979,4],
+    //    items : 9
+    //});
     }
-getCIs("#hurst");

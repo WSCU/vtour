@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Contextual Navigation</title>
+    <title>Western Virtual Tour</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/hotspot-map.min.css" type="text/css"/>
@@ -19,9 +19,6 @@
     <!-- Galleria Assets -->
     <script src="js/Carousel_Jquery.js"></script>
 
-    <!-- Map -->
-    <script src="js/lib/map/gmapScript.js"></script>
-
     <!-- Popup Gallery Assests -->
     <script src="js/Carousel_lightbox.js"></script>
     <link href="css/Carousel_lightbox.css" rel="stylesheet" />
@@ -36,7 +33,7 @@
     <script src="js/menu_lists.js"></script>
     <script src="js/jquery.dcdrilldown.1.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="js/carousel.js"></script>
+    <!--<script src="js/carousel.js"></script>-->
     <script src="js/Carousel_Switch.js"></script>
     <script src="js/contextual.js"></script>
 
@@ -75,9 +72,9 @@
       <!--</style>-->
       <div id="owl-demo" class="owl-carousel noselect">
 
-        <!--<a class="gallery_thumbs thumb_size" href="imgs/FieldHouse_FullImages/FieldHouse_InfoGymFishEyeFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;">-->
-          <!--<img src='imgs/FieldHouse_Thumb/FieldHouse_InfoGymFishEyeThumb.jpg' alt="" /></a>-->
+        <a class="gallery_thumbs thumb_size" href="imgs/Taylor_JohnMasonFull.png"
+          rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;">
+          <img src='imgs/Taylor_JohnMasonThumb.png' alt="" /></a>
 
         <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_AquaCenterCarFull.png"-->
           <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/aquatic-center&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/aquatic-center'&gt;Click here to learn more information about the Aquatic Center&lt;/a&gt;">-->
@@ -121,6 +118,7 @@
     </div>
 
     <script src="js/carousel.js"></script>
+
     <script>
       $(document).ready(function($){
         dispMainMenu();
@@ -140,12 +138,20 @@
         });
 
       });
-      $("#owl-demo").owlCarousel({
-        autoPlay: 2000,
-        itemsDesktop : [1250,6],
-        itemsDesktopSmall : [979,4],
-        items : 9
-      });
+
+//      $(document).ready(function() {
+
+//        var owl = $("#owl-demo");
+
+//        owl.owlCarousel({
+//          items : 10, //10 items above 1000px browser width
+//          itemsDesktop : [1000,5], //5 items between 1000px and 901px
+//          itemsDesktopSmall : [900,3], // betweem 900px and 601px
+//          itemsTablet: [600,2], //2 items between 600 and 0
+//          itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+//        });
+//      });
+
     </script>
   </body>
 </html>
