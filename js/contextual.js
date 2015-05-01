@@ -107,7 +107,6 @@ $(function () {
         var inner_html = "";
         for (var i in navs) {
             if (navs[i].tag === locationTag) {
-                console.log("Found a nav: " + navs[i])
                 var d = "M202.969,0l-99.438,130.824h52.213c8.629,89.9-25.768,176.225-120.373,206.957" +
                     "c121.697,0.34,190.641-99.896,213.967-206.957h53.072L202.969,0z";
                 if (navs[i].direction === "forward") {

@@ -950,31 +950,31 @@ function initialize() {
     };
     //cityCircle1 = new google.maps.Circle(gunnyC);
     //cityCircle2 = new google.maps.Circle(cbC);
-    google.maps.event.addListener(cityCircle1, 'click', function () {
-        smoothZoom(map, 14, map.getZoom());
-        map.panTo(citymap['gunnison'].center);
-        westernM.setMap(map);
-        hartmanM.setMap(map);
-        Pstop.setMap(map);
-        cityCircle2.setMap(map);
-        cbmrM.setMap(null);
-        gothicM.setMap(null);
-        cityCircle1.setMap(null);
-        cbArtsM.setMap(null);
-
-    });
-    google.maps.event.addListener(cityCircle2, 'click', function () {
-        smoothZoom(map, 14, map.getZoom());
-        map.panTo(citymap['cb'].center);
-        westernM.setMap(null);
-        hartmanM.setMap(null);
-        Pstop.setMap(null);
-        cityCircle2.setMap(null);
-        cityCircle1.setMap(map);
-        cbmrM.setMap(map);
-        cbArtsM.setMap(map);
-        gothicM.setMap(map);
-    });
+    //google.maps.event.addListener(cityCircle1, 'click', function () {
+    //    smoothZoom(map, 14, map.getZoom());
+    //    map.panTo(citymap['gunnison'].center);
+    //    westernM.setMap(map);
+    //    hartmanM.setMap(map);
+    //    Pstop.setMap(map);
+    //    cityCircle2.setMap(map);
+    //    cbmrM.setMap(null);
+    //    gothicM.setMap(null);
+    //    cityCircle1.setMap(null);
+    //    cbArtsM.setMap(null);
+    //
+    //});
+    //google.maps.event.addListener(cityCircle2, 'click', function () {
+    //    smoothZoom(map, 14, map.getZoom());
+    //    map.panTo(citymap['cb'].center);
+    //    westernM.setMap(null);
+    //    hartmanM.setMap(null);
+    //    Pstop.setMap(null);
+    //    cityCircle2.setMap(null);
+    //    cityCircle1.setMap(map);
+    //    cbmrM.setMap(map);
+    //    cbArtsM.setMap(map);
+    //    gothicM.setMap(map);
+    //});
     google.maps.event.addListener(westernM, 'click', function () {
         infowindow.open(map, westernM);
     });

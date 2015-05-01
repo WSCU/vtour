@@ -21,11 +21,11 @@ body.contextual_navigation
 .contextual_assets{
     position: fixed;
     width: 100%;
-    height: 83%;
-    max-height: 83%;
+    height: 85%;
+    max-height: 85%;
     max-width: 100%;
     z-index: -1;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .contextual_assets img {
