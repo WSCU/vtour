@@ -27,7 +27,7 @@
     <script src="js/hotspot-map.min.js"></script>
     <script src="js/jquery.tipsy.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg3suBVsTjew0sCBoqHHBF2cy2UOI4dYk"></script>
-    <script src="js/lib/map/gmapScript.js"></script>
+    <script src="/js/lib/gmapScript.js"></script>
     <script>google.maps.event.addDomListener(window,'load',initialize);</script>
     <script src="js/menu.js"></script>
     <script src="js/menu_lists.js"></script>
@@ -41,9 +41,6 @@
   <body class="contextual_navigation">
     <!-- ISSUE: Content width doesn't appear to be responsive in Firefox-->
     <!-- Div class and id names are important for the JS -->
-    <div class="menu">
-
-    </div>
 
     <div class="contextual_assets">
       <section class="show" id="start">
@@ -70,88 +67,46 @@
       <!--<style scoped>-->
         <!--@import "css/Carousel_bootstrapTheme.css";-->
       <!--</style>-->
-      <div id="owl-demo" class="owl-carousel noselect">
+    <div id="owl-demo" class="owl-carousel noselect">
 
-        <a class="gallery_thumbs thumb_size" href="imgs/Taylor_JohnMasonFull.png"
-          rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;">
-          <img src='imgs/Taylor_JohnMasonThumb.png' alt="" /></a>
+      <a class="gallery_thumbs thumb_size" href="imgs/Taylor_JohnMasonFull.png"
+        rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;">
+        <img src='imgs/Taylor_JohnMasonThumb.png' alt="" /></a>
 
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_AquaCenterCarFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/aquatic-center&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/aquatic-center'&gt;Click here to learn more information about the Aquatic Center&lt;/a&gt;">-->
-          <!--<img src='imgs/FieldHouse_Thumb/FieldHouse_AquaCenterCarThumb.jpg' alt="" /></a>-->
 
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_ClimbingWallCarFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house'&gt;Click here to learn more information about the Climbing Wall&lt;/a&gt;">-->
-          <!--<img src="imgs/FieldHouse_Thumb/FieldHouse_ClimbingWallCarThumb.jpg" alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_HaaPLabCarFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab&#x27;&quot;   href='https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab'&gt;Click here to learn more information about the HAPLab here&lt;/a&gt;">-->
-          <!--<img src="imgs/FieldHouse_Thumb/FieldHouse_HaaPLabCarThumb.jpg" alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_FitCenterCarFull.png"-->
-          <!--rel="lightbox[painting]" title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mfh-fitness-center&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mfh-fitness-center'&gt;Click here to learn more information about the Fitness Center&lt;/a&gt;">-->
-          <!--<img src="imgs/FieldHouse_Thumb/FieldHouse_FitCenterCarThumb.jpg" alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs thumb_size" href="imgs/FieldHouse_FullImages/FieldHouse_InfoGymFishEyeFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;">-->
-          <!--<img src='imgs/FieldHouse_Thumb/FieldHouse_InfoGymFishEyeThumb.jpg' alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_AquaCenterCarFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/aquatic-center&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/aquatic-center'&gt;Click here to learn more information about the Aquatic Center&lt;/a&gt;">-->
-          <!--<img src='imgs/FieldHouse_Thumb/FieldHouse_AquaCenterCarThumb.jpg' alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_ClimbingWallCarFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house'&gt;Click here to learn more information about the Climbing Wall&lt;/a&gt;">-->
-          <!--<img src="imgs/FieldHouse_Thumb/FieldHouse_ClimbingWallCarThumb.jpg" alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_HaaPLabCarFull.png"-->
-          <!--rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab&#x27;&quot;   href='https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab'&gt;Click here to learn more information about the HAPLab here&lt;/a&gt;">-->
-          <!--<img src="imgs/FieldHouse_Thumb/FieldHouse_HaaPLabCarThumb.jpg" alt="" /></a>-->
-
-        <!--<a class="gallery_thumbs" href="imgs/FieldHouse_FullImages/FieldHouse_FitCenterCarFull.png"-->
-          <!--rel="lightbox[painting]" title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mfh-fitness-center&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mfh-fitness-center'&gt;Click here to learn more information about the Fitness Center&lt;/a&gt;">-->
-          <!--<img src="imgs/FieldHouse_Thumb/FieldHouse_FitCenterCarThumb.jpg" alt="" /></a>-->
-
-      </div>
     </div>
-    <div id="map-canvas" class="map">
-    </div>
+  </div>
+  <div id="map-canvas" class="map">
+  </div>
 
-    <script src="js/carousel.js"></script>
+  <div>
+    <input type="button" id="recFilter" value="Recreation"/>
+    <input type="button" id="cultFilter" value="Culture"/>
+    <input type="button" id="foodFilter" value="Restaurants"/>
+  </div>
+  <script src="js/carousel.js"></script>
 
-    <script>
-      $(document).ready(function($){
-        dispMainMenu();
+  <script>
+    $(document).ready(function($){
+      dispMainMenu();
 
-        $('#drilldown-1').dcDrilldown({
-          speed : 'fast',
-          saveState : true,
-          showCount : false,
-          linkType : 'backlink',
-          defaultText: ''
-        });
-        $('#drilldown-2').dcDrilldown({
-          speed : 'fast',
-          saveState : false,
-          showCount : false,
-          linkType : 'link'
-        });
-
+      $('#drilldown-1').dcDrilldown({
+        speed : 'fast',
+        saveState : true,
+        showCount : false,
+        linkType : 'backlink',
+        defaultText: ''
+      });
+      $('#drilldown-2').dcDrilldown({
+        speed : 'fast',
+        saveState : false,
+        showCount : false,
+        linkType : 'link'
       });
 
-//      $(document).ready(function() {
+    });
 
-//        var owl = $("#owl-demo");
 
-//        owl.owlCarousel({
-//          items : 10, //10 items above 1000px browser width
-//          itemsDesktop : [1000,5], //5 items between 1000px and 901px
-//          itemsDesktopSmall : [900,3], // betweem 900px and 601px
-//          itemsTablet: [600,2], //2 items between 600 and 0
-//          itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-//        });
-//      });
-
-    </script>
-  </body>
+  </script>
+</body>
 </html>
