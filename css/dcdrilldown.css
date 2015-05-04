@@ -1,11 +1,11 @@
 /* Page */
 
-.wrap {width: 100%; margin: auto;}
-.menu-container {width: 20%; float: left; height:83%;}
+.wrap {width: 100%; top:15%; }
+.menu-container {width: 10%; top: 15%; float: left; height:68%;}
 .clear {clear: both;}
 
 
 /* Drill Down Menu Styles */
 .dd-wrapper ul, .dd-wrapper ul li, .dd-wrapper li, .dd-wrapper li ul, .dd-wrapper li ul li {margin: 0; padding: 0; list-style: none;}
-.dd-wrapper .dd-menu {overflow: hidden; position: absolute; left:0; width:20%; top: 7%; height:100%;}
-.dd-wrapper  .dd-menu ul {margin: 0; position: absolute; top: 0; right: 0;}
+.dd-wrapper .dd-menu {overflow: hidden; position: absolute; left:0; width:10%; top: 15%; height:100%;}
+.dd-wrapper  .dd-menu ul {margin: 0; position: absolute; top: 15%; right: 0;}

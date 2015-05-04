@@ -65,10 +65,13 @@ $(function () {
         for (var i in locations) {
             if (locationTag === locations[i].tag) {
                 inner_html = "<div class='caption_wrapper'><div class='caption'><div id='caption_title'>" +
-                    locations[i].name + "</div><div id='caption_text'>" + locations[i].description +
+                    locations[i].name + "</div><div id='caption_text' class='description'>" + locations[i].description +
                     "</div></div></div>";
                 $('#text_overlay').html(inner_html);
-                $('.caption_wrapper').delay(2000).fadeOut(1500);
+                $('.description').delay(5000).slideUp("slow");
+                $("#caption_title").click(function(){
+                    $(".description").slideToggle("slow");
+                });
                 previousLocation = currentLocation;
                 currentLocation = locations[i];
                 break;
@@ -155,7 +158,8 @@ $(function () {
         for (var i in navs) {
             if (currentLocation.onCampus) {
                 if (navs[i].tag === locationTag) {
-                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
+                    inner_html += "<button class='map_button'>Map</button>" +
+                        "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
                         "<button class='restart_button' onclick=javascript:window.location=''>Restart Tour</button>" +
                         "<img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
                         navs[i].styleClass + " arrow' src='imgs/nav_arrows/" + navs[i].direction + "_white.png'" +
@@ -185,6 +189,9 @@ $(function () {
                 $("#navigation").html(inner_html);
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
+            $(".map_button").click(function(){
+                $(".map").animate({width:'toggle'}, window.innerWidth*0.2);
+            });
         }
     }
 
