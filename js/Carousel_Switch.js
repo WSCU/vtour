@@ -129,8 +129,9 @@ var TaylorSTZoeSmith = new CarouselItem(["#taylor"], TaylorSTZoeSmithThumb,
 		 
 var CIs = [FieldHouseAquaCenter, FieldHouseClimbingWall, FieldHouseFitCenter, FieldhouseHaaPLab, FieldhouseInfoGymFishEye, HurstQuin, HurstKendricEvans, HurstRobots, HurstSTAlanCleary, HurstSTKevinSears, TaylorJohnMason, TaylorSTAnnaBoyle,  TaylorSTBradArcher, TaylorSTChristina, TaylorSTZoeSmith]
 
-function getCIs(locationTag) /*Carousel Items*/{
-       var inner_html = "";
+function getCIs(locationTag) /*Carousel Items*/ {
+    if (location.hash !== '') {
+        var inner_html = "";
         for (var i in CIs) {
             for (var tag in CIs[i].tags) {
                 if (CIs[i].tags[tag] === locationTag) {
@@ -140,10 +141,11 @@ function getCIs(locationTag) /*Carousel Items*/{
         }
         var CIsDiv = "#owl-demo";
         $(CIsDiv).html(inner_html);
-    //$("#owl-demo").owlCarousel({
-    //    autoPlay: 2000,
-    //    itemsDesktop : [1250,6],
-    //    itemsDesktopSmall : [979,4],
-    //    items : 9
-    //});
+        //$("#owl-demo").owlCarousel({
+        //    autoPlay: 2000,
+        //    itemsDesktop : [1250,6],
+        //    itemsDesktopSmall : [979,4],
+        //    items : 9
+        //});
     }
+}

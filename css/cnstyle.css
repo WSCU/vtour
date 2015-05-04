@@ -4,17 +4,20 @@ body.contextual_navigation
     margin: 0px;
 }
 
+.menu{
+    position: fixed;
+    width: 100%;
+    top: 15%;
+}
+
 .map{
     position: fixed;
     width:200px;
     height:300px;
+    max-height: 30%;
+    max-width: 20%;
     float:right;
-    border-style: ridge;
-    border-color: #6F737A;
     opacity:0.75;
-    -webkit-transition-duration: 3s; /* Safari */
-    transition-duration: 3s;
-    transform: translate(400px);
     overflow: hidden;
 }
 
@@ -81,11 +84,19 @@ section:target, .show{
     cursor: pointer;
 }
 
+.map_button{
+    position: fixed;
+    z-index: 1;
+    right: 0%;
+    top: 20%;
+    max-height: 7%;
+}
+
 .switch_button {
     position: fixed;
     z-index: 1;
     right: 1%;
-    top: 20%;
+    top: 35%;
     max-height: 7%;
     /*padding:7px 25px;*/
 }
@@ -94,7 +105,7 @@ section:target, .show{
     position: fixed;
     z-index: 1;
     right: 1%;
-    top: 30%;
+    top: 45%;
     max-height: 7%;
     /*padding-top: 7px; */
     /*padding-bottom: 7px; */
@@ -117,8 +128,8 @@ section:target, .show{
     position: relative;
     padding:7px 25px;
 }
-.beginButton, .switch_button, .restart_button {
-    margin-top: 20%;
+.beginButton, .switch_button, .restart_button, .map_button {
+    margin-top: 5%;
     -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
     -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
     box-shadow: 3px 4px 0px 0px #8a2a21;
@@ -143,7 +154,7 @@ section:target, .show{
     text-shadow:0px 1px 0px #810e05;
 }
 
-.beginButton:hover, .switch_button:hover, .restart_button:hover {
+.beginButton:hover, .switch_button:hover, .restart_button:hover, .map_button:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
     background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
     background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
@@ -183,9 +194,9 @@ section:target, .show{
 }
 
 .caption_wrapper {
-    width:50%;
+    width:25%;
     height:auto;
-    left: 25%;
+    left: 10%;
     overflow:hidden;
     position:fixed;
 }
@@ -195,7 +206,7 @@ section:target, .show{
     padding-bottom: 5px;
     width:100%;
     text-align:center;
-    opacity:0.7;
+    opacity:0.5;
     color:#FFF;
     background-color:#000;
     font-weight:bold;
@@ -204,13 +215,12 @@ section:target, .show{
 }
 
 #caption_title {
-    font: bold 12px/23px Arial,Verdana,sans-serif;
+    font: bold 20px Arial,Verdana,sans-serif;
     letter-spacing: -1px;
 }
 
-#caption_text {
-    font: 10px Arial,Verdana,sans-serif;
-    margin: 5px;
+.description {
+    font: 20px Arial,Verdana,sans-serif;
+    letter-spacing: -1px;
 }
-
 
