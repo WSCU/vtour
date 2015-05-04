@@ -2,6 +2,7 @@
 node_modules
 *.swp
 tags
+.idea
 /imgs
 *.jpg
 *.png

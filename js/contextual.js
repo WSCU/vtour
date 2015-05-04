@@ -1,134 +1,241 @@
 $(function () {
-    /**
-     * Lines 20-27 are only in place for demo purposes until we hook everything up
-     * They can be removed at some point along with the "show" section in html
-     * Anything that references #start and .show in cnstyle.css can also be removed at that time
-     */
     if (location.hash !== "") {
         $("#start").removeClass("show");
-    } 
+    }
     $("#start").find("a").on("click", function () {
         $("#start").removeClass("show");
         $(this).off("click");
     });
 
     /**
-     * Creates an instance of a Navigation Item
+     * Creates an instance of a Location Item
      * @constructor
      * @this {Navigation}
      * @param {string} tag The location tag of the navigation item (should be in form # + location, i.e #hurst
      * @param {string} name The name of the navigation item corresponding to div id to be filled
-     * @param {string} styleClass The CSS style to apply
+     * @param {string} locationType Type of location, i.e. "academic", etc
+     * @param {string} description The description of the current location
+     * @param {Boolean} onCampus If location is on campus or off campus
+     */
+    function Location(tag, name, locationType, description, onCampus) {
+        this.tag = tag;
+        this.name = name;
+        this.locationType = locationType;
+        this.description = description;
+        this.onCampus = onCampus;
+    }
+
+    /**
+     * Location object instances
+     */
+    var taylor = new Location("#taylor", "Taylor Hall", "academic",
+        "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
+        "auditorium and theater.", true);
+    var quigley = new Location("#quigley", "Quigley Hall", "academic",
+        "Home of the Music and Art departments", true);
+    var hurst = new Location("#hurst", "Hurst Hall", "academic",
+        "Home of Science and Mathematics departments", true);
+    var kelley = new Location("#kelley", "Kelley Hall", "academic",
+        "Home of Social Sciences and Environment & Sustainability programs", true);
+    var library = new Location("#library", "Leslie J. Savage Library", "studentlife",
+        "The research hub for campus and a great study spot", true);
+    var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
+        "The hub of student life on campus", true);
+    var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
+        "The world's highest collegiate football stadium", true);
+    var telluride = new Location("#telluride", "Telluride", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var crestedbutte = new Location("#cb", "Crested Butte", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var monarchmountain = new Location("#mm", "Monarch Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var taylorreservoir = new Location("#tr", "Taylor Reservoir", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var hartmanrocks = new Location("#hr", "Hartman Rocks", "recreation", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var artscenter = new Location("#artscenter", "Gunnison Arts Center", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var wmountain = new Location("#wmountain", "W Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+
+    var locations = [taylor, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
+        taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain];
+
+    var currentLocation;
+
+    function getLocation(locationTag) {
+        $('.caption_wrapper').hide();
+        var inner_html = "";
+        for (var i in locations) {
+            if (locationTag === locations[i].tag) {
+                inner_html = "<div class='caption_wrapper'><div class='caption'><div id='caption_title'>" +
+                    locations[i].name + "</div><div id='caption_text'>" + locations[i].description +
+                    "</div></div></div>";
+                $('#text_overlay').html(inner_html);
+                $('.caption_wrapper').delay(2000).fadeOut(1500);
+                currentLocation = locations[i];
+                break;
+            }
+        }
+    }
+
+    /**
+     * Creates an instance of a Navigation Item
+     * @constructor
+     * @this {Navigation}
+     * @param {string} tag The location tag of the navigation item (should be in form # + location, i.e #hurst
+     * @param {string} styleClass The css style class name (no spaces)
      * @param {string} ttip Tool tip
      * @param {string} destination The hash location destination (i.e. "#hurst)
      * @param {string} direction The direction of navigation arrow (i.e. "back", "forward", "right", "left")
-     * @param {string} fillColor Arrow fill color in form #CC0000
+     * @param {number} x x coordinate in pixels (for on campus)
+     * @param {number} y y coordinate in pixels (for on campus)
      */
-    function Navigation(tag, name, styleClass, ttip, dest, direction, fillColor) {
+    function Navigation(tag, styleClass, ttip, dest, direction, x, y) {
         this.tag = tag;
-        this.name = name;
         this.styleClass = styleClass;
         this.ttip = ttip;
         this.dest = dest;
         this.direction = direction;
-        this.fillColor = fillColor;
+        this.x = x;
+        this.y = y;
     }
 
     /**
      * Navigation object instances
      */
-    var forward_to_pathway = new Navigation("#taylor", "forward_to_pathway", "forward_arrow", "to pathway", "#pathway", "forward", "#CC0000");
-    var forward_to_hurst = new Navigation("#pathway", "forward_to_hurst", "forward_arrow", "to Hurst", "#hurst", "forward", "#CC0000");
-    var back_to_taylor = new Navigation("#pathway", "back_to_taylor", "back_arrow", "back to Taylor", "#taylor", "back", "#CC0000");
-    var back_to_pathway = new Navigation("#hurst", "back_to_pathway", "back_arrow", "back to pathway", "#pathway", "back", "#CC0000");
-    var navs = [forward_to_pathway, forward_to_hurst, back_to_taylor, back_to_pathway];
+    var taylor_to_pathway = new Navigation("#taylor", "taylor_to_pathway", "to pathway", "#pathway", "forward", 47, 10); //
+    var pathway_to_hurst = new Navigation("#pathway", "pathway_to_hurst", "to Hurst", "#hurst", "forward", 47, 12);
+    var pathway_to_taylor = new Navigation("#pathway", "pathway_to_taylor", "back to Taylor", "#taylor", "back", 50, 2); //
+    var pathway_to_quigly = new Navigation("#pathway", "pathway_to_quigly", "to Quigly", "#quigley", "right", 58, 12);
+    var hurst_to_pathway = new Navigation("#hurst", "hurst_to_pathway", "back to pathway", "#pathway", "back", 50, 2);
+    var hurst_to_kelley = new Navigation("#hurst", "hurst_to_kelley", "to Kelley Hall", "#kelley", "left", 42, 12);
+    var quigly_to_pathway = new Navigation("#quigley", "quigly_to_pathway", "back to pathway", "#pathway", "left", 42, 12);
+    var kelley_to_hurst = new Navigation("#kelley", "kelley_to_hurst", "to Hurst Hall", "#hurst", "right", 58, 12);
+    var kelley_to_pathway2 = new Navigation("#kelley", "kelley_to_pathway2", "to pathway", "#pathway2", "left", 42, 12);
+    var pathway2_to_library = new Navigation("#pathway2", "pathway2_to_library", "to Library", "#library", "forward", 47, 12);
+    var pathway2_to_kelley = new Navigation("#pathway2", "pathway2_to_kelley", "to Kelley Hall", "#kelley", "back", 50, 2);
+    var library_to_pathway2 = new Navigation("#library", "library_to_pathway2", "to pathway", "#pathway2", "back", 50, 2);
+    var library_to_universitycenter = new Navigation("#library", "library_to_universitycenter", "to University Center", "#universitycenter", "forward", 47, 12);
+    var universitycenter_to_library = new Navigation("#universitycenter", "universitycenter_to_library", "to Library", "#library", "right", 58, 12);
+    var universitycenter_to_mountaineerbowl = new Navigation("#universitycenter", "universitycenter_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "left", 42, 12);
+    var mountaineerbowl_to_universitycenter = new Navigation("#mountaineerbowl", "mountaineerbowl_to_universitycenter", "to University Center", "#universitycenter", "right", 58, 12);
 
-    /**
-     * Creates an instance of a Hotspot
-     * @constructor
-     * @this {Hspot}
-     * @param {string} tag The location tag of the hotspot (should be in form # + location, i.e #hurst
-     * @param {string} name The name of the location corresponding to div id to be filled
-     * @param {Number} xLoc The x coordinate of the hotspot.
-     * @param {Number} yLoc The y coordinate of the hotspot.
-     * @param {Number} width The width of the hotspot.
-     * @param {Number} height The height of the hotspot.
-     * @param {Number} ttipWidth The width of the tooltip.
-     * @param {string} image The html code for image, i.e "<img src = . . ."
-     * @param {string} position The position of the tooltip in relation to hspot, i.e. "top", "bottom", "left", "right"
-     * @param {string} type of hotspot, i.e. "spot", "rect"
-     */
-    function Hspot(tag, name, xLoc, yLoc, width, height, text, ttipWidth, image, position, type) {
-        this.tag = tag;
-        this.name = name;
-        this.xLoc = xLoc;
-        this.yLoc = yLoc;
-        this.width = width;
-        this.height = height;
-        this.text = text;
-        this.ttipWidth = ttipWidth;
-        this.image = image;
-        this.position = position;
-        this.type = type;
-    }
+    var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 800, 130);
+    var telluride_to_cbmr = new Navigation("#telluride", "telluride_to_cbmr", "to CBMR", "#cbmr", "left");
+    var telluride_to_cb = new Navigation("#telluride", "telluride_to_cb", "to Crested Butte", "#cb", "right");
+    var cb_to_telluride = new Navigation("#cb", "cb_to_telluride", "to Telluride", "#telluride", "left");
+    var cb_to_mm = new Navigation("#cb", "cb_to_mm", "to Monarch Mountain", "#mm", "right");
+    var mm_to_cb = new Navigation("#mm", "mm_to_cb", "to Crested Butte", "#cb", "left");
+    var mm_to_tr = new Navigation("#mm", "mm_to_tr", "to Taylor Resevoir", "#tr", "right");
+    var tr_to_mm = new Navigation("#tr", "tr_to_mm", "to Monarch Mountain", "#mm", "left");
+    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hr", "right");
+    var hr_to_tr = new Navigation("#hr", "hr_to_tr", "to Taylor Resevoir", "#tr", "left");
+    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right");
+    var tc_to_hr = new Navigation("#tc", "tc_to_hr", "to Hartman's Rocks", "#hr", "left");
+    var tc_to_wmountain = new Navigation("#tc", "tc_to_wmountain", "to W Mountain", "#wmountain", "right");
+    var wmountain_to_tc = new Navigation("#wmountain", "wmountain_to_tc", "to Taylor Canyon", "#tc", "left");
+    var wmountain_to_artscenter = new Navigation("#wmountain", "wmountain_to_artscenter", "to Arts Center", "#artscenter", "right");
+    var artscenter_to_wmountain = new Navigation("#artscenter", "artscenter_to_wmountain", "to W Mountain", "#wmountain", "left");
+    var artscenter_to_cbmr = new Navigation("#artscenter", "artscenter_to_cbmr", "to CBMR", "#cbmr", "right");
+    var cbmr_to_artscenter = new Navigation("#cbmr", "cbmr_to_artscenter", "to Arts Center", "#artscenter", "left");
 
-    /**
-     * Hspot object instances
-     */
-    var taylor_hotspot = new Hspot("#taylor", "taylor_hotspot", 70, 30, 15, 30, "Taylor Hall", 100, null, "bottom", "spot");
-    var pathway_hotspot = new Hspot("#pathway", "pathway_hotspot", 70, 30, 8, 8, "some trees", 100, null, "left", "rect");
-    var hurst_hotspot = new Hspot("#hurst", "hurst_hotspot", 50, 34, 30, 30, "This is Hurst, the building above all buildings. Check out the super cool things about it. So much Hurst.", 200, null, "bottom", "spot");
-    var hotspots = [taylor_hotspot, pathway_hotspot, hurst_hotspot];
-
-    /**
-     * Render all hotspots at the current location
-     * @param {string} locationTag Location tag, should be in form "#" + location, i.e. "#Hurst"
-     */
-    function getHspots(locationTag) {
-        var inner_html = "";
-        for (var i in hotspots) {
-            if (hotspots[i].tag === locationTag) {
-                var hotspotsDiv = "#hotspots";
-                inner_html += "<div class='hs-spot-object' data-tint-color='#e52929' data-type=" + hotspots[i].type +
-                    " data-x =" + hotspots[i].xLoc + " data-y =" + hotspots[i].yLoc + " data-width = " + hotspots[i].width + " data-height = " + hotspots[i].height + " data-popup-position = " + hotspots[i].position +
-                    " data-visible = 'visible'" +
-                    "data-tooltip-width =" + hotspots[i].ttipWidth + " data-tooltip-auto-width= 'false'> " + hotspots[i].text + " </div>";
-            }
-        }
-        $(".icon-clear").css({'fill': "black", "color": "white"});
-        $(hotspotsDiv).html(inner_html);
-    }
+    var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
+        hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
+        pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
+        universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, cbmr_to_telluride, telluride_to_cbmr,
+        telluride_to_cb, cb_to_telluride, cb_to_mm, mm_to_cb, mm_to_tr, tr_to_mm, tr_to_hr, hr_to_tr, hr_to_tc, tc_to_hr,
+        tc_to_wmountain, wmountain_to_tc, artscenter_to_wmountain, artscenter_to_cbmr, cbmr_to_artscenter, wmountain_to_artscenter];
 
     /**
      *  Render all navigation items at the current location
      * @param {string} locationTag Location tag, should be in form "#" + location, i.e. "#hurst"
      */
     function getNavs(locationTag) {
+        $('.tipsy:last').remove();
         var inner_html = "";
+        var items = [];
         for (var i in navs) {
-            if (navs[i].tag === locationTag) {
-                var d = "M202.969,0l-99.438,130.824h52.213c8.629,89.9-25.768,176.225-120.373,206.957" +
-                    "c121.697,0.34,190.641-99.896,213.967-206.957h53.072L202.969,0z";
-                if (navs[i].direction === "forward") {
-                    var flip = 0;
-                    var viewBox = "'0 0 300 502'";
+            if (currentLocation.onCampus) {
+                if (navs[i].tag === locationTag) {
+                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
+                        "<button class='restart_button' onclick=javascript:window.location=''>Restart Tour</button>" +
+                        "<img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
+                        navs[i].styleClass + " arrow' src='imgs/nav_arrows/" + navs[i].direction + "_white.png'" +
+                        "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_hover.png'" +
+                        " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_white.png' " +
+                        "title='" + navs[i].ttip + "' />";
+                    items.push(navs[i].styleClass);
                 }
-                if (navs[i].direction === "back") {
-                    flip = "transform='rotate(180 0 0)'";
-                    viewBox = "'-300 -450 300 502'";
+                $("#navigation").html(inner_html);
+                $(".arrow").tipsy({gravity: 's', fade: true, html: true});
+                for (var i in items) {
+                    for (var j in navs) {
+                        if (items[i] === navs[j].styleClass) {
+                            $("." + navs[j].styleClass).css({bottom: navs[j].y + "%", "left": navs[j].x + "%"});
+                        }
+                    }
                 }
-                inner_html += "<svg " + navs[i].dest + "' class=' " + navs[i].styleClass + " icon-clear icon-clear2' version='1.1' x='0px' y='0px' " +
-                    "width='500' height='200' viewBox= " + viewBox + " enable-background='new 200 0 200 502.174' xml:space='preserve'> " +
-                    "<use xlink:href = '#" + navs[i].name + "' class = 'icon-shadow' transform = 'translate(6, 5)' /> " +
-                    "<path onclick=javascript:window.location.hash='" + navs[i].dest + "' title='" + navs[i].ttip + "' class ='icon-clear2' id='" + navs[i].name + "' " + flip + " d=" + d + "/></svg>";
-                var navigationDiv = "#navigation";
-                $(navigationDiv).html(inner_html);
-                $(".icon-clear").css({"fill": navs[i].fillColor});
-                if (navs[i].direction === "back") {
-                    $(".icon-clear2").tipsy({gravity: 'nw', fade: true});
+            }
+            else {
+                if (navs[i].tag === locationTag) {
+                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='#taylor'>Go On Campus</button><img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
+                        navs[i].direction + "_offcampus arrow' src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png'" +
+                        "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus_hover.png'" +
+                        " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png' " +
+                        "title='" + navs[i].ttip + "' />";
                 }
-                if (navs[i].direction === "forward") {
-                    $(".icon-clear2").tipsy({gravity: 'nw', fade: true});
+                $("#navigation").html(inner_html);
+                $(".arrow").tipsy({gravity: 's', fade: true, html: true});
+            }
+        }
+    }
+
+    /**
+     * Creates an instance of a Hotspot
+     * @constructor
+     * @this {Hspot}
+     * @param {string} tag The location tag of the hotspot (should be in form # + location, i.e #hurst
+     * @param {string} styleClass name of css class (no spaces)
+     * @param {string} ttip Tooltip for hotspot
+     * @param {string} dest The destination url for hotspot
+     * @param {Number} x The x coordinate of the hotspot (in pixels)
+     * @param {Number} y The y coordinate of the hotspot (in pixels)
+     */
+    function Hspot(tag, styleClass, ttip, dest, x, y) {
+        this.tag = tag;
+        this.styleClass = styleClass;
+        this.ttip = ttip;
+        this.dest = dest;
+        this.x = x;
+        this.y = y;
+    }
+
+    /**
+     * Hspot object instances
+     */
+    var taylor_hotspot = new Hspot("#taylor", "taylor_panorama_hs", "view Panorama", "panoramas/taylor_panorama/Taylor_Panorama.html", 75, 75);
+    var hotspots = [taylor_hotspot];
+
+    /**
+     * Render all hotspots at the current location
+     * @param {string} locationTag Location tag, should be in form "#" + location, i.e. "#Hurst"
+     */
+    function getHspots(locationTag) {
+        $('.tipsy:last').remove();
+        var inner_html = "";
+        var items = [];
+        for (var i in hotspots) {
+            if (hotspots[i].tag === locationTag) {
+                inner_html += "<a href=" + hotspots[i].dest + " " + "target='_blank'><img class='" +
+                    hotspots[i].styleClass + " hotspot' src='imgs/logo_hotspot.png'" +
+                    "onmouseover=" + "this.src='imgs/logo_hotspot_hover.png'" +
+                    " onmouseout=" + "this.src='imgs/logo_hotspot.png' " +
+                    "title='" + hotspots[i].ttip + "' /></a>";
+                items.push(hotspots[i].styleClass);
+            }
+            $("#hotspots").html(inner_html);
+            $(".hotspot").tipsy({gravity: 'sw', fade: true, html: true});
+            for (var i in items) {
+                for (var j in hotspots) {
+                    if (items[i] === hotspots[j].styleClass) {
+                        $("." + hotspots[j].styleClass).css({bottom: hotspots[j].y + "%", "left": hotspots[j].x + "%"});
+                    }
                 }
             }
         }
@@ -144,16 +251,13 @@ $(function () {
         $(mainImageDiv).html("<img src='imgs/" + locationTag.substring(1) + "_main.jpg'/>");
     }
 
-    /***Currently using location.hash, this will likely be replaced with getLocation()?
+    /***
      * Functions above requires the location tag passed in to be # + location tag name. (i.e "#hurst")
      */
     $(window).on('hashchange', function () {
-        $('.tipsy:last').remove();
         getImage(location.hash);
-        getHspots(location.hash);
+        getLocation(location.hash);
         getNavs(location.hash);
-        getCIs(location.hash);
-        $("#wrapper").hotspot({"show_on": "mouseover", "responsive": true});
-
-    });
+        getHspots(location.hash);
+    }).trigger('hashchange');
 });
