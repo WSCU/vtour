@@ -259,5 +259,9 @@ $(function () {
         getLocation(location.hash);
         getNavs(location.hash);
         getHspots(location.hash);
-    }).trigger('hashchange');
+    });
+
+    if(window.location.hash) {
+        $(window).trigger('hashchange');
+    }
 });
