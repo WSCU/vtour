@@ -57,6 +57,7 @@ $(function () {
         taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain];
 
     var currentLocation;
+    var previousLocation;
 
     function getLocation(locationTag) {
         $('.caption_wrapper').hide();
@@ -68,6 +69,7 @@ $(function () {
                     "</div></div></div>";
                 $('#text_overlay').html(inner_html);
                 $('.caption_wrapper').delay(2000).fadeOut(1500);
+                previousLocation = currentLocation;
                 currentLocation = locations[i];
                 break;
             }
@@ -174,7 +176,7 @@ $(function () {
             }
             else {
                 if (navs[i].tag === locationTag) {
-                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='#taylor'>Go On Campus</button><img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
+                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='"+previousLocation.tag+"'>Go On Campus</button><img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
                         navs[i].direction + "_offcampus arrow' src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png'" +
                         "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus_hover.png'" +
                         " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png' " +
@@ -259,6 +261,7 @@ $(function () {
         getLocation(location.hash);
         getNavs(location.hash);
         getHspots(location.hash);
+        getCIs(location.hash);
     });
 
     if(window.location.hash) {

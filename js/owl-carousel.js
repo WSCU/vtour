@@ -1,5 +1,6 @@
 
 /*Customisable Carousel Attributes */
+/*
 $(document).ready(function() {
 
     $("#owl-demo").owlCarousel({
@@ -10,7 +11,7 @@ $(document).ready(function() {
     });
 
 
-});
+});*/
 /*JS Lint helpers: */
 /*global dragMove: false, dragEnd: false, $, jQuery, alert, window, document */
 /*jslint nomen: true, continue:true */

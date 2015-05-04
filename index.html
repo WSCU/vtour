@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/blue.css">
     <link rel="stylesheet" href="css/dcdrilldown.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
     <!-- Owl Carousel Assets -->
     <link href="css/carousel.css" rel="stylesheet">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
-    <script src="js/lightbox.js"></script>
-    <link href="css/Carousel_lightbox.css" rel="stylesheet" />
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/owl-carousel.js"></script>
+    <script src="js/carousel_items.js"></script>
     <script src="js/jquery.tipsy.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/menu_lists.js"></script>
     <script src="js/jquery.dcdrilldown.1.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <!--<script src="js/carousel.js"></script>-->
-    <script src="js/Carousel_Switch.js"></script>
     <script src="js/contextual.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg3suBVsTjew0sCBoqHHBF2cy2UOI4dYk"></script>
     <script src="js/lib/gmapScript.js"></script>
@@ -41,16 +41,10 @@
           <button class="beginButton">Begin Tour</button>
         </a>
       </section>
-      <div id="main_image" class="noselect">
-      </div>
-      <div id="navigation">
-      </div>
-      <div id="hotspots">
-
-      </div>
-      <div id="text_overlay">
-        s
-      </div>
+      <div id="main_image" class="noselect"></div>
+      <div id="navigation"></div>
+      <div id="hotspots"></div>
+      <div id="text_overlay"></div>
     </div>
 
     <div class="menu">
@@ -63,49 +57,48 @@
     </div>
 
     <div class="Carousel">
-      <!--<style scoped>-->
-        <!--@import "css/Carousel_bootstrapTheme.css";-->
-      <!--</style>-->
-    <div id="owl-demo" class="owl-carousel noselect">
+      <div id="owl-demo" class="owl-carousel noselect">
 
-      <a class="gallery_thumbs thumb_size" href="imgs/Taylor_JohnMasonFull.png"
-        rel="lightbox[painting]"  title="&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house&#x27;&quot;   href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;">
-        <img src='imgs/Taylor_JohnMasonThumb.png' alt="" /></a>
-
-
+      </div>
     </div>
-  </div>
-  <div id="map-canvas" class="map">
-  </div>
+    <div id="map-canvas" class="map">
+    </div>
 
-  <div>
-    <input type="button" id="recFilter" value="Recreation"/>
-    <input type="button" id="cultFilter" value="Culture"/>
-    <input type="button" id="foodFilter" value="Restaurants"/>
-  </div>
-  <!--<script src="js/carousel.js"></script>-->
+    <!--<div>
+      <input type="button" id="recFilter" value="Recreation"/>
+      <input type="button" id="cultFilter" value="Culture"/>
+      <input type="button" id="foodFilter" value="Restaurants"/>
+    </div>
+    -->
 
-  <script>
-    $(document).ready(function($){
-      dispMainMenu();
+    <script>
+      $(document).ready(function($){
+        dispMainMenu();
 
-      $('#drilldown-1').dcDrilldown({
-        speed : 'fast',
-        saveState : true,
-        showCount : false,
-        linkType : 'backlink',
-        defaultText: ''
+        owl.owlCarousel({
+          autoPlay: 2000,
+          itemsDesktop : [1250,6],
+          itemsDesktopSmall : [979,4],
+          items : 9
+        });
+
+        $('#drilldown-1').dcDrilldown({
+          speed : 'fast',
+          saveState : true,
+          showCount : false,
+          linkType : 'backlink',
+          defaultText: ''
+        });
+        $('#drilldown-2').dcDrilldown({
+          speed : 'fast',
+          saveState : false,
+          showCount : false,
+          linkType : 'link'
+        });
+
       });
-      $('#drilldown-2').dcDrilldown({
-        speed : 'fast',
-        saveState : false,
-        showCount : false,
-        linkType : 'link'
-      });
-
-    });
 
 
-  </script>
-</body>
+    </script>
+  </body>
 </html>

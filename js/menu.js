@@ -1,15 +1,3 @@
-if (!String.prototype.format) {
-  String.prototype.format = function() {
-    var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) { 
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
-    });
-  };
-}
-
 var Menu = function(opts) {
     this.name = opts.name ? opts.name : 'main';
     this.text = opts.text ? opts.text : 'Menu';
@@ -21,7 +9,8 @@ var Menu = function(opts) {
 var MenuItem = function(opts) {
     this.text = opts.text;
     this.icon = opts.icon ? opts.icon : '';
-    this.target = '';
+    this.target = opts.target ? opts.target : '';
+    this.onclk = opts.onclick ? opts.onclick : '';
     this.rel = opts.rel ? opts.rel: '';
     this.items = opts.items ? opts.items : [];
 };
