@@ -74,7 +74,9 @@ $(function () {
                 $("#caption_title").click(function(){
                     $(".description").slideToggle("slow");
                 });
-                previousLocation = currentLocation;
+                if (currentLocation && currentLocation.onCampus) {
+                    previousLocation = currentLocation;
+                }
                 currentLocation = locations[i];
                 break;
             }
