@@ -1,9 +1,11 @@
 function dispMenu(items) {
     var i;
-    var inner = "<li>";
+    var inner = "";
     var mi, a, icon;
     for (i in items) {
+        inner += "<li>";
         mi = items[i];
+        a = '';
         icon = "<i class='"+mi.icon+"'></i>";
 
         if (mi.target === "locations") {
