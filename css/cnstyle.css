@@ -6,7 +6,7 @@ body.contextual_navigation
 
 .menu{
     position: fixed;
-    width: 100%;
+    width: 20%;
     top: 15%;
     z-index: 1000;
 }
