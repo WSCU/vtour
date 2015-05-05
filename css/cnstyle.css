@@ -8,7 +8,7 @@ body.contextual_navigation
     position: fixed;
     width: 20%;
     top: 15%;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .map{
