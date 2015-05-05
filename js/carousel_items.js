@@ -1,7 +1,8 @@
 // JavaScript Document
-function CarouselItem(tags, thumb, ttip, html) {
+function CarouselItem(tags, full, thumb, ttip, html) {
     this.name = name;
     this.tags = tags;
+    this.full = full;
     this.thumb = thumb;
     this.ttip = ttip;
     this.html = html;
@@ -12,267 +13,197 @@ function Image(name, fname) {
     this.fname = fname;
 }
 
-//********************Field House****************************
-var FieldHouseAquaCenterFull = new Image("FieldHouse_AquaCenterFull", "FieldHouse_AquaCenterFull.png");
-var FieldHouseAquaCenterThumb = new Image("FieldHouse_AquaCenterThumb", "FieldHouse_AquaCenterCarThumb.png");
-var FieldHouseAquaCenter = new CarouselItem(["Fieldhouse"], FieldHouseAquaCenterThumb,
-											"AquaticCenter", "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_AquaCenterCarFull.png\"\
-											 rel=\"lightbox[painting]\" title=\"&lt;a target='_self'\ onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/aquatic-center&#x27;&quot;\
-						href=\'/http://www.western.edu/current-students/campus-recreation/aquatic-center'&gt;Click here to learn more information about the Aquatic Center&lt;/a&gt;\">\
- 		<img src='imgs/FieldHouse_Thumb/FieldHouse_AquaCenterCarThumb.png' alt=\"\" /></a>");
 
-
-var FieldHouseClimbingWallFull = new Image("FieldHouse_ClimbingWallFull", "FieldHouse_ClimbingWallFull.png");
-var FieldHouseClimbingWallThumb = new Image("FieldHouse_ClimbingWallThumb", "FieldHouse_ClimbingWallThumb.png");
-var FieldHouseClimbingWall = new CarouselItem(["Fieldhouse"], FieldHouseClimbingWallThumb,
-											"ClimbingWall", "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_ClimbingWallCarFull.png\" rel=\"lightbox[painting]\" \
-        rel=\"lightbox[painting]\"  title=\"&lt;a target='_self'\ onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house&#x27;&quot; \  href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house'&gt;Click here to learn more information about the Climbing\ Wall&lt;/a&gt;");
-
-var FieldHouseFitCenterFull = new Image("FieldHouse_FitCenterFull", "FieldHouse_FitCenter.png");
-var FieldHouseFitCenterThumb = new Image("FieldHouse_FitCenterThumb", "FieldHouse_FitCenter.png");
-var FieldHouseFitCenter = new CarouselItem(["Fieldhouse"], FieldHouseFitCenterThumb,
-											"FitnessCenter", "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_FitCenterCarFull.png\" rel=\"lightbox[painting]\" \
-        rel=\"lightbox[painting]\" title=\"&lt;a target='_self'\ onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house&#x27;&quot; \  href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house/climbing-wall-mountaineer-field-house'&gt;Click here to learn more information about the Climbing\ Wall&lt;/a&gt;") ;
-
-var FieldhouseHaaPLabFull = new Image("Fieldhouse_HaaPLabFull", "Fieldhouse_HaaPLabFull.png");
-var FieldhouseHaaPLabThumb = new Image("Fieldhouse_HaaPLabThumb", "Fieldhouse_HaaPLabThumb.png");
-var FieldhouseHaaPLab = new CarouselItem(["Fieldhouse"], FieldhouseHaaPLabThumb,
-											"HaaPLab",   "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_HaaPLabCarFull.png\" rel=\"lightbox[painting]\" \
-        rel=\"lightbox[painting]\" title=\"&lt;a target='_self'\
-		onClick=&quot;window.location.href=&#x27;https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab&#x27;&quot; \  href='https://www.western.edu/academics/undergraduate/exercise-sport-science-ess/high-altitude-performance-lab-haplab'&gt;Click here to learn more information about the HAPLab \here&lt;/a&gt;\">\
- 		<img src=\"imgs/FieldHouse_Thumb/FieldHouse_HaaPLabCarThumb.png\" alt=\"\" /></a>");
-
-var FieldhouseInfoGymFishEyeFull = new Image("Fieldhouse_InfoGymFishEyeFull", "Fieldhouse_InfoGymFishEyeFull.png");
-var FieldhouseInfoGymFishEyeThumb = new Image("Fieldhouse_InfoGymFishEyeThumb", "Fieldhouse_InfoGymFishEyeThumb.png");
-var FieldhouseInfoGymFishEye = new CarouselItem(["Fieldhouse"], FieldhouseInfoGymFishEye,
-											"InfoGymFishEye", "<a class=\"gallery_thumbs\" href=\"imgs/FieldHouse_InfoGymFishEyeFull.png\"\
-        rel=\"lightbox[painting]\" href='http://www.western.edu/current-students/campus-recreation/mountaineer-field-house'&gt;Click here to learn more information about the Mountaineer Field House&lt;/a&gt;\">\
- 		<img src='imgs/FieldHouse_Thumb/FieldHouse_InfoGymFishEyeThumb.png' alt=\"\" /></a>");
-
-//********************Hurst****************************
-var HurstQuinnFull = new Image("Hurst_QuinnFull", "Hurst_QuinnFull.jpg");
-var HurstQuinnThumb = new Image("Hurst_QuinnThumb", "Hurst_QuinnThumb.png");
-var HurstQuinn = new CarouselItem(["#hurst"], HurstQuinnThumb,
-                                            "QuinTestimonial", " <a class=\"fancybox-effects-b\" href=\"imgs/Hurst_QuinnFull.jpg\" data-fancybox-group=\"gallery\" title=\"<b>Student\ Testimonials- <br />Rebecca and Quinn Bryant</b><br />I like to take things apart. My husband, Quinn, likes to put them together.<br />\
-We met and married after high school, and decided together to come to Gunnison. At Western, we found a place that complements our unique relationship.<br />\
-Getting married reminded us of our high school graduations. We were suddenly adults, fodder for trial by fire. But when we arrived at Western in 2011, people accepted us as we were: two\ people attempting to navigate life’s chaos.\
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/rebecca-and-quinn-bryant&#x27;&quot; \ href='http://www.western.edu/profile/student/rebecca-and-quinn-bryant'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Hurst_QuinnThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> <p>\
-                              Computer Science<br />\
-                                Student Testimonial <br />\
-                                Rebecca and Quinn Bryant</p>\
-                        </div>\
-                        </div>\
-                        </a>");
-
-var HurstKendricEvansFull = new Image("Hurst_STKendricEvans", "Hurst_STKendricEvans.jpg");
-var HurstKendricEvansThumb = new Image("Hurst_STKendricEvansThumb", "Hurst_KendricEvansThumb.png");
-var HurstKendricEvans = new CarouselItem(["#hurst"], HurstKendricEvansThumb,
-                                            "<a class=\"fancybox-effects-b\" href=\"imgs/Hurst_STKendricEvansFull.jpg\" data-fancybox-group=\"gallery\" title=\"\
-											<b>\Student  Testimonials- Kendirc Evans </b></br>I work for CRMCulture, a company in the Boulder area that was founded by a Western grad.  I had\ found a good job right after graduation but when friends I had made at Western invited me to interview here I realized this was where I wanted to be.</br>\
-While attending Western, I was able to be a Computer Science tutor.  This provided the opportunity to really immerse myself in the material, as well as forge close partnerships with the\ other students that I still have today.\
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kendric-evans&#x27;&quot;   href='http://www.western.edu/profile/alumnus/kendric-evans'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Hurst_STKendricEvansThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> \
-          Computer Science<br />\
-          <p>Student Testimonial <br />\
-                                Kendric Evans</p>\
-                        </div>\
-                        </div>\
-                        </a> ");
-
-var HurstRobotsFull = new Image("Hurst_RobotsFull", "Hurst_RobotsFull.png");
-var HurstRobotsThumb = new Image("Hurst_RobotsThumb", "Hurst_RobotsThumb.png");
-var HurstRobots = new CarouselItem(["#hurst"], HurstRobotsThumb,
-                                            "<a class=\"fancybox-effects-b\" href=\"imgs/Hurst_RobotsFull.jpg\" data-fancybox-group=\"gallery\" title=\"<b>Robotics Club</b><br />As part\ of\ Western's involvement in the Colorado Space Grant Consortium – a NASA-affiliated program – a group of students meets Friday afternoons in Hurst Hall to prepare a Mars-Rover-like,\ autonomous robot.<br />\
-The resulting device will compete with robots from other schools April 5 at Great Sand Dunes National Park, about two hours drive from Western. The device must navigate on its own once it's\ released on the sandy course, where it must avoid obstacles to seek a beacon transmitting at a specific frequency.\
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/students-build-robot-compete-sand-dunes&#x27;&quot;  \ href='http://www.western.edu/news/students-build-robot-compete-sand-dunes'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Hurst_RobotsThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> <p>\
-          Computer Science<br />\
-                               Robotics Club</p>\
-                        </div>\
-                        </div>\
-                        </a>" );
-
-var HurstGeoMovieThumb = new Image("Hurst_MovieThumb", "Hurst_MovieThumb.jpg");
-var HurstGeoMovie = new CarouselItem(["#hurst"], HurstGeoMovie,
-
-           "<a class=\"iframe\"  title=\"Western State Colorado University\" href=\"https://www.youtube.com/watch?v=z_PmLcZ5KSQ\"target=\"_blank\" >\
-      <div class=\"Thumbimage\">\
-      <img src=\"imgs/Hurst_GeoMovieThumb.jpg\" alt=\"\" />\
-         <div class=\"Thumbcaption\"> <p>\
-                                Moncrief Petroleum <br /> Geology Program <br />Video</p>\
-                        </div>\
-                        </div></a>" );
-
-
-var HurstSTAlanClearyFull = new Image("Hurst_STAlanClearyFull", "Hurst_STAlanClearyFull.jpg");
-var HurstSTAlanClearyThumb = new Image("Hurst_STAlanClearyThumbs", "Hurst_STAlanClearyThumbs.png");
-var HurstSTAlanCleary = new CarouselItem(["#hurst"], HurstSTAlanClearyThumb,
-                                            "AlanClearyTestimonial",
-											"<a class=\"fancybox-effects-b\" href=\"imgs/Hurst_STAlanClearyFull.jpg\" data-fancybox-group=\"gallery\" title=\"<b>Student Testimonials- Alan\ Cleary</b><br />I'm currently a Computer Science PhD student at Montana State University, Bozeman. I graduated from Western with degrees in Mathematics and Computer Science. I chose to\ pursue a PhD because as an undergraduate I found that I enjoyed research and that there were many advanced Math and Computer Science topics I wanted to study.\
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/alan-cleary&#x27;&quot; \  href='http://www.western.edu/profile/alumnus/alan-cleary'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Hurst_STAlanClearyThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> <p>\
-          Computer Science<br />\
-                                Student Testimonial <br />\
-                                Alan Cleary</p>\
-                        </div>\
-                        </div>\
-                        </a>"
-                        );
-
-var HurstSTKevinSearsFull = new Image("Hurst_STKevinSearsFull", "Hurst_STKevinSearsFull.png");
-var HurstSTKevinSearsThumb = new Image("Hurst_STKevinSearsThumb", "Hurst_STKevinSearsThumb.png");
-var HurstSTKevinSears = new CarouselItem(["#hurst"], HurstSTKevinSearsThumb,
-
-         "<a class=\"fancybox-effects-b\" href=\"imgs/Hurst_STKevinSears.jpg\" data-fancybox-group=\"gallery\" title=\"<b>Student Testimonials- Kevin Sears</b></br>Western's Computer\
-		 Science program really game me the skills I needed to work here at CRMCulture, but even more so, it instilled the notion of knowledge share.  I have the drive to learn and to teach\
-		 every chance I get. \
-<br />\
-We had a ton of fun hanging out in the library in the evenings, working on computer science tasks together.  I never had to be a shut in student there was always someone willing to help wit\
- what ever I was working on. \
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kevin-sears&#x27;&quot; \  href='http://www.western.edu/profile/alumnus/kevin-sears'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-        <img src=\"imgs/Hurst_STKevinSearsThumb.png\" alt=\"\" />\
-            <div class=\"Thumbcaption\"> <p>\
-            Computer Science<br />\
-                                 Student Testimonial <br />\
-                                Kevin Sears</p>\
-                        </div>\
-                        </div>\
-                        </a>");
-
-//********************Taylor****************************
-var TaylorWildPersuitsFull = new Image("Taylor_WildPersuitsFull", "Taylor_WildPersuitsFull.jpg");
-var TaylorWildPersuitsThumb = new Image("Taylor_WildPersuitsThumb", "Taylor_WildPersuitsThumb.png");
-var TaylorWildPersuits = new CarouselItem(["#taylor"], TaylorWildPersuitsThumb,
-                                            "WildPersuits", "<a class=\"fancybox-effects-b\" href=\"imgs/Taylor_WildPersuitsFull.jpg\" data-fancybox-group=\"gallery\" title=\"\
-											<b>Wilderness Persuits Club</b><br />Wilderness Pursuits provides fun, low-cost, and professional-quality co-curricular outdoor expeditions and\ resources for the students of Western State Colorado University. Wilderness Pursuits trips are led by students and designed to meet the needs of a broad range of abilities and interests,\ while developing outdoor skills and fostering community, citizenry, environmental stewardship and healthy living.\</br>\
-&lt;a target='_self'\ onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips&#x27;&quot;\   href='http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Taylor_WildPersuitsThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> <p>\
-          					Clubs<br />\
-                                Wildreness Pursuits \
-                               </p>\
-                        </div>\
-                        </div>\
-                        </a>" );
-
-var TaylorSTChrisNoahFull = new Image("imgs/Taylor_STChrisNoahFull", "imgs/Taylor_STChrisNoahFull.jpg");
-var TaylorSTChrisNoahThumb = new Image("Taylor_STChrisNoahThumb", "Taylor_STChrisNoahThumb.jpg");
-var TaylorSTChrisNoah = new CarouselItem(["#taylor"], TaylorSTChrisNoahThumb,
-                                            "AnnaBoyleTestimonial", " <a class=\"fancybox-effects-b\" href=\"imgs/Taylor_STChrisNoahFull.jpg\" data-fancybox-group=\"gallery\" title=\"\
-											<b>Student Testimonials - Chris Noah</b>\
-Chris is working on a Recreation and Outdoor Education major with an emphasis in instruction. Wilderness Pursuits allows him to practice his instruction techniques while guiding rock, ice,\ and snow based trips for other students. \
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/chris-noah&#x27;&quot;  \ href='http://www.western.edu/profile/student/chris-noah'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Taylor_STChrisNoahThumb.jpg\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> <p>\
-          Taylor<br />\
-                                Student Testimonial <br />\
-                                Chris Noah</p>\
-                        </div>\
-                        </div>\
-                        </a>");
-
-var TaylorMovieThumb = new Image("Taylor_MovieThumb", "Taylor_MovieThumb.png");
-var TaylorMovie = new CarouselItem(["#hurst"], HurstGeoMovie,
-
-           "<a class=\"iframe\"  title=\"Western State Colorado University\" href=\"https://www.youtube.com/watch?v=NyYG2YRohp8\"target=\"_blank\" >\
-      <div class=\"Thumbimage\">\
-      <img src=\"imgs/Taylor_MovieThumb.png\" alt=\"\" />\
-         <div class=\"Thumbcaption\"> <p>\
-                                Wilderness Pursuits: <br />\
-                                Blackridge Canyon  <br />Video</p>\
-                        </div>\
-                        </div></a>" );
-
-var TaylorSTBradArcherFull = new Image("Taylor_STBradArcherFull", "Taylor_STBradArcherFull.png");
-var TaylorSTBradArcherThumb = new Image("Taylor_STBradArcherThumb", "Taylor_STBradArcherThumb.png");
-var TaylorSTBradArcher = new CarouselItem(["#taylor"], TaylorSTBradArcherThumb,
-                                            "BradArcherTestimonial",  "<a class=\"fancybox-effects-b\" href=\"imgs/Taylor_STBradArcherFull.jpg\" data-fancybox-group=\"gallery\" title=\"\
-											<b>Student Testimonials - Brad Archer</b><br />\
-By immersing himself in the community that is Western State Colorado University, Brad Archer says, he found direction for his life.\
-He says he came to Western from his home of Milliken, Colo., to indulge his fascination with people. He had been a state officer in the Family, Career and Community Leaders of America, as\ well as an active citizen in the Potawatomi Nation of American Indians.\
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; \  href='http://www.western.edu/future-students/student-testimonials-and-profiles'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Taylor_STBradArcherThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\">\ \
-          Taylor<br />\
-          <p>Student Testimonial <br />\
-                                Brad Archer</p>\
-                        </div>\
-                        </div>\
-                        </a>");
-
-var TaylorSTChristinaFull = new Image("Taylor_STChristinaFull", "Taylor_STChristinaFull.png");
-var TaylorSTChristinaThumb = new Image("Taylor_STChristinaThumb", "Taylor_STChristinaThumb.png");
-var TaylorSTChristina = new CarouselItem(["#taylor"], TaylorSTChristinaThumb,
-                                            "ChristinaTestimonial", " <a class=\"fancybox-effects-b\" href=\"imgs/Taylor_STChristinaFull.jpg\" data-fancybox-group=\"gallery\" title=\"\
-											<b>Student Testimonials - Christian Schwiegeraths</b><br />\
-Western State Colorado University senior Christian Schwiegerath, who was crowned Miss Colorado United States in April of 2013, says she’s laser-focused on her studies in Business and\ \Professional Land & Resource Management.  <br />\
-      </br>&lt;a target='_self'\ onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;href='http://www.western.edu/future-students/student-\
-	  testimonial\-and-profiles'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-        <img src=\"imgs/Taylor_STChristinaThumb.png\" alt=\"\" />\
-            <div class=\"Thumbcaption\"> <p>\
-            Taylor<br />\
-                                 Student Testimonial <br />\
-                                Christina Schwiegeraths</p>\
-                        </div>\
-                        </div>\
-                        </a>");
+//Taylor___________________________________________________________
 
 var TaylorSTZoeSmithFull = new Image("Taylor_ZoeSmithFull", "Taylor_ZoeSmithFull.png");
 var TaylorSTZoeSmithThumb = new Image("Taylor_ZoeSmithThumb", "Taylor_ZoeSmithThumb.png");
-var TaylorSTZoeSmith = new CarouselItem(["#taylor"], TaylorSTZoeSmithThumb,
-                                            "ZoeSmithTestimonial", " <a class=\"fancybox-effects-b\" href=\"imgs/Taylor_STZoeSmithFull.jpg\" data-fancybox-group=\"gallery\" title=\"\
-											<b>Student Testimonials - Zoe Smith</b>\
-<b>Where are you from?</b> <br />\
-I’m from Rockford, Illinois about 60 miles outside of Chicago.\
-<b>Why did you come to Western?</b> <br />\
-I came to Western because I came for a tour and was looking at schools all around the intermountain west, and then I came back to Western for a preview day. They had one of the old\ \buildings\  sprayed with ice to form a climbing wall. Through the entire time, my admissions counselor was in really close contact with me and I felt like if I went to Western my success really mattered and they were committed to helping me out. It was the best decision I ever made!<br />\
-      </br>&lt;a target='_self' onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;\   href='http://www.western.edu/future-students/student-testimonials-and-profiles'&gt;Click here to read more...&lt;/a&gt;\">\
-       <div class=\"Thumbimage\">\
-      <img src=\"imgs/Taylor_STZoeSmithThumb.png\" alt=\"\" />\
-          <div class=\"Thumbcaption\"> <p>\
-          Taylor<br />\
-                                Student Testimonial <br />\
-                                Zoe Smith</p>\
-                        </div>\
-                        </div>\
-                        </a>");
-
-var CIs = [FieldHouseAquaCenter, FieldHouseClimbingWall, FieldHouseFitCenter, FieldhouseHaaPLab, FieldhouseInfoGymFishEye, HurstQuinn, HurstKendricEvans, HurstRobots, HurstSTAlanCleary, HurstGeoMovie, HurstSTKevinSears, TaylorWildPersuits, TaylorSTChrisNoah, TaylorMovie, TaylorSTBradArcher, TaylorSTChristina, TaylorSTZoeSmith]
-
-var owl = $('#owl-demo'),
-    i = 0
+var TaylorSTZoeSmith = new CarouselItem(["#taylor"], Taylor_STZoeSmithFull, TaylorSTZoeSmithThumb, "Zoe smith testimonial", '<a class="fancybox-effects-b" href="imgs/Taylor_STZoeSmithFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Zoe Smith</b><b>Where are you from?</b> <br />I’m from Rockford, Illinois about 60 miles outside of Chicago.<b>Why did you come to Western?</b> <br />I came to Western because I came for a tour and was looking at schools all around the intermountain west, and then I came backto Western for a preview day. They had one of the old buildings sprayed with ice to form a climbing wall. Through the entire time, my admissions counselor was in really close contact with me and I felt like if I went to Western my success really mattered and they were committed to helping me out. It was the best decision I ever made!<br /></br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Taylor_STZoeSmithThumb.png" alt="" /><div class="Thumbcaption"> <p>Taylor<br />Student Testimonial <br />Zoe Smith</p></div></div></a>);');
 
 
-function getCIs(locationTag) /*Carousel Items*/{
-    var inner_html = "";
-    for (var i in CIs) {
-        for (var tag in CIs[i].tags) {
-            if (CIs[i].tags[tag] === locationTag) {
-                inner_html += CIs[i].html;
+var TaylorWildPersuitsFull = new Image("Taylor_WildPersuitsFull", "Taylor_WildPersuitsFull.jpg");
+var TaylorWildPersuitsThumb = new Image("Taylor_WildPersuitsThumb", "Taylor_WildPersuitsThumb.png");
+var TaylorWildPersuits = new CarouselItem(["#taylor"], Taylor_WildPersuitsFull, Taylor_WildPersuitsThumb, "Wilderness Persuits",  '<a class="fancybox-effects-b" href="imgs/Taylor_WildPersuitsFull.jpg" data-fancybox-group="gallery" title="<b>Wilderness Persuits Club</b><br />Wilderness Pursuits provides fun, low-cost, and professional-quality co-curricular outdoor expeditions and resources for the students of Western State Colorado University. Wilderness Pursuits trips are led by students and designed to meet the needs of a broad range of abilities and interests, while developing outdoor skills and fostering community, citizenry, environmental stewardship and healthy living.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips&#x27;&quot;   href="http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Taylor_WildPersuitsThumb.png" alt="" /><div class="Thumbcaption"> <p>Clubs<br />Wildreness Pursuits</p></div></div></a>);');
+
+
+var TaylorSTChrisNoahFull = new Image("images/Taylor_STChrisNoahFull", "images/Taylor_STChrisNoahFull.jpg");
+var TaylorSTChrisNoahThumb = new Image("Taylor_STChrisNoahThumb", "Taylor_STChrisNoahThumb.jpg");
+var TaylorSTChrisNoah = new CarouselItem(["#taylor"], Taylor_STChrisNoahFull, Taylor_STChrisNoahThumb, "Chris Noah testimonial", '<a class="fancybox-effects-b" href="imgs/Taylor_STChrisNoahFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Chris Noah</b>Chris is working on a Recreation and Outdoor Education major with an emphasis in instruction. Wilderness Pursuits allows him to practice his instruction techniques while guiding rock, ice, and snow based trips for other students. </br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/chris-noah&#x27;&quot;   href="http://www.western.edu/profile/student/chris-noah"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Taylor_STChrisNoahThumb.jpg" alt="" /><div class="Thumbcaption"><p>Taylor<br />Student Testimonial <br />Chris Noah</p></div></div></a>);');
+
+var TaylorSTBradArcherFull = new Image("Taylor_STBradArcherFull", "Taylor_STBradArcherFull.jpg");
+var TaylorSTBradArcherThumb = new Image("Taylor_STBradArcherThumb", "Taylor_STBradArcherThumb.png");
+var TaylorSTBradArcher = new CarouselItem(["#taylor"], Taylor_STBradArcherFull, Taylor_STBradArcherThumb, "Brad Archer testimonial", '<a class="fancybox-effects-b" href="imgs/Taylor_STBradArcherFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Brad Archer</b><br />By immersing himself in the community that is Western State Colorado University, Brad Archer says, he found direction for his life.He says he came to Western from his home of Milliken, Colo., to indulge his fascination with people. He had been a state officer in the Family, Career and Community Leaders of America, as well as an active citizen in the Potawatomi Nation of American Indians.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Taylor_STBradArcherThumb.png" alt="" /><div class="Thumbcaption"> Taylor<br /><p>Student Testimonial <br />Brad Archer</p></div></div></a>);');
+
+
+var TaylorSTChristinaFull = new Image("Taylor_STChristinaFull", "Taylor_STChristinaFull.jpg");
+var TaylorSTChristinaThumb = new Image("Taylor_STChristinaThumb", "Taylor_STChristinaThumb.png");
+var TaylorSTChristina = new CarouselItem(["#taylor"], Taylor_STChristinaFull, Taylor_STChristinaThumb, "Christina testimonial", '<a class="fancybox-effects-b" href="imgs/Taylor_STChristinaFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Christian Schwiegeraths</b><br />Western State Colorado University senior Christian Schwiegerath, who was crowned Miss Colorado United States in April of 2013, says she’s laser-focused on her studies in Business and Professional Land & Resource Management.<br /></br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Taylor_STChristinaThumb.png" alt="" /><div class="Thumbcaption"> <p>Taylor<br />Student Testimonial <br />Christina Schwiegeraths</p></div></div></a>);');
+
+
+
+var TaylorMovieThumb = new Image("Taylor_MovieThumb", "Taylor_MovieThumb.png");
+var TaylorMovie = new CarouselItem(["#taylor"], Taylor_MovieThumb, "Taylor Movie", '<a class="iframe" href="https://www.youtube.com/watch?v=NyYG2YRohp8"target="_blank" ><div class="Thumbimage"><img src="imgs/Taylor_MovieThumb.png" alt="" /><div class="Thumbcaption"> <p>Wilderness Pursuits: <br />Blackridge Canyon  <br />Video</p></div></div></a>);');
+
+
+//Hurst___________________________________________________________
+var HurstQuinFull = new Image("Hurst_QuinnFull", "Hurst_QuinnFull.jpg");
+var HurstQuinThumb = new Image("Hurst_QuinnThumb", "Hurst_QuinnThumb.png");
+var HurstQuinn = new CarouselItem(["#hurst"], HurstQuinnFull, HurstQuinnThumb, "Quinn Testimonial", '<a class="fancybox-effects-b" href="imgs/Hurst_QuinnFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials- <br />Rebecca and Quinn Bryant</b><br />I like to take things apart. My husband, Quinn, likes to put them together.<br />We met and married after high school, and decided together to come to Gunnison. At Western, we found a place that complements our unique relationship.<br />Getting married reminded us of our high school graduations. We were suddenly adults, fodder for trial by fire. But when we arrived at Western in 2011, people accepted us as we were: two people attempting to navigate life’s chaos.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/rebecca-and-quinn-bryant&#x27;&quot;   href="http://www.western.edu/profile/student/rebecca-and-quinn-bryant"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hurst_QuinnThumb.png" alt="" /><div class="Thumbcaption"> <p>Computer Science<br />Student Testimonial <br />Rebecca and Quinn Bryant</p></div></div></a>);');
+
+var HurstSTKevinSearsFull = new Image("Hurst_STKevinSearsFull", "Hurst_STKevinSearsFull.png");
+var HurstSTKevinSearsThumb = new Image("Hurst_STKevinSearsThumb", "Hurst_STKevinSearsThumb.png");
+var HurstSTKevinSears = new CarouselItem(["#hurst"], Hurst_STKevinSearsFull, Hurst_STKevinSearsThumb, "Kevin Sears Testimonial", '<a class="fancybox-effects-b" href="imgs/Hurst_STKevinSears.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials- Kevin Sears</b></br>Western`s Computer Science program really game me the skills I needed to work here at CRMCulture, but even more so, it instilled the notion of knowledge share.  I have the drive to learn and to teach every chance I get.  <br />We had a ton of fun hanging out in the library in the evenings, working on computer science tasks together.  I never had to be a shut in student there was always someone willing to help with what ever I was working on.  </br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kevin-sears&#x27;&quot;   href="http://www.western.edu/profile/alumnus/kevin-sears"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hurst_STKevinSearsThumb.png" alt="" /><div class="Thumbcaption"> <p>Computer Science<br />Student Testimonial <br />Kevin Sears</p></div></div></a>);');
+
+var HurstSTAlanClearyFull = new Image("Hurst_STAlanClearyFull", "Hurst_STAlanClearyFull.jpg");
+var HurstSTAlanClearyThumb = new Image("Hurst_STAlanClearyThumbs", "Hurst_STAlanClearyThumbs.png");
+var HurstSTAlanCleary = new CarouselItem(["#hurst"], Hurst_STAlanClearyFull, Hurst_STAlanClearyThumb, "Alan Cleary Testimonial", '<a class="fancybox-effects-b" href="imgs/Hurst_STAlanClearyFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials- Alan Cleary</b><br />I`m currently a Computer Science PhD student at Montana State University, Bozeman. I graduated from Western with degrees in Mathematics and Computer Science. I chose to pursue a PhD because as an undergraduate I found that I enjoyed research and that there were many advanced Math and Computer Science topics I wanted to study.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/alan-cleary&#x27;&quot;   href="http://www.western.edu/profile/alumnus/alan-cleary"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hurst_STAlanClearyThumb.png" alt="" /><div class="Thumbcaption"> <p>Computer Science<br />Student Testimonial <br />Alan Cleary</p></div></div></a>);');
+
+var HurstGeoMovieThumb = new Image("Hurst_MovieThumb", "Hurst_MovieThumb.jpg");
+var HurstGeoMovie = new CarouselItem(["#hurst"], Hurst_MovieThumb, "Hurst Movie",  '<a class="iframe"  title="Western State Colorado University"> href="https://www.youtube.com/watch?v=z_PmLcZ5KSQ"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_GeoMovieThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Moncrief Petroleum <br /> Geology Program <br />Video</p></div></div></a>)');
+
+var HurstRobotsFull = new Image("Hurst_RobotsFull", "Hurst_RobotsFull.png");
+var HurstRobotsThumb = new Image("Hurst_RobotsThumb", "Hurst_RobotsThumb.png");
+var HurstRobots = new CarouselItem(["#hurst"], Hurst_RobotsFull, Hurst_RobotsThumb, "Robots", '<a class="fancybox-effects-b" href="imgs/Hurst_RobotsFull.jpg" data-fancybox-group="gallery" title="<b>Robotics Club</b><br />As part of Western`s involvement in the Colorado Space Grant Consortium – a NASA-affiliated program – a group of students meets Friday afternoons in Hurst Hall to prepare a Mars-Rover-like, autonomous robot.<br />The resulting device will compete with robots from other schools April 5 at Great Sand Dunes National Park, about two hours drive from Western. The device must navigate on its own once it`s released on the sandy course, where it must avoid obstacles to seek a beacon transmitting at a specific frequency.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/students-build-robot-compete-sand-dunes&#x27;&quot;   href="http://www.western.edu/news/students-build-robot-compete-sand-dunes"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hurst_RobotsThumb.png" alt="" /><div class="Thumbcaption"> <p>Computer Science<br />Robotics Club</p></div></div></a>);');
+
+var HurstKendricEvansFull = new Image("Hurst_STKendricEvans", "Hurst_STKendricEvans.jpg");
+var HurstKendricEvansThumb = new Image("Hurst_STKendricEvansThumb", "Hurst_KendricEvansThumb.png");
+var HurstSTKendricEvans = new CarouselItem(["#hurst"], Hurst_STHurstKendricEvansFull, Hurst_STHurstKendricEvansThumb, "Kendric Evans Testimonial",  '<a class="fancybox-effects-b" href="imgs/Hurst_STKendricEvansFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials- Kendirc Evans </b></br>I work for CRMCulture, a company in the Boulder area that was founded by a Western grad.  I had found a good job right after graduation but when friends I had made at Western invited me to interview here I realized this was where I wanted to be.</br>While attending Western, I was able to be a Computer Science tutor.  This provided the opportunity to really immerse myself in the material, as well as forge close partnerships with the other students that I still have today.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kendric-evans&#x27;&quot;   href="http://www.western.edu/profile/alumnus/kendric-evans"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hurst_STKendricEvansThumb.png" alt="" /><div class="Thumbcaption"> Computer Science<br /><p>Student Testimonial <br />Kendric Evans</p></div></div></a>);');
+
+
+//Fieldhouse___________________________________________________________
+var FieldHouseAquaCenterFull = new Image("FieldHouse_AquaCenterFull", "FieldHouse_AquaCenterFull.jpg");
+var FieldHouseAquaCenterThumb = new Image("FieldHouse_AquaCenterThumb", "FieldHouse_AquaCenterCarThumb.jpg");
+var FieldHouseAquaCenter = new CarouselItem(["#fieldhouse"], FieldHouse_AquaCenterFull, FieldHouse_AquaCenterThumb, "Aqua Center", '<a class="fancybox-effects-b" href="imgs/FieldHouse_AquaCenterFull.jpg" data-fancybox-group="gallery" title="<b>Western Swim Team</b><br />In mid-April, the Western State Colorado University Mountain Rescue Team earned its sixth, five-year recertification from the national Mountain Rescue Association.“We passed with flying colors,” reports Anna Boyle, team communications officer and fundraising coordinator.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/western-mountain-rescue-recertified&#x27;&quot; href=`http://www.western.edu/news/western-mountain-rescue-recertified`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/FieldHouse_AquaCenterThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Western Mountain Rescue</p></div></div></a>);');
+
+var FieldHouseClimbingWallFull = new Image("FieldHouse_ClimbingWallFull", "FieldHouse_ClimbingWallFull.jpg");
+var FieldHouseClimbingWallThumb = new Image("FieldHouse_ClimbingWallThumb", "FieldHouse_ClimbingWallThumb.jpg");
+var FieldHouseClimbingWall = new CarouselItem(["#fieldhouse"], FieldHouse_ClimbingWallFull, FieldHouse_ClimbingWallThumb, "Climbing Wall", '<a class="fancybox-effects-b" href="imgs/FieldHouse_ClimbingWallFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Sarah Stevens</b><br />Western’s team, founded in 1973 and MRA-certified since 1987, remains one of the strongest certified, college-based teams in the country. About three-fourths of team members are Western students, with the rest neighbors in the Gunnison Valley. <br /></br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href=`http://www.western.edu/future-students/student-testimonials-and-profiles`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/FieldHouse_ClimbingWallThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Sarah Stevens</p></div></div></a>);');
+
+var FieldHouseFitCenterFull = new Image("FieldHouse_FitCenterFull", "FieldHouse_FitCenter.jpg");
+var FieldHouseFitCenterThumb = new Image("FieldHouse_FitCenterThumb", "FieldHouse_FitCenter.jpg");
+var FieldHouseFitCenter = new CarouselItem(["#fieldhouse"], FieldHouse_FitCenterFull, FieldHouse_FitCenterThumb, "Fit Center",  '<a class="fancybox-effects-b" href="imgs/FieldHouse_FitCenterFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Jane Smith</b>The fitness center allows me to keep in shape during the school year. They offer different classes that are awesome and encourage everybody to participate. </br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;href=`http://www.western.edu/future-students/student-testimonials-and-profiles`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/FieldHouse_FitCenterThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Jane Smith</p></div></div></a>);');
+
+var FieldhouseHaaPLabFull = new Image("Fieldhouse_HaaPLabFull", "Fieldhouse_HaaPLabFull.png");
+var FieldhouseHaaPLabThumb = new Image("Fieldhouse_HaaPLabThumb", "Fieldhouse_HaaPLabThumb.jpg");
+var FieldHouseHaaPLab = new CarouselItem(["#fieldhouse"], FieldHouse_HaaPLabFull, FieldHouse_HaaPLabThumb, "HaaP Lab", '<a class="fancybox-effects-b" href="imgs/FieldHouse_HaaPLabFull.png" data-fancybox-group="gallery" title="<b>Student Testimonials - Samantha Phillip - HaAP Lab</b><br />The HaAP lab has allowed me to really emmerce myself into my studies. Wilderness Pursuits trips are led by students and designed to meet the needs of a broad range of abilities and interests, while developing outdoor skills and fostering community, citizenry, environmental stewardship and healthy living.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips&#x27;&quot;   href=`http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/FieldHouse_HaaPLabThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Samantha Phillip</p></div></div></a>);');
+
+var FieldhouseInfoGymFishEyeFull = new Image("Fieldhouse_InfoGymFishEyeFull", "Fieldhouse_InfoGymFishEyeFull.jpg");
+var FieldhouseInfoGymFishEyeThumb = new Image("Fieldhouse_InfoGymFishEyeThumb", "Fieldhouse_InfoGymFishEyeThumb.jpg");
+var FieldHouseInfoGymFishEye = new CarouselItem(["#fieldhouse"], FieldHouse_InfoGymFishEyeFull, FieldHouse_InfoGymFishEyeThumb, "Gym Fish Eye", '<a class="fancybox-effects-b" href="imgs/FieldHouse_GymFishEyeFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Garen Hanks</b><br />It`s been a year since Westerns Track & Field team held its first practice in Mountaineer Field House, less than that since the building opened to the public. And during the past few weeks, the vast, energy-efficient structure, which could accommodate a jetliner, welcomed regional Track & Field teams to compete in the rare air of a track 7,700 feet above sea level.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/chris-noah&#x27;&quot;   href=`http://www.western.edu/profile/student/chris-noah`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/FieldHouse_InfoGymFishEyeThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Garen Hanks</p></div></div></a>);');
+
+var FieldHouseMovieThumb = new Image("Field_MovieThumb", "Field_MovieThumb.jpg");
+var FieldHouseMovie = new CarouselItem(["#fieldhouse"], FieldHouse_MovieThumb, "Field House Movie",  '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=vVYL6Npiuvc"target="_blank" ><div class="Thumbimage"><img src="imgs/FieldHouse_MovieThumb.jpg" alt="" /><div class="Thumbcaption"> <p>WSCU The Grind <br />Movie  <br />Video</p></div></div></a>');
+
+
+
+//Hartmans___________________________________________________________
+
+var HartmansMountainRescueFull = new Image("Hartmans_MountainRescueFull", "Hartmans_MountainRescueFull.jpg");
+var HartmansMountainRescueThumb = new Image("Hartmans_MountainRescueThumb", "Hartmans_MountainRescueThumb.jpg");
+var HartmansMountainRescue = new CarouselItem(["#hartmans"], Hartmans_MountainRescueFull.jpg, Hartmans_MountainRescuenThumb.jpg, "Mountain Rescue", '<a class="fancybox-effects-b" href="imgs/Hartmans_MountainRescueFull.jpg" data-fancybox-group="gallery" title="<b>Western Mountain Rescue</b><br />In mid-April, the Western State Colorado University Mountain Rescue Team earned its sixth, five-year recertification from the national Mountain Rescue Association.“We passed with flying colors,” reports Anna Boyle, team communications officer and fundraising coordinator.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/western-mountain-rescue-recertified&#x27;&quot;   href=`http://www.western.edu/news/western-mountain-rescue-recertified`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hartmans_MountainRescueThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Western Mountain Rescue</p></div></div></a>);');
+
+var HartmansSTBillMurrayFull = new Image("Hartmans_STBillMurrayFull", "Hartmans_STBillMurrayFull.jpg");
+var HartmansSTBillMurrayThumb = new Image("Hartmans_STBillMurrayThumb", "Hartmans_STBillMurrayThumb.jpg");
+var HartmansSTBillMurray = new CarouselItem(["#hartmans"], Hartmans_STBillMurrayFull.jpg, Hartmans_STBillMurrayThumb.jpg, "Bill Murray Testimonial", '<a class="fancybox-effects-b" href="imgs/Hartmans_STBillMurrayFull.JPG" data-fancybox-group="gallery" title="<b>Student Testimonials - Bill Murray</b><br />Western’s team, founded in 1973 and MRA-certified since 1987, remains one of the strongest certified, college-based teams in the country. About three-fourths of team members are Western students, with the rest neighbors in the Gunnison Valley. <br /></br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;  href=`http://www.western.edu/future-students/student-testimonials-and-profiles`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hartmans_STBillMurrayThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Bill Murray</p></div></div></a>);');
+
+var HartmansSTJaneSmithFull = new Image("Hartmans_STJaneSmithFull", "Hartmans_STJaneSmithFull.jpg");
+var HartmansSTJaneSmithThumb = new Image("Hartmans_STJaneSmithThumb", "Hartmans_STJaneSmithThumb.jpg");
+var HartmansSTJaneSmith = new CarouselItem(["#hartmans"], Hartmans_STJaneSmithFull.jpg, Hartmans_STJaneSmithThumb.jpg, "Jane Smith Testimonial", '<a class="fancybox-effects-b" href="imgs/Hartmans_STJaneSmithFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Jane Smith</b>Western’s team, founded in 1973 and MRA-certified since 1987, remains one of the strongest certified, college-based teams in the country. About three-fourths of team members are Western students, with the rest neighbors in the Gunnison Valley.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href=`http://www.western.edu/future-students/student-testimonials-and-profiles`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hartmans_STJaneSmithThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Jane Smith</p></div></div></a>);');
+
+var HartmansSTJohnJonesFull = new Image("Hartmans_STJohnJoneseFull", "Hartmans_STJohnJonesFull.jpg");
+var HartmansSTJohnJonesThumb = new Image("Hartmans_STJohnJonesThumb", "Hartmans_STJohnJonesThumb.jpg");
+var HartmansSTJohnJones = new CarouselItem(["#hartmans"], Hartmans_STJohnJonesFull.jpg, Hartmans_STJohnJonesThumb.jpg, "John Jones Testimonial", '<a class="fancybox-effects-b" href="imgs/Hartmans_STJohnJonesFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - John Jones</b><br />Wilderness Pursuits provides fun, low-cost, and professional-quality co-curricular outdoor expeditions and resources for the students of Western State Colorado University. Wilderness Pursuits trips are led by students and designed to meet the needs of a broad range of abilities and interests, while developing outdoor skills and fostering community, citizenry, environmental stewardship and healthy living.</br>&lt;a target=`_self`onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips&#x27;&quot;href=`http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Taylor_WildPersuitsThumb.png" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />John Jones</p></div></div></a>);');
+
+var HartmansSTTammyHanksFull = new Image("Hartmans_STTammyHanksFull", "Hartmans_STTammyHanksFull.jpg");
+var HartmansSTTammyHanksThumb = new Image("Hartmans_STTammyHanksThumb", "Hartmans_STTammyHanksThumb.jpg");
+var HartmansSTTammyHanks = new CarouselItem(["#hartmans"], Hartmans_STTammyHanksFull.jpg, Hartmans_STTammyHanksThumb.jpg, "Tammy Hanks Testimonial", '<a class="fancybox-effects-b" href="imgs/Hartmans_STTammyHanksFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Tammy Hanks</b><br />Learn to Ice Climb with Wilderness Pursuits.   </br&lt;atarget=`_self`onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/chris-noah&#x27;&quot;href=`http://www.western.edu/profile/student/chris-noah`&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Hartmans_STTammyHanksThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Taylor<br />Student Testimonial <br />Tammy Hanks</p></div></div></a>);');
+
+var HartmansMovieThumb = new Image("Hartmans_MovieThumb", "Hartmans_MovieThumb.jpg");
+var HartmansMovie = new CarouselItem(["#hartmans"], Hurst_GeoMovieThumb.jpg, "Hartmans Movie",'<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=12Q3RZYPNNg"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_GeoMovieThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Wilderness Pursuits: <br />Blackridge Canyon  <br />Video</p></div></div></a>');
+
+
+//CB___________________________________________________________
+
+var CBSTJDennisFull = new Image("CB_STJDennisFull", "CB_STJDennisFull.jpg");
+var CBSTJDennisThumb = new Image("CB_STJDennisThumb", "CB_STJDennisThumb.jpg");
+var CBSTJDennis = new CarouselItem(["#cb"], CB_STJDennisFull.jpg, CB_STJDennisThumb.jpg, "TJ Dennis Testimonial", '<a class="fancybox-effects-b" href="imgs/CB_STJDennisFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - TJ Dennis - Resort Management</b><br />Western’s unique emphasis in Resort Management, which builds leaders for the hospitality industry, is embarking on a new approach: offering courses at one of the world’s top mountain retreats, Crested Butte Mountain Resort.The program is set to begin in January with six students studying and interning at CBMR’s Grand Lodge and the Lodge at Mountain Square, just steps from the high-speed chairlifts that serve some of North America’s most interesting ski and snowboarding terrain. The students, all upper-classmen, will work daily at the resort, where they will also be learning and earning credits toward graduation.</br>&lt;a target="_self"onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/resort-management-program-teams-crested-butte-hands-experience&#x27;&quot;   href="http://www.western.edu/news/resort-management-program-teams-crested-butte-hands-experience"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/CB_STJDennisThumb.jpg" alt="" /><div class="Thumbcaption"> <br /><p>Student Testimonial <br />TJ Dennis</p></div></div></a>');
+
+var CBPaddlerFull = new Image("CB_PaddlerFull", "CB_PaddlerFull.jpg");
+var CBPaddlerThumb = new Image("CB_PaddlerThumb", "CB_PaddlerThumb.jpg");
+var CBPaddler = new CarouselItem(["#cb"], CB_PaddlerFull.jpg, CB_PaddlerThumb.jpg, "Paddler", '<a class="fancybox-effects-b" href="imgs/CB_STChastityMorganFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Chastity Morgan</b><br /> Western`s campus at an altitude of 7,700 feet sits nestled among the Colorado Rocky Mountains, creating a beautiful and inspiring locale.  Our valley is a destination for those seeking an active lifestyle. You`ll find many ways to test your limits in this breathtaking and rugged alpine playground. Our quaint mountain towns are safe, relaxing and offer something for everyone.Crested Butte, known as Colorado`s “last great ski town”, is the official Wildflower Capitol of Colorado—and just 30 miles north of Western`s campus. <br /></br>&lt;a target="_self"onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"> <img src="imgs/CB_STChastityMorganThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Chad Morgan</p></div></div></a>');
+
+var CBSTChastityMorganFull = new Image("CB_STChastityMorganFull", "CB_STChastityMorganFull.jpg");
+var CBSTChastityMorganThumb = new Image("CB_STChastityMorganThumb", "CB_STChastityMorganThumb.jpg");
+var CBSTChastityMorgan = new CarouselItem(["#cb"], CB_STChastityMorganFull.jpg, CB_STChastityMorganThumb.jpg, "Chastity Morgan Testimonial",  '<a class="fancybox-effects-b" href="imgs/CB_PaddlerFull.jpg" data-fancybox-group="gallery" title="<b>Western Paddler Wins Crazy Slide on Snow</b><br />For the second year in a row, a paddler from the Western Whitewater Club took first place in the annual insanity the folks at Monarch Mountain call Kayaks on the Snow.Josh Stupka won socks and a bicycle in the event that signals the end of ski season. In second, was Sean Spiller from Littleton. Josh Pecaric of Roanoke, Va., came in third, and Nick Blake of Buena Vista was fourth.<br /></br>&lt;a target="_self"onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/western-paddler-wins-crazy-slide-snow&#x27;&quot;href="http://www.western.edu/news/western-paddler-wins-crazy-slide-snow"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/CB_PaddlingThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Snow Paddling <br /></p></div></div></a>');
+
+var CBSTChrisSwartzFull = new Image("CB_STChrisSwartzFull", "CB_STChrisSwartzFull.jpg");
+var CBSTChrisSwartzThumb = new Image("CB_STChrisSwartzThumb", "CB_STChrisSwartzThumb.jpg");
+var CBSTChrisSwartz = new CarouselItem(["#cb"], CB_STChrisSwartzFull.jpg, CB_STChrisSwartzThumb.jpg, "Chris Swartz Testimonial", '<a class="fancybox-effects-b" href="imgs/CB_STChrisSwartzFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonial - Chris Swartz</b><br />At Western State Colorado University, you will have the unique opportunity to extend your academic experience beyond the classroom. Our environment in the Colorado Rocky Mountains is beautiful, inspiring and motivating.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips&#x27;&quot;href="http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/CB_STChrisSwartzThumb.jpg" alt="" /><div class="Thumbcaption"> <p><br />Student Testimonial <br />Chris Swartz</p></div></div></a>');
+
+var CBSTTimToddFull = new Image("CB_STTimToddFull", "CB_STTimToddFull.jpg");
+var CBSTTimToddThumb = new Image("CB_STTimToddThumb", "CB_STTimToddThumb.jpg");
+var CBSTTimTodd = new CarouselItem(["#cb"], CB_STTimToddFull.jpg, CB_STTimToddThumb.jpg, "Tim Todd Testimonial",  '<a class="fancybox-effects-b" href="imgs/CB_STTimToddFull.JPG" data-fancybox-group="gallery" title="<b>Student Testimonials - Tim Todd</b>Having the Slopes so close is totally rad. I can be out of class and on in the slopes in less than an hour. Western provides a unique experience that no where else can beat. </br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/chris-noah&#x27;&quot;   href="http://www.western.edu/profile/student/chris-noah"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/CB_STTimToddThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Student Testimonial <br />Tim Todd</p></div></div></a>');
+
+var CBMovieThumb = new Image("CB_MovieThumb", "CB_MovieThumb.jpg");
+var CBMovie = new CarouselItem(["#cb"], CB_MovieThumb.jpg, "CB Movie", '<a class="iframe" href="https://www.youtube.com/watch?v=RORxeC44k7w"target="_blank" ><div class="Thumbimage"><img src="imgs/CB_MovieThumb.jpg" alt="" /><div class="Thumbcaption"> <p>WSCU Mountain Sports Team: <br />Video</p></div></div></a>');
+
+
+//Main Street___________________________________________________________
+
+var MainstreetChristmasTreeFull = new Image("Mainstreet_ChristmasTreesFull", "Mainstreet_ChristmasTreesFull.jpg");
+var MainstreetChristmasTreeThumb = new Image("Mainstreet_ChristmasTreesThumb", "Mainstreet_ChristmasTreesThumb.jpg");
+var MainstreetChristmasTree = new CarouselItem(["#mainstreet"], Mainstreet_ChristmasTreeFull.jpg, Mainstreet_ChristmasTreeThumb.jpg, "Christmas Tree", '<a class="fancybox-effects-b" href="imgs/Mainstreet_ChristmasTreeFull.jpg" data-fancybox-group="gallery" title="<b>Student Testimonials - Joanna Jones - Main Street at Christmas</b><br />"There is no place to spend the holidays like main street, Gunnison, Colorado. The wonderful community makes it feel like a home away from home", Joanna Jones tells Western reporters. Every year a large christmas tree is placed in the middle of main street. Live music, hot coco, and holiday cheer is spread in anticipation for the lighting of the tree.</br>&lt;a target=_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/Mainstreet_ChristmasTreeThumb.jpg" alt="" /><div class="Thumbcaption"> Main Street<br /><p>Student Testimonial <br />Joanna Jones</p></div></div></a>');
+
+var MainstreetRailJamFull = new Image("Mainstreet_RailJamFull", "Mainstreet_RailJamFull.jpg");
+var MainstreetRailJamThumb = new Image("Mainstreet_RailJamThumb", "Mainstreet_RailJamThumb.jpg");
+var MainStreetRailJam = new CarouselItem(["#mainstreet"], MainStreetRailJamFull.jpg, MainStreet_RailJamThumb.jpg, "Rail Jam",  '<a class="fancybox-effects-b" href="imgs/MainStreet_RailJamFull.jpg" data-fancybox-group="gallery" title="<b>Rail Jam</b><br />The Sixth Annual Rail Jam is set for Friday night on campus at the Rail Park in front of the University Center. The park opened for practice last week, and students have been taking advantage of it most afternoons.The competition will include men`s ski and snowboard categories and women`s combined (based on participation). <br /></br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/campus-rail-jam-2015-friday-evening-feb-6&#x27;&quot;href="http://www.western.edu/news/campus-rail-jam-2015-friday-evening-feb-6"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/MainStreet_RailJamThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Rail Jam<br /></p></div></div></a>');
+
+var MainstreetFarm2TableFull = new Image("Mainstreet_Farm2TableFull", "Mainstreet_Farm2TableFull.jpg");
+var MainstreetFarm2TableThumb = new Image("Mainstreet_Farm2TableThumb", "Mainstreet_Farm2TableThumb.jpg");
+var MainStreetFarm2Table = new CarouselItem(["#mainstreet"], MainStreet_Farm2TableFull.jpg, MainStreet_Farm2TableThumb.jpg, "Farm to table", '<a class="fancybox-effects-b" href="imgs/MainStreet_Farm2TableFull.jpg" data-fancybox-group="gallery" title="<b>Farm to Table - Sustainable Eating</b><br />Each April, farmers, ranchers, retailers, restaurateurs and eaters gathered in Western’s University Center Ballroom, seeking answers to questions concerning economic, environmental and personal sustainability, such as:Western’s Environment & Sustainability and Business Administration programs jointly sponsored the event, reflecting its focus on not only ideas but also practical economic solutions.<br /></br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/conference-refines-ideas-sustainable-eating&#x27;&quot;href="http://www.western.edu/news/conference-refines-ideas-sustainable-eating"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/MainStreet_Farm2TableThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Farm to Table<br /></p></div></div></a>');
+
+var MainstreetGardenFull = new Image("Mainstreet_GardenFull", "Mainstreet_GardenFull.jpg");
+var MainstreetGardenThumb = new Image("Mainstreet_GardenThumb", "Mainstreet_GardenThumb.jpg");
+var MainStreetGarden = new CarouselItem(["#mainstreet"], MainStreet_GardenFull.jpg, MainStreet_GardenThumb.jpg, "Garden", '<a class="fancybox-effects-b" href="imgs/MainStreet_GardenFull.jpg" data-fancybox-group="gallery" title="<b>Western’s Organics Guild Growing Produce in a Cold Place</b><br />A new student group at Western State Colorado University is working to bring locally produced vegetables and increased food security to the Gunnison Valley.At 7,700 feet, Gunnison`s winters can be harsh and difficult for growers. The valley harbors a growing season that hovers around 60 days – barely enough time to see a tomato plant grow and fruit. This short window and the associated challenges of the climate can make it difficult for regional farmers and ranchers to provide the variety and quality of food local residents have come to expect.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/western%E2%80%99s-organics-guild-growing-produce-cold-place&#x27;&quot;   href="http://www.western.edu/news/western%E2%80%99s-organics-guild-growing-produce-cold-place"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/MainStreet_GardenThumb.jpg" alt="" /><div class="Thumbcaption"> <p><br />Western Organics</p></div></div></a>');
+
+var MainstreetSustainabilityFull = new Image("Mainstreet_SustainabilityFull", "Mainstreet_SustainabilityFull.jpg");
+var MainstreetSustainabilityThumb = new Image("Mainstreet_SustainabilityThumb", "Mainstreet_SustainabilityThumb.jpg");
+var MainStreetSustainability = new CarouselItem(["#mainstreet"], MainStreet_SustainabilityFull.jpg, MainStreet_SustainabilityThumb.jpg, "Sustainability",  '<a class="fancybox-effects-b" href="imgs/MainStreet_SustainabilityFull.jpg" data-fancybox-group="gallery" title="<b>Environment & Sustainability and Business Double Major</b>Chris is working on a Recreation and Outdoor Education major with an emphasis in instruction. Wilderness Pursuits allows him to practice his instruction techniques while guiding rock, ice, and snow based trips for other students. </br>&lt;a target="_self"onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/environment-sustainability-and-business-double-major&#x27;&quot;   href="http://www.western.edu/news/environment-sustainability-and-business-double-major"&gt;Click here to read more...&lt;/a&gt;"><div class="Thumbimage"><img src="imgs/MainStreet_SustainabilityThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Environment & Sustainability</p></div></div></a>');
+
+var MainstreetMovieThumb = new Image("Mainstreet_MovieThumb", "Mainstreet_MovieThumb.jpg");
+var MainStreetMovie = new CarouselItem(["#mainstreet"], MainStreet_MovieThumb.jpg, "Mainstreet Movie", '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=12Q3RZYPNNg"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_GeoMovieThumb.jpg" alt="" /><div class="Thumbcaption"> <p>Wilderness Pursuits: <br />Blackridge Canyon  <br />Video</p></div></div></a>');
+
+
+
+//End of Carousel Items______________________________________________________________
+
+var CIs = [FieldHouseAquaCenter, FieldHouseClimbingWall, FieldHouseFitCenter, FieldhouseHaaPLab, FieldhouseInfoGymFishEye, FieldHouseMovie, HurstQuinn, HurstKendricEvans, HurstRobots, HurstSTAlanCleary, HurstGeoMovie, HurstSTKevinSears, TaylorWildPersuits, TaylorSTChrisNoah, TaylorMovie, TaylorSTBradArcher, TaylorSTChristina, TaylorSTZoeSmith, HartmansMountainRescue, HartmansSTBillMurray, HartmansSTJaneSmith, HartmansSTJohnJones, HartmansSTTammyHanks, HartmansMovie,  CBSTJDennis, CBPaddler, CBSTChastityMorgan, CBSTChrisSwartz, CBSTTimTodd, CBMovie, MainstreetChristmasTree, MainStreetRailJam, MainStreetFarm2Table,  MainStreetGarden, MainStreetSustainability, MainStreetMovie]
+
+function getCIs(tag) /*Carousel Items*/{
+    var inner, ci, i, j, a;
+    inner = "";
+    for(i in CIs) {
+        ci = CIs[i];
+        for (j in ci.tags) {
+            if (ci.tags[j] === tag) {
+                //build carousel item
+                a = "<a class='fancybox' href = 'imgs/"+ci.full.fname+"' data-fancybox-group='gallery' title='"+ci.html+"' rel='gallery'>";
+                a += "<div class='Thumbimage'>";
+                a += "<img src='"+ci.thumb.fname+"' alt=''/>";
+                a += "<div class='Thumbcaption'>";
+                a += "<p>'"+ci.ttip+"'</p>";
+                a += "</div></div></a>";
+                inner += "<div class='citem'>" + a + "</div>";
+                break;
             }
         }
     }
-    $('#owl-demo').html(inner_html);
-    $("#owl-demo").data('owlCarousel').reinit({
+    $("#owl-demo").html(inner);
+    $("#owl-demo").owlCarousel({
         autoPlay: 2000,
         itemsDesktop : [1250,6],
         itemsDesktopSmall : [979,4],
         items : 9
     });
-
-    $(".fanybox-effects-b").fancybox();
+    $(".fancybox").fancybox();
 }
