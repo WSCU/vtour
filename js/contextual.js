@@ -52,8 +52,10 @@ $(function () {
     var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var artscenter = new Location("#artscenter", "Gunnison Arts Center", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var wmountain = new Location("#wmountain", "W Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true);
+    var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true);
 
-    var locations = [taylor, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
+    var locations = [taylor, pathway, pathway2, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
         taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain];
 
     var currentLocation;
@@ -201,6 +203,14 @@ $(function () {
      * @this {Hspot}
      * @param {string} tag The location tag of the hotspot (should be in form # + location, i.e #hurst
      * @param {string} styleClass name of css class (no spaces)
+    <thwaydiv class="menu">
+      <div class="wrap">
+        <div class="blue menu-container">
+          <ul id="drilldown-1">
+          </ul>
+        </div>
+      </div>
+    </div>
      * @param {string} ttip Tooltip for hotspot
      * @param {string} dest The destination url for hotspot
      * @param {Number} x The x coordinate of the hotspot (in pixels)
