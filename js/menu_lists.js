@@ -9,16 +9,16 @@ var Menu = function(opts) {
 var MenuItem = function(opts) {
     this.text = opts.text;
     this.icon = opts.icon ? opts.icon : '';
-    this.target = opts.target ? opts.target : '';
-    this.onclk = opts.onclick ? opts.onclick : '';
+    this.target = opts.target ? opts.target : ''; this.onclk = opts.onclick ? opts.onclick : '';
     this.rel = opts.rel ? opts.rel: '';
     this.items = opts.items ? opts.items : [];
     this.href = opts.href ? opts.href : '';
 };
+
 var subwanita = [
-new MenuItem({text: 'About', icon: 'fa fa-university fa-2x', target: 'external', href: "#"}),
-new MenuItem({text: 'Location', icon: 'fa fa-university fa-2x', target: 'external', href: "#"}),
-new MenuItem({text: 'Prices', icon: 'fa fa-university fa-2x', target: 'external', href: "#"})
+new MenuItem({text: 'About', icon: 'fa fa-university ', target: 'external', href: "#"}),
+new MenuItem({text: 'Location', icon: 'fa fa-university ', target: 'external', href: "#"}),
+new MenuItem({text: 'Prices', icon: 'fa fa-university ', target: 'external', href: "#"})
 ]
 
 var subfish = [
@@ -109,13 +109,13 @@ new MenuItem({text: 'Out of State', icon: 'fa fa-university', target: 'external'
 
 
 var subfuture = [
-new MenuItem({text: 'Apply Now!!', icon: 'fa fa-star fa-2x', target: 'external', href: "#"}),
-new MenuItem({text: 'Tution and Fees', icon: 'fa fa-credit-card fa-2x', items: subtution}),
-new MenuItem({text: 'Visit Campus', icon: 'fa fa-university fa-2x', items: subvisit}),
-new MenuItem({text: 'Activities', icon: 'fa fa-smile-o fa-2x', items: subactivities}),
-new MenuItem({text: 'Housing', icon: 'fa fa-home fa-2x', items: subhousing}),
-new MenuItem({text: 'Nearby', icon: 'fa fa-road fa-2x', items: subnear}),
-new MenuItem({text: 'Downtown Gunnison', icon: 'fa fa-university fa-2x'})
+new MenuItem({text: 'Apply Now!!', icon: 'fa fa-star ', target: 'external', href: "#"}),
+new MenuItem({text: 'Tution and Fees', icon: 'fa fa-credit-card ', items: subtution}),
+new MenuItem({text: 'Visit Campus', icon: 'fa fa-university ', items: subvisit}),
+new MenuItem({text: 'Activities', icon: 'fa fa-smile-o ', items: subactivities}),
+new MenuItem({text: 'Housing', icon: 'fa fa-home ', items: subhousing}),
+new MenuItem({text: 'Nearby', icon: 'fa fa-road ', items: subnear}),
+new MenuItem({text: 'Downtown Gunnison', icon: 'fa fa-university '})
 ]
 
 var subbike = [
@@ -175,8 +175,8 @@ new MenuItem({text: 'Soccer', icon: 'fa fa-university', items: subsoccer})
 
 
 var subathletics = [
-new MenuItem({text: 'NCAA Sports', icon: 'fa fa-futbol-o fa-2x', items: subncaa}),
-new MenuItem({text: 'Mountain Sports', icon: 'fa fa-motorcycle fa-2x', items: submountain})
+new MenuItem({text: 'NCAA Sports', icon: 'fa fa-futbol-o ', items: subncaa}),
+new MenuItem({text: 'Mountain Sports', icon: 'fa fa-motorcycle ', items: submountain})
 ]
 
 var subcatalog = [
@@ -424,35 +424,35 @@ new MenuItem({text: 'Literature and Language', icon: 'fa fa-pencil', items: subl
 
 
 var subacademics = [
-new MenuItem({text: 'Majors', icon: 'fa fa-arrow-right fa-2x', items: submajors}),
-new MenuItem({text: 'Graduate Programs', icon: 'fa fa-graduation-cap fa-2x', items: subgrad}),
-new MenuItem({text: 'Extended Studies', icon: 'fa fa-file fa-2x"', items:  subextended}),
-new MenuItem({text: 'University Catalog', icon: 'fa fa-file fa-2x"', items: subcatalog}),
-new MenuItem({text: 'Academic Calendar', icon: 'fa fa-calendar fa-2x', target: 'external', href: "#"})
+new MenuItem({text: 'Majors', icon: 'fa fa-arrow-right ', items: submajors}),
+new MenuItem({text: 'Graduate Programs', icon: 'fa fa-graduation-cap ', items: subgrad}),
+new MenuItem({text: 'Extended Studies', icon: 'fa fa-file "', items:  subextended}),
+new MenuItem({text: 'University Catalog', icon: 'fa fa-file "', items: subcatalog}),
+new MenuItem({text: 'Academic Calendar', icon: 'fa fa-calendar ', target: 'external', href: "#"})
 ]
 
 
 var subgo = [
-new MenuItem({text: 'Business Building', icon: 'fa fa-university fa-2x', target: "locations", href: '#borrick'}),
-new MenuItem({text: 'Chipeta Hall', icon: 'fa fa-university fa-2x', target: "locations", href: '#chipeta'}),
-new MenuItem({text: 'Escalante Terrace', icon: 'fa fa-university fa-2x', target: '#escalante'}),
-new MenuItem({text: 'Hurst Hall', icon: 'fa fa-university fa-2x', target:"locations", href: '#hurst'}),
-new MenuItem({text: 'Kelley Hall', icon: 'fa fa-university fa-2x', target: "locations", href: '#kelley'}),
-new MenuItem({text: 'Library', icon: 'fa fa-university fa-2x', target: "locations", href: '#library'}),
-new MenuItem({text: 'Mears Hall', icon: 'fa fa-university fa-2x', target: "locations", href: '#mears'}),
-new MenuItem({text: 'Moffat Hall', icon: 'fa fa-university fa-2x', target:"locations", href: '#moffat'}),
-new MenuItem({text: 'Mountaineer Bowl', icon: 'fa fa-university fa-2x', target:"locations", href: '#mountaineerbowl'}),
-new MenuItem({text: 'Pinnacles', icon: 'fa fa-university fa-2x', target: "locations", href:'#pinnacles'}),
-new MenuItem({text: 'Quigley Hall', icon: 'fa fa-university fa-2x', target:"locations", href: '#quigley'})  ,
-new MenuItem({text: 'Taylor Hall', icon: 'fa fa-university fa-2x', target: "locations", href:'#taylor'})  ,
-new MenuItem({text: 'University Center', icon: 'fa fa-university fa-2x', target:"locations", href: '#universitycenter'})  ,
-new MenuItem({text: 'W Mountain', icon: 'fa fa-university fa-2x', target: "locations", href:'#wmountain'})
+new MenuItem({text: 'Business Building', icon: 'fa fa-university ', target: "locations", href: '#borrick'}),
+new MenuItem({text: 'Chipeta Hall', icon: 'fa fa-university ', target: "locations", href: '#chipeta'}),
+new MenuItem({text: 'Escalante Terrace', icon: 'fa fa-university ', target: '#escalante'}),
+new MenuItem({text: 'Hurst Hall', icon: 'fa fa-university ', target:"locations", href: '#hurst'}),
+new MenuItem({text: 'Kelley Hall', icon: 'fa fa-university ', target: "locations", href: '#kelley'}),
+new MenuItem({text: 'Library', icon: 'fa fa-university ', target: "locations", href: '#library'}),
+new MenuItem({text: 'Mears Hall', icon: 'fa fa-university ', target: "locations", href: '#mears'}),
+new MenuItem({text: 'Moffat Hall', icon: 'fa fa-university ', target:"locations", href: '#moffat'}),
+new MenuItem({text: 'Mountaineer Bowl', icon: 'fa fa-university ', target:"locations", href: '#mountaineerbowl'}),
+new MenuItem({text: 'Pinnacles', icon: 'fa fa-university ', target: "locations", href:'#pinnacles'}),
+new MenuItem({text: 'Quigley Hall', icon: 'fa fa-university ', target:"locations", href: '#quigley'})  ,
+new MenuItem({text: 'Taylor Hall', icon: 'fa fa-university ', target: "locations", href:'#taylor'})  ,
+new MenuItem({text: 'University Center', icon: 'fa fa-university ', target:"locations", href: '#universitycenter'})  ,
+new MenuItem({text: 'W Mountain', icon: 'fa fa-university ', target: "locations", href:'#wmountain'})
 ]
 
 var submenu = [
-new MenuItem({text: 'Academics', icon: 'fa fa-book fa-3x', items: subacademics}),
-new MenuItem({text: 'Athletics', icon: 'fa fa-bicycle fa-3x', items: subathletics}),
-new MenuItem({text: 'Student Life', icon: 'fa fa-mars fa-3x', items: subfuture}),
+new MenuItem({text: 'Academics', icon: 'fa fa-book ', items: subacademics}),
+new MenuItem({text: 'Athletics', icon: 'fa fa-bicycle ', items: subathletics}),
+new MenuItem({text: 'Student Life', icon: 'fa fa-mars', items: subfuture}),
 new MenuItem({text: 'Go To', icon: 'fa fa-th', items: subgo})
 ]
 
