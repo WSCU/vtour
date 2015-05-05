@@ -11,15 +11,17 @@ body.contextual_navigation
     z-index: 1000;
 }
 
-.map{
+#map{
     position: fixed;
-    width:200px;
-    height:300px;
-    max-height: 30%;
-    max-width: 20%;
-    float:right;
+    width: 15%;
+    height: 25%;
+    right: 0%;
     opacity:0.75;
     overflow: hidden;
+}
+
+.mapImage{
+
 }
 
 .contextual_assets{

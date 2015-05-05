@@ -26,12 +26,13 @@
     <script src="js/jquery.dcdrilldown.1.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/contextual.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg3suBVsTjew0sCBoqHHBF2cy2UOI4dYk"></script>
-    <script src="js/lib/gmapScript.js"></script>
-    <script>google.maps.event.addDomListener(window,'load',initialize);</script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg3suBVsTjew0sCBoqHHBF2cy2UOI4dYk"></script>-->
+    <!--<script src="js/lib/gmapScript.js"></script>-->
+    <!--<script>google.maps.event.addDomListener(window,'load',initialize);</script>-->
+
 
   </head>
-  <body class="contextual_navigation">
+  <body class="contextual_navigation noselect">
     <!-- ISSUE: Content width doesn't appear to be responsive in Firefox-->
     <!-- Div class and id names are important for the JS -->
 
@@ -50,8 +51,10 @@
       </div>
       <div id="text_overlay">
       </div>
-      <div id="map-canvas" class="map">
-      </div>
+    </div>
+
+    <div id="map">
+      <img class="mapImage" src="imgs/oncampusmap.jpg">
     </div>
 
     <div class="menu">

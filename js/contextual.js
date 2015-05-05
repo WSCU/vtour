@@ -194,7 +194,7 @@ $(function () {
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
             $(".map_button").click(function(){
-                $(".map").animate({width:'toggle'}, window.innerWidth*0.2);
+                $("#map").animate({width:'toggle'}, window.innerWidth*0.2);
             });
         }
     }
@@ -272,15 +272,39 @@ $(function () {
         $(mainImageDiv).html("<img src='imgs/" + locationTag.substring(1) + "_main.jpg'/>");
     }
 
+    /**********************************
+     * Load static image map screen
+     *********************************/
+
+    var prevCampus = true;
+
+    function loadMap(locationTag){
+        for(var i in locations){
+            if(locations[i].tag === locationTag){
+                if(prevCampus != locations[i].onCampus) {
+                    if (!locations[i].onCampus) {
+                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/library_main.jpg">';
+                    }
+                    else{
+                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusMap.jpg">';
+                    }
+                }
+                prevCampus = locations[i].onCampus;
+            }
+        }
+    }
+
     /***
      * Functions above requires the location tag passed in to be # + location tag name. (i.e "#hurst")
      */
+
     $(window).on('hashchange', function () {
         getImage(location.hash);
         getLocation(location.hash);
         getNavs(location.hash);
         getHspots(location.hash);
-        getCIs(location.hash);
+        loadMap(location.hash);
+        //getCIs(location.hash);
     });
 
     if(window.location.hash) {
