@@ -266,7 +266,6 @@ function getCIs(locationTag) /*Carousel Items*/{
             }
         }
     }
-    console.log("hello?")
     $('#owl-demo').html(inner_html);
     $("#owl-demo").data('owlCarousel').reinit({
         autoPlay: 2000,
