@@ -272,6 +272,14 @@ $(function () {
     });
 
     if(window.location.hash) {
+        dispMainMenu();
+        $('#drilldown-1').dcDrilldown({
+            speed : 'fast',
+            saveState : true,
+            showCount : false,
+            linkType : 'backlink',
+            defaultText: ''
+        });
         $(window).trigger('hashchange');
     }
 });

@@ -30,6 +30,7 @@ function dispMenu(items) {
 }
 
 function dispMainMenu() {
+    console.log("hai");
     var inner = "";
     inner += "<li><a href='"+menu.target+"'><i class='"+menu.icon+"'></i>&nbsp; "+menu.text+"</a>"
     inner += "<ul>" + dispMenu(menu.items) + "</ul>";
