@@ -24,6 +24,16 @@ body.contextual_navigation
     z-index: 5;
 }
 
+.to_athletics, .to_academics {
+    bottom: 15%;
+    left: 75%; 
+}
+
+.to_studentlife, .studentlife_to_athletics {
+    bottom: 15%; 
+    left: 23%; 
+}
+
 .contextual_assets{
     position: fixed;
     width: 100%;
