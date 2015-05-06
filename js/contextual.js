@@ -7,9 +7,7 @@ $(function () {
     }
     $("#start").find("a").on("click", function () {
         $("#start").removeClass("show");
-        $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
         $(this).off("click");
-        mapState = 0;
     });
 
     /**
