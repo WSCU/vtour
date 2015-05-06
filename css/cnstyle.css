@@ -101,7 +101,7 @@ section:target, .show{
     position: fixed;
     z-index: 1;
     right: 1%;
-    top: 50%;
+    top: 65%;
     max-height: 7%;
     /*padding:7px 25px;*/
 }
@@ -110,7 +110,7 @@ section:target, .show{
     position: fixed;
     z-index: 1;
     right: 1%;
-    top: 45%;
+    top: 60%;
     max-height: 7%;
     /*padding-top: 7px; */
     /*padding-bottom: 7px; */
