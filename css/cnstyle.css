@@ -35,9 +35,10 @@ body.contextual_navigation
 }
 
 .contextual_assets img {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: auto;
+    max-height: 85%;
     overflow: hidden;
 }
 
