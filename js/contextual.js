@@ -4,6 +4,7 @@ $(function () {
     }
     $("#start").find("a").on("click", function () {
         $("#start").removeClass("show");
+        $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
         $(this).off("click");
     });
 
@@ -17,12 +18,14 @@ $(function () {
      * @param {string} description The description of the current location
      * @param {Boolean} onCampus If location is on campus or off campus
      */
-    function Location(tag, name, locationType, description, onCampus) {
+    function Location(tag, name, locationType, description, onCampus, x, y) {
         this.tag = tag;
         this.name = name;
         this.locationType = locationType;
         this.description = description;
         this.onCampus = onCampus;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -30,19 +33,19 @@ $(function () {
      */
     var taylor = new Location("#taylor", "Taylor Hall", "academic",
         "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
-        "auditorium and theater.", true);
+        "auditorium and theater.", true, 1905, 1200);
     var quigley = new Location("#quigley", "Quigley Hall", "academic",
-        "Home of the Music and Art departments", true);
+        "Home of the Music and Art departments", true, 2170, 1419);
     var hurst = new Location("#hurst", "Hurst Hall", "academic",
-        "Home of Science and Mathematics departments", true);
+        "Home of Science and Mathematics departments", true, 2422, 1227);
     var kelley = new Location("#kelley", "Kelley Hall", "academic",
-        "Home of Social Sciences and Environment & Sustainability programs", true);
+        "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
     var library = new Location("#library", "Leslie J. Savage Library", "studentlife",
-        "The research hub for campus and a great study spot", true);
+        "The research hub for campus and a great study spot", true, 1918, 994);
     var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
-        "The hub of student life on campus", true);
+        "The hub of student life on campus", true, 1849, 887);
     var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
-        "The world's highest collegiate football stadium", true);
+        "The world's highest collegiate football stadium", true, 2023, 644);
     var telluride = new Location("#telluride", "Telluride", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var crestedbutte = new Location("#cb", "Crested Butte", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
@@ -52,8 +55,8 @@ $(function () {
     var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var artscenter = new Location("#artscenter", "Gunnison Arts Center", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var wmountain = new Location("#wmountain", "W Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true);
-    var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true);
+    var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true, 2041, 1232);
+    var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true, 2083, 1076);
 
     var locations = [taylor, pathway, pathway2, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
         taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain];
@@ -194,7 +197,7 @@ $(function () {
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
             $(".map_button").click(function(){
-                $("#map").animate({width:'toggle'}, window.innerWidth*0.2);
+                $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
             });
         }
     }
@@ -230,7 +233,7 @@ $(function () {
     /**
      * Hspot object instances
      */
-    var taylor_hotspot = new Hspot("#taylor", "taylor_panorama_hs", "view Panorama", "panoramas/taylor_panorama/Taylor_Panorama.html", 75, 75);
+    var taylor_hotspot = new Hspot("#taylor", "taylor_panorama_hs", "view Panorama", "panoramas/taylor_panorama/Taylor_Panorama.html", 60, 75);
     var hotspots = [taylor_hotspot];
 
     /**
@@ -289,6 +292,11 @@ $(function () {
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusMap.jpg">';
                     }
                 }
+                $('.mapImage').load(function ()
+                {
+                    console.log("IMAGE");
+                    $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                });
                 prevCampus = locations[i].onCampus;
             }
         }
@@ -304,6 +312,7 @@ $(function () {
         getNavs(location.hash);
         getHspots(location.hash);
         loadMap(location.hash);
+        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
         //getCIs(location.hash);
     });
 
