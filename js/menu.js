@@ -8,6 +8,10 @@ function dispMenu(items) {
         a = '';
         icon = "<i class='"+mi.icon+"'></i>";
 
+        if(mi.href === "#") { //Place holder links break currently
+            mi.href = '';
+        }
+
         if (mi.target === "locations") {
             a = "<a href='"+mi.href+"'>" + icon + "&nbsp;"+mi.text+"</a>";
         } else if (mi.target === "external") {
