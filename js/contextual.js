@@ -330,7 +330,7 @@ $(function () {
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/library_main.jpg">';
                     }
                     else{
-                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusMap.jpg">';
+                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusmap.jpg">';
                     }
                 }
                 $('.mapImage').load(function ()
