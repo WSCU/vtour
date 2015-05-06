@@ -32,20 +32,20 @@ $(function () {
      * Location object instances
      */
     var taylor = new Location("#taylor", "Taylor Hall", "academic",
-        "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
-        "auditorium and theater.", true, 1905, 1200);
+                              "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
+                              "auditorium and theater.", true, 1905, 1200);
     var quigley = new Location("#quigley", "Quigley Hall", "academic",
-        "Home of the Music and Art departments", true, 2170, 1419);
+                               "Home of the Music and Art departments", true, 2170, 1419);
     var hurst = new Location("#hurst", "Hurst Hall", "academic",
-        "Home of Science and Mathematics departments", true, 2422, 1227);
+                             "Home of Science and Mathematics departments", true, 2422, 1227);
     var kelley = new Location("#kelley", "Kelley Hall", "academic",
-        "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
+                              "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
     var library = new Location("#library", "Leslie J. Savage Library", "studentlife",
-        "The research hub for campus and a great study spot", true, 1918, 994);
+                               "The research hub for campus and a great study spot", true, 1918, 994);
     var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
-        "The hub of student life on campus", true, 1849, 887);
+                                        "The hub of student life on campus", true, 1849, 887);
     var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
-        "The world's highest collegiate football stadium", true, 2023, 644);
+                                       "The world's highest collegiate football stadium", true, 2023, 644);
     var telluride = new Location("#telluride", "Telluride", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var crestedbutte = new Location("#cb", "Crested Butte", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
@@ -55,6 +55,9 @@ $(function () {
     var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var artscenter = new Location("#artscenter", "Gunnison Arts Center", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var wmountain = new Location("#wmountain", "W Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var elkmountains = new Location("#elkmountains", "Elk Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var sanjuan = new Location("#sanjuan", "San Juan Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var gunnison = new Location("#gunnison", "Gunnison", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true, 2041, 1232);
     var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true, 2083, 1076);
 
@@ -146,13 +149,25 @@ $(function () {
     var artscenter_to_wmountain = new Navigation("#artscenter", "artscenter_to_wmountain", "to W Mountain", "#wmountain", "left");
     var artscenter_to_cbmr = new Navigation("#artscenter", "artscenter_to_cbmr", "to CBMR", "#cbmr", "right");
     var cbmr_to_artscenter = new Navigation("#cbmr", "cbmr_to_artscenter", "to Arts Center", "#artscenter", "left");
+    var cbmr_to_gunnison = new Navigation("#cbmr", "cbmr_to_gunnison", "to Gunnison", "#gunnison", "right", 800, 130);
+    var gunnison_to_cbmr = new Navigation("#gunnison", "telluride_to_gunnison", "to CBMR", "#cbmr", "left");
+    var gunnison_to_elkmountains = new Navigation("#gunnison", "gunnison_to_elkmountains", "to Elk Mountains", "#elkmountains", "right");
+    var elkmountains_to_gunnison = new Navigation("#elkmountains", "elkmountains_to_gunnison", "to Gunnison", "#gunnison", "left");
+    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hr", "right");
+    var hr_to_elkmountains = new Navigation("#hr", "hr_to_elkmountains", "to Elk Mountains", "#elkmountains", "left");
+    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right");
+    var tc_to_hr = new Navigation("#tc", "tc_to_hr", "to Hartman's Rocks", "#hr", "left");
+    var tc_to_sanjuan = new Navigation("#tc", "tc_to_sanjuan", "to San Juan Mountains", "#sanjuan", "right");
+    var sanjuan_to_tc = new Navigation("#sanjuan", "sanjuan_to_tc", "to Taylor Canyon", "#tc", "left");
+    var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right");
+    var cbmr_to_sanjuan = new Navigation("#cbmr", "cbmr_to_sanjuan", "to San Juan Mountains", "#sanjuan", "left");
 
     var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
         hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
-        pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
-        universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, cbmr_to_telluride, telluride_to_cbmr,
-        telluride_to_cb, cb_to_telluride, cb_to_mm, mm_to_cb, mm_to_tr, tr_to_mm, tr_to_hr, hr_to_tr, hr_to_tc, tc_to_hr,
-        tc_to_wmountain, wmountain_to_tc, artscenter_to_wmountain, artscenter_to_cbmr, cbmr_to_artscenter, wmountain_to_artscenter];
+    pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
+    universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr,cbmr_to_gunnison,
+    gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
+    tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan];
 
     /**
      *  Render all navigation items at the current location
@@ -209,14 +224,14 @@ $(function () {
      * @this {Hspot}
      * @param {string} tag The location tag of the hotspot (should be in form # + location, i.e #hurst
      * @param {string} styleClass name of css class (no spaces)
-    <thwaydiv class="menu">
-      <div class="wrap">
-        <div class="blue menu-container">
-          <ul id="drilldown-1">
-          </ul>
-        </div>
-      </div>
-    </div>
+     <thwaydiv class="menu">
+     <div class="wrap">
+     <div class="blue menu-container">
+     <ul id="drilldown-1">
+     </ul>
+     </div>
+     </div>
+     </div>
      * @param {string} ttip Tooltip for hotspot
      * @param {string} dest The destination url for hotspot
      * @param {Number} x The x coordinate of the hotspot (in pixels)
@@ -294,11 +309,11 @@ $(function () {
                     }
                 }
                 $('.mapImage').load(function ()
-                {
-                    console.log("IMAGE");
-                    $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
-                });
-                prevCampus = locations[i].onCampus;
+                                    {
+                                        console.log("IMAGE");
+                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                                    });
+                                    prevCampus = locations[i].onCampus;
             }
         }
     }
@@ -313,8 +328,8 @@ $(function () {
         getNavs(location.hash);
         getHspots(location.hash);
         loadMap(location.hash);
+        getCIs(location.hash);
         $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
-        //getCIs(location.hash);
     });
 
     if(window.location.hash) {
