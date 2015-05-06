@@ -34,37 +34,40 @@ $(function () {
      * Location object instances
      */
     var taylor = new Location("#taylor", "Taylor Hall", "academic",
-                              "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
-                              "auditorium and theater.", true, 1905, 1200);
+            "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
+            "auditorium and theater.", true, 1905, 1200);
     var quigley = new Location("#quigley", "Quigley Hall", "academic",
-                               "Home of the Music and Art departments", true, 2170, 1419);
+            "Home of the Music and Art departments", true, 2170, 1419);
     var hurst = new Location("#hurst", "Hurst Hall", "academic",
-                             "Home of Science and Mathematics departments", true, 2422, 1227);
+            "Home of Science and Mathematics departments", true, 2422, 1227);
     var kelley = new Location("#kelley", "Kelley Hall", "academic",
-                              "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
+            "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
     var library = new Location("#library", "Leslie J. Savage Library", "studentlife",
-                               "The research hub for campus and a great study spot", true, 1918, 994);
+            "The research hub for campus and a great study spot", true, 1918, 994);
     var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
-                                        "The hub of student life on campus", true, 1849, 887);
+            "The hub of student life on campus", true, 1849, 887);
+    var fieldhouse = new Location("#fieldhouse", "Mountaineer Field House", "athletic", "65,000-square-foot LEED-Gold certified field house.",
+            true, 1850, 1200);
     var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
-                                       "The world's highest collegiate football stadium", true, 2023, 644);
+            "The world's highest collegiate football stadium", true, 2023, 644);
     var telluride = new Location("#telluride", "Telluride", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 988, 432);
     var crestedbutte = new Location("#cb", "Crested Butte", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 713, 372);
     var monarchmountain = new Location("#mm", "Monarch Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 1193, 716);
-    //var taylorreservoir = new Location("#tr", "Taylor Reservoir", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var taylorreservoir = new Location("#tr", "Taylor Reservoir", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var hartmanrocks = new Location("#hr", "Hartman Rocks", "recreation", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 744, 728);
     var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 738, 363);
     var artscenter = new Location("#artscenter", "Gunnison Arts Center", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 760, 692);
     var wmountain = new Location("#wmountain", "W Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false, 778, 723);
-    //var elkmountains = new Location("#elkmountains", "Elk Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    //var sanjuan = new Location("#sanjuan", "San Juan Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    //var gunnison = new Location("#gunnison", "Gunnison", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var elkmountains = new Location("#elkmountains", "Elk Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var sanjuan = new Location("#sanjuan", "San Juan Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var gunnison = new Location("#gunnison", "Gunnison", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true, 2041, 1232);
     var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true, 2083, 1076);
 
     var locations = [taylor, pathway, pathway2, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
-        taylorcanyon, crestedbutte, monarchmountain,  hartmanrocks, cbmr, artscenter, wmountain];
+        taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain, fieldhouse];
+
 
     var currentLocation;
     var previousLocation;
@@ -75,11 +78,11 @@ $(function () {
         for (var i in locations) {
             if (locationTag === locations[i].tag) {
                 inner_html = "<div class='caption_wrapper'><div class='caption'><div id='caption_title'>" +
-                    locations[i].name + "</div><div id='caption_text' class='description'>" + locations[i].description +
-                    "</div></div></div>";
+                        locations[i].name + "</div><div id='caption_text' class='description'>" + locations[i].description +
+                        "</div></div></div>";
                 $('#text_overlay').html(inner_html);
                 $('.description').delay(5000).slideUp("slow");
-                $("#caption_title").click(function(){
+                $("#caption_title").click(function () {
                     $(".description").slideToggle("slow");
                 });
                 currentLocation = locations[i];
@@ -116,6 +119,7 @@ $(function () {
     /**
      * Navigation object instances
      */
+
     var taylor_to_pathway = new Navigation("#taylor", "taylor_to_pathway", "to pathway", "#pathway", "forward", 47, 27); //
     var pathway_to_hurst = new Navigation("#pathway", "pathway_to_hurst", "to Hurst", "#hurst", "forward", 47, 27);
     var pathway_to_taylor = new Navigation("#pathway", "pathway_to_taylor", "back to Taylor", "#taylor", "back", 50, 17); //
@@ -125,52 +129,51 @@ $(function () {
     var quigly_to_pathway = new Navigation("#quigley", "quigly_to_pathway", "back to pathway", "#pathway", "left", 42, 27);
     var kelley_to_hurst = new Navigation("#kelley", "kelley_to_hurst", "to Hurst Hall", "#hurst", "right", 58, 27);
     var kelley_to_pathway2 = new Navigation("#kelley", "kelley_to_pathway2", "to pathway", "#pathway2", "left", 42, 27);
-    var pathway2_to_library = new Navigation("#pathway2", "pathway2_to_library", "to Library", "#library", "forward", 47, 27);
     var pathway2_to_kelley = new Navigation("#pathway2", "pathway2_to_kelley", "to Kelley Hall", "#kelley", "back", 50, 17);
-    var library_to_pathway2 = new Navigation("#library", "library_to_pathway2", "to pathway", "#pathway2", "back", 50, 17);
     var library_to_universitycenter = new Navigation("#library", "library_to_universitycenter", "to University Center", "#universitycenter", "forward", 47, 27);
-    var universitycenter_to_library = new Navigation("#universitycenter", "universitycenter_to_library", "to Library", "#library", "right", 58, 27);
-    var universitycenter_to_mountaineerbowl = new Navigation("#universitycenter", "universitycenter_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "left", 42, 27);
-    var mountaineerbowl_to_universitycenter = new Navigation("#mountaineerbowl", "mountaineerbowl_to_universitycenter", "to University Center", "#universitycenter", "right", 58, 27);
+    var fieldhouse_to_mountaineerbowl = new Navigation("#fieldhouse", "fieldhouse_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "forward", 47, 27);
+    var mountaineerbowl_to_fieldhouse = new Navigation("#mountaineerbowl", "mountaineerbowl_to_fieldhouse", "to Field House", "#fieldhouse", "back", 50, 17);
 
-    var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 90, 50);
+
+    var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 75, 50);
     var telluride_to_cbmr = new Navigation("#telluride", "telluride_to_cbmr", "to CBMR", "#cbmr", "left", 0, 50);
-    var telluride_to_cb = new Navigation("#telluride", "telluride_to_cb", "to Crested Butte", "#cb", "right", 90, 50);
+    var telluride_to_cb = new Navigation("#telluride", "telluride_to_cb", "to Crested Butte", "#cb", "right", 75, 50);
     var cb_to_telluride = new Navigation("#cb", "cb_to_telluride", "to Telluride", "#telluride", "left", 0, 50);
-    var cb_to_mm = new Navigation("#cb", "cb_to_mm", "to Monarch Mountain", "#mm", "right", 90, 50);
+    var cb_to_mm = new Navigation("#cb", "cb_to_mm", "to Monarch Mountain", "#mm", "right", 75, 50);
     var mm_to_cb = new Navigation("#mm", "mm_to_cb", "to Crested Butte", "#cb", "left", 0, 50);
-    var mm_to_tr = new Navigation("#mm", "mm_to_tr", "to Taylor Resevoir", "#tr", "right", 90, 50);
+    var mm_to_tr = new Navigation("#mm", "mm_to_tr", "to Taylor Resevoir", "#tr", "right", 75, 50);
     var tr_to_mm = new Navigation("#tr", "tr_to_mm", "to Monarch Mountain", "#mm", "left", 0, 50);
-    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hr", "right", 90, 50);
+    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hr", "right", 75, 50);
     var hr_to_tr = new Navigation("#hr", "hr_to_tr", "to Taylor Resevoir", "#tr", "left", 0, 50);
-    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right", 90, 50);
+    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right", 75, 50);
     var tc_to_hr = new Navigation("#tc", "tc_to_hr", "to Hartman's Rocks", "#hr", "left", 0, 50);
-    var tc_to_wmountain = new Navigation("#tc", "tc_to_wmountain", "to W Mountain", "#wmountain", "right", 90, 50);
+    var tc_to_wmountain = new Navigation("#tc", "tc_to_wmountain", "to W Mountain", "#wmountain", "right", 75, 50);
     var wmountain_to_tc = new Navigation("#wmountain", "wmountain_to_tc", "to Taylor Canyon", "#tc", "left", 0, 50);
-    var wmountain_to_artscenter = new Navigation("#wmountain", "wmountain_to_artscenter", "to Arts Center", "#artscenter", "right", 90, 50);
+    var wmountain_to_artscenter = new Navigation("#wmountain", "wmountain_to_artscenter", "to Arts Center", "#artscenter", "right", 75, 50);
     var artscenter_to_wmountain = new Navigation("#artscenter", "artscenter_to_wmountain", "to W Mountain", "#wmountain", "left", 0, 50);
-    var artscenter_to_cbmr = new Navigation("#artscenter", "artscenter_to_cbmr", "to CBMR", "#cbmr", "right", 90, 50);
+    var artscenter_to_cbmr = new Navigation("#artscenter", "artscenter_to_cbmr", "to CBMR", "#cbmr", "right", 75, 50);
     var cbmr_to_artscenter = new Navigation("#cbmr", "cbmr_to_artscenter", "to Arts Center", "#artscenter", "left", 0, 50);
-    var cbmr_to_gunnison = new Navigation("#cbmr", "cbmr_to_gunnison", "to Gunnison", "#gunnison", "right", 90, 50);
+    var cbmr_to_gunnison = new Navigation("#cbmr", "cbmr_to_gunnison", "to Gunnison", "#gunnison", "right", 75, 50);
     var gunnison_to_cbmr = new Navigation("#gunnison", "telluride_to_gunnison", "to CBMR", "#cbmr", "left", 0, 50);
-    var gunnison_to_elkmountains = new Navigation("#gunnison", "gunnison_to_elkmountains", "to Elk Mountains", "#elkmountains", "right", 90, 50);
+    var gunnison_to_elkmountains = new Navigation("#gunnison", "gunnison_to_elkmountains", "to Elk Mountains", "#elkmountains", "right", 75, 50);
     var elkmountains_to_gunnison = new Navigation("#elkmountains", "elkmountains_to_gunnison", "to Gunnison", "#gunnison", "left", 0, 50);
-    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hr", "right", 90, 50);
+    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hr", "right", 75, 50);
     var hr_to_elkmountains = new Navigation("#hr", "hr_to_elkmountains", "to Elk Mountains", "#elkmountains", "left", 0, 50);
-    var tc_to_sanjuan = new Navigation("#tc", "tc_to_sanjuan", "to San Juan Mountains", "#sanjuan", "right", 90, 50);
+    var tc_to_sanjuan = new Navigation("#tc", "tc_to_sanjuan", "to San Juan Mountains", "#sanjuan", "right", 75, 50);
     var sanjuan_to_tc = new Navigation("#sanjuan", "sanjuan_to_tc", "to Taylor Canyon", "#tc", "left", 0, 50);
-    var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right", 90, 50);
+    var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right", 75, 50);
     var cbmr_to_sanjuan = new Navigation("#cbmr", "cbmr_to_sanjuan", "to San Juan Mountains", "#sanjuan", "left", 0, 50);
 
     var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
-        hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
-    pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
-    universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr,cbmr_to_gunnison,
+        hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2,
+    pathway2_to_kelley, library_to_universitycenter,
+   hr_to_tc, tc_to_hr,cbmr_to_gunnison,
     gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
     tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan, cb_to_telluride, cb_to_mm,cbmr_to_telluride,telluride_to_cbmr,
         mm_to_cb, mm_to_tr,tr_to_mm, tr_to_hr,hr_to_tr,hr_to_tc,tc_to_hr,tc_to_wmountain,wmountain_to_tc,wmountain_to_artscenter,
-        artscenter_to_wmountain,artscenter_to_cbmr,cbmr_to_artscenter,
+        artscenter_to_wmountain,artscenter_to_cbmr,cbmr_to_artscenter,fieldhouse_to_mountaineerbowl, mountaineerbowl_to_fieldhouse
     ];
+
 
     /**
      *  Render all navigation items at the current location
@@ -178,19 +181,54 @@ $(function () {
      */
     function getNavs(locationTag) {
         $('.tipsy:last').remove();
-        var inner_html = "";
+        if (currentLocation.locationType === "academic" || currentLocation.locationType === "walkway") {
+            var inner_html = "<img onclick=javascript:window.location.hash='#fieldhouse' class='to_athletics " +
+                    "arrow' src='imgs/nav_arrows/right_slate.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/right_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_slate.png' " + 
+                    "title = 'to Athletics' />" + 
+                    "<img onclick=javascript:window.location.hash='#library' class='to_studentlife " +
+                    "arrow' src='imgs/nav_arrows/left_crimson.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/left_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/left_crimson.png' " + 
+                    "title = 'to Student Life' />";
+        }
+        if (currentLocation.locationType === "studentlife") {
+            inner_html = "<img onclick=javascript:window.location.hash='#fieldhouse' class='studentlife_to_athletics " +
+                    "arrow' src='imgs/nav_arrows/left_slate.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/left_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/left_slate.png' " + 
+                    "title = 'to Athletics' />" + 
+                    "<img onclick=javascript:window.location.hash='#taylor' class='to_academics " +
+                    "arrow' src='imgs/nav_arrows/right_blue.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/right_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_blue.png' " + 
+                    "title = 'to Academics' />";
+        }
+        if (currentLocation.locationType === "athletic") {
+            inner_html = "<img onclick=javascript:window.location.hash='#library' class='to_studentlife " +
+                    "arrow' src='imgs/nav_arrows/left_crimson.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/left_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/left_crimson.png' " + 
+                    "title = 'to Student Life' />" + 
+                    "<img onclick=javascript:window.location.hash='#taylor' class='to_academics " +
+                    "arrow' src='imgs/nav_arrows/right_blue.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/right_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_blue.png' " + 
+                    "title = 'to Academics' />";
+        }
         var items = [];
         for (var i in navs) {
             if (currentLocation.onCampus) {
                 if (navs[i].tag === locationTag) {
                     inner_html += "<button class='map_button'>Map</button>" +
-                        "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
-                        "<button class='restart_button' onclick=javascript:window.location=''>Restart Tour</button>" +
-                        "<img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
-                        navs[i].styleClass + " arrow' src='imgs/nav_arrows/" + navs[i].direction + "_white.png'" +
-                        "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_hover.png'" +
-                        " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_white.png' " +
-                        "title='" + navs[i].ttip + "' />";
+                            "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
+                            "<button class='restart_button' onclick=javascript:window.location=''>Restart Tour</button>" +
+                            "<img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
+                            navs[i].styleClass + " arrow' src='imgs/nav_arrows/" + navs[i].direction + "_white.png'" +
+                            "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_hover.png'" +
+                            " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_white.png' " +
+                            "title='" + navs[i].ttip + "' />";
                     items.push(navs[i].styleClass);
                 }
                 $("#navigation").html(inner_html);
@@ -214,13 +252,14 @@ $(function () {
                 $("#navigation").html(inner_html);
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
+
             $(".map_button").click(function(){
                 if(mapState === 0) {
                     $("#map").animate({width: window.innerWidth * 0.25, height: window.innerHeight * 0.38}, function(){
                         $('#map').animate({
                             scrollLeft: currentLocation.x - ($('#map').width() / 2),
                             scrollTop: currentLocation.y - ($('#map').height() / 2)
-                        }, 1500, 'easeOutQuad');
+                        }, 1500, 'easeInOutQuad');
                     });
                     mapState += 1;
                 }
@@ -229,7 +268,7 @@ $(function () {
                         $('#map').animate({
                             scrollLeft: currentLocation.x - ($('#map').width() / 2),
                             scrollTop: currentLocation.y - ($('#map').height() / 2)
-                        }, 1500, 'easeOutQuad');
+                        }, 1500, 'easeInOutQuad');
                     });
                     $(".map_button").animate({right: window.innerWidth * 0.75});
                     mapState += 1;
@@ -288,10 +327,10 @@ $(function () {
         for (var i in hotspots) {
             if (hotspots[i].tag === locationTag) {
                 inner_html += "<a href=" + hotspots[i].dest + " " + "target='_blank'><img class='" +
-                    hotspots[i].styleClass + " hotspot' src='imgs/logo_hotspot.png'" +
-                    "onmouseover=" + "this.src='imgs/logo_hotspot_hover.png'" +
-                    " onmouseout=" + "this.src='imgs/logo_hotspot.png' " +
-                    "title='" + hotspots[i].ttip + "' /></a>";
+                        hotspots[i].styleClass + " hotspot' src='imgs/logo_hotspot.png'" +
+                        "onmouseover=" + "this.src='imgs/logo_hotspot_hover.png'" +
+                        " onmouseout=" + "this.src='imgs/logo_hotspot.png' " +
+                        "title='" + hotspots[i].ttip + "' /></a>";
                 items.push(hotspots[i].styleClass);
             }
             $("#hotspots").html(inner_html);
@@ -322,12 +361,12 @@ $(function () {
 
     var prevCampus = true;
 
-    function loadMap(locationTag){
-        for(var i in locations){
-            if(locations[i].tag === locationTag){
-                if(prevCampus != locations[i].onCampus) {
+    function loadMap(locationTag) {
+        for (var i in locations) {
+            if (locations[i].tag === locationTag) {
+                if (prevCampus != locations[i].onCampus) {
                     if (!locations[i].onCampus) {
-                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/library_main.jpg">';
+                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/offcampusmap.png">';
                     }
                     else{
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusmap.jpg">';
@@ -335,7 +374,7 @@ $(function () {
                 }
                 $('.mapImage').load(function ()
                                     {
-                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeInOutQuad');
                                     });
                                     prevCampus = locations[i].onCampus;
             }
@@ -353,17 +392,17 @@ $(function () {
         getHspots(location.hash);
         loadMap(location.hash);
         killCarousel();
-        getCIs(location.hash);
-        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+        //getCIs(location.hash);
+        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeInOutQuad');
     });
 
-    if(window.location.hash) {
+    if (window.location.hash) {
         dispMainMenu();
         $('#drilldown-1').dcDrilldown({
-            speed : 'fast',
-            saveState : true,
-            showCount : false,
-            linkType : 'backlink',
+            speed: 'fast',
+            saveState: true,
+            showCount: false,
+            linkType: 'backlink',
             defaultText: ''
         });
         $(window).trigger('hashchange');
