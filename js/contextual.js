@@ -198,6 +198,7 @@ $(function () {
             }
             $(".map_button").click(function(){
                 $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
+                $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
             });
         }
     }
