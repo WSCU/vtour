@@ -352,6 +352,7 @@ $(function () {
         getNavs(location.hash);
         getHspots(location.hash);
         loadMap(location.hash);
+        killCarousel();
         getCIs(location.hash);
         $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
     });
