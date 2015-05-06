@@ -120,13 +120,13 @@ section:target, .show{
 }
 
 .right_offcampus {
-    bottom: 40%;
-    left: 90%;
+    bottom: 25%;
+    left: 75%;
 }
 
 .left_offcampus {
-    bottom: 40%;
-    left: 5%;
+    bottom: 25%;
+    left: 25%;
 }
 
 .beginButton {

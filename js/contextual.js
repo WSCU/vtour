@@ -133,33 +133,33 @@ $(function () {
     var universitycenter_to_mountaineerbowl = new Navigation("#universitycenter", "universitycenter_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "left", 42, 27);
     var mountaineerbowl_to_universitycenter = new Navigation("#mountaineerbowl", "mountaineerbowl_to_universitycenter", "to University Center", "#universitycenter", "right", 58, 27);
 
-    var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 90, 50);
+    var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 75, 50);
     var telluride_to_cbmr = new Navigation("#telluride", "telluride_to_cbmr", "to CBMR", "#cbmr", "left", 0, 50);
-    var telluride_to_cb = new Navigation("#telluride", "telluride_to_cb", "to Crested Butte", "#cb", "right", 90, 50);
+    var telluride_to_cb = new Navigation("#telluride", "telluride_to_cb", "to Crested Butte", "#cb", "right", 75, 50);
     var cb_to_telluride = new Navigation("#cb", "cb_to_telluride", "to Telluride", "#telluride", "left", 0, 50);
-    var cb_to_mm = new Navigation("#cb", "cb_to_mm", "to Monarch Mountain", "#mm", "right", 90, 50);
+    var cb_to_mm = new Navigation("#cb", "cb_to_mm", "to Monarch Mountain", "#mm", "right", 75, 50);
     var mm_to_cb = new Navigation("#mm", "mm_to_cb", "to Crested Butte", "#cb", "left", 0, 50);
-    var mm_to_tr = new Navigation("#mm", "mm_to_tr", "to Taylor Resevoir", "#tr", "right", 90, 50);
+    var mm_to_tr = new Navigation("#mm", "mm_to_tr", "to Taylor Resevoir", "#tr", "right", 75, 50);
     var tr_to_mm = new Navigation("#tr", "tr_to_mm", "to Monarch Mountain", "#mm", "left", 0, 50);
-    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hr", "right", 90, 50);
+    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hr", "right", 75, 50);
     var hr_to_tr = new Navigation("#hr", "hr_to_tr", "to Taylor Resevoir", "#tr", "left", 0, 50);
-    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right", 90, 50);
+    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right", 75, 50);
     var tc_to_hr = new Navigation("#tc", "tc_to_hr", "to Hartman's Rocks", "#hr", "left", 0, 50);
-    var tc_to_wmountain = new Navigation("#tc", "tc_to_wmountain", "to W Mountain", "#wmountain", "right", 90, 50);
+    var tc_to_wmountain = new Navigation("#tc", "tc_to_wmountain", "to W Mountain", "#wmountain", "right", 75, 50);
     var wmountain_to_tc = new Navigation("#wmountain", "wmountain_to_tc", "to Taylor Canyon", "#tc", "left", 0, 50);
-    var wmountain_to_artscenter = new Navigation("#wmountain", "wmountain_to_artscenter", "to Arts Center", "#artscenter", "right", 90, 50);
+    var wmountain_to_artscenter = new Navigation("#wmountain", "wmountain_to_artscenter", "to Arts Center", "#artscenter", "right", 75, 50);
     var artscenter_to_wmountain = new Navigation("#artscenter", "artscenter_to_wmountain", "to W Mountain", "#wmountain", "left", 0, 50);
-    var artscenter_to_cbmr = new Navigation("#artscenter", "artscenter_to_cbmr", "to CBMR", "#cbmr", "right", 90, 50);
+    var artscenter_to_cbmr = new Navigation("#artscenter", "artscenter_to_cbmr", "to CBMR", "#cbmr", "right", 75, 50);
     var cbmr_to_artscenter = new Navigation("#cbmr", "cbmr_to_artscenter", "to Arts Center", "#artscenter", "left", 0, 50);
-    var cbmr_to_gunnison = new Navigation("#cbmr", "cbmr_to_gunnison", "to Gunnison", "#gunnison", "right", 90, 50);
+    var cbmr_to_gunnison = new Navigation("#cbmr", "cbmr_to_gunnison", "to Gunnison", "#gunnison", "right", 75, 50);
     var gunnison_to_cbmr = new Navigation("#gunnison", "telluride_to_gunnison", "to CBMR", "#cbmr", "left", 0, 50);
-    var gunnison_to_elkmountains = new Navigation("#gunnison", "gunnison_to_elkmountains", "to Elk Mountains", "#elkmountains", "right", 90, 50);
+    var gunnison_to_elkmountains = new Navigation("#gunnison", "gunnison_to_elkmountains", "to Elk Mountains", "#elkmountains", "right", 75, 50);
     var elkmountains_to_gunnison = new Navigation("#elkmountains", "elkmountains_to_gunnison", "to Gunnison", "#gunnison", "left", 0, 50);
-    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hr", "right", 90, 50);
+    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hr", "right", 75, 50);
     var hr_to_elkmountains = new Navigation("#hr", "hr_to_elkmountains", "to Elk Mountains", "#elkmountains", "left", 0, 50);
-    var tc_to_sanjuan = new Navigation("#tc", "tc_to_sanjuan", "to San Juan Mountains", "#sanjuan", "right", 90, 50);
+    var tc_to_sanjuan = new Navigation("#tc", "tc_to_sanjuan", "to San Juan Mountains", "#sanjuan", "right", 75, 50);
     var sanjuan_to_tc = new Navigation("#sanjuan", "sanjuan_to_tc", "to Taylor Canyon", "#tc", "left", 0, 50);
-    var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right", 90, 50);
+    var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right", 75, 50);
     var cbmr_to_sanjuan = new Navigation("#cbmr", "cbmr_to_sanjuan", "to San Juan Mountains", "#sanjuan", "left", 0, 50);
 
     var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
@@ -220,7 +220,7 @@ $(function () {
                         $('#map').animate({
                             scrollLeft: currentLocation.x - ($('#map').width() / 2),
                             scrollTop: currentLocation.y - ($('#map').height() / 2)
-                        }, 1500, 'easeOutQuad');
+                        }, 1500, 'easeInOutQuad');
                     });
                     mapState += 1;
                 }
@@ -229,7 +229,7 @@ $(function () {
                         $('#map').animate({
                             scrollLeft: currentLocation.x - ($('#map').width() / 2),
                             scrollTop: currentLocation.y - ($('#map').height() / 2)
-                        }, 1500, 'easeOutQuad');
+                        }, 1500, 'easeInOutQuad');
                     });
                     $(".map_button").animate({right: window.innerWidth * 0.75});
                     mapState += 1;
@@ -327,7 +327,7 @@ $(function () {
             if(locations[i].tag === locationTag){
                 if(prevCampus != locations[i].onCampus) {
                     if (!locations[i].onCampus) {
-                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/library_main.jpg">';
+                        document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/offcampusmap.png">';
                     }
                     else{
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusmap.jpg">';
@@ -335,7 +335,7 @@ $(function () {
                 }
                 $('.mapImage').load(function ()
                                     {
-                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeInOutQuad');
                                     });
                                     prevCampus = locations[i].onCampus;
             }
@@ -353,7 +353,7 @@ $(function () {
         getHspots(location.hash);
         loadMap(location.hash);
         getCIs(location.hash);
-        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeInOutQuad');
     });
 
     if(window.location.hash) {
