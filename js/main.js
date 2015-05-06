@@ -1,43 +1,44 @@
-/********************************
- *  Mouse move on Map           *
- ********************************/
+$(function() {
 
-var clicking = false;
-var previousX;
-var previousY;
+    /********************************
+     *  Mouse move on Map           *
+     ********************************/
 
-$('.mapImage').load(function () {
+    var clicking = false;
+    var previousX;
+    var previousY;
+
+    $('.mapImage').load(function () {
 
 
-
-    $('body').on('mousedown', '#map', function (e) {
-        console.log("mouse down");
-        e.preventDefault();
-        previousX = e.clientX;
-        previousY = e.clientY;
-        clicking = true;
-    });
-
-    $(document).mouseup(function () {
-        clicking = false;
-    });
-
-    $('body').on('mousemove', '#map', function (e) {
-        if (clicking) {
+        $('body').on('mousedown', '#map', function (e) {
+            console.log("mouse down");
             e.preventDefault();
-            var directionX = (previousX - e.clientX) > 0 ? 1 : -1;
-            var directionY = (previousY - e.clientY) > 0 ? 1 : -1;
-            $("#map").scrollLeft($("#map").scrollLeft() + 10 * directionX);
-            $("#map").scrollTop($("#map").scrollTop() + 10 * directionY);
             previousX = e.clientX;
             previousY = e.clientY;
-        }
-    });
-});
+            clicking = true;
+        });
 
-/********************************
- *  Map Toggle                  *
- ********************************/
+        $(document).mouseup(function () {
+            clicking = false;
+        });
+
+        $('body').on('mousemove', '#map', function (e) {
+            if (clicking) {
+                e.preventDefault();
+                var directionX = (previousX - e.clientX) > 0 ? 1 : -1;
+                var directionY = (previousY - e.clientY) > 0 ? 1 : -1;
+                $("#map").scrollLeft($("#map").scrollLeft() + 10 * directionX);
+                $("#map").scrollTop($("#map").scrollTop() +  10 * directionY);
+                previousX = e.clientX;
+                previousY = e.clientY;
+            }
+        });
+    });
+
+    /********************************
+     *  Map Toggle                  *
+     ********************************/
 
 //var mapState = 0;
 //
@@ -56,3 +57,5 @@ $('.mapImage').load(function () {
 //        mapState = 0;
 //    }
 //});
+
+});
