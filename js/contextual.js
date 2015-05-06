@@ -4,6 +4,7 @@ $(function () {
     }
     $("#start").find("a").on("click", function () {
         $("#start").removeClass("show");
+        $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
         $(this).off("click");
     });
 
@@ -17,12 +18,14 @@ $(function () {
      * @param {string} description The description of the current location
      * @param {Boolean} onCampus If location is on campus or off campus
      */
-    function Location(tag, name, locationType, description, onCampus) {
+    function Location(tag, name, locationType, description, onCampus, x, y) {
         this.tag = tag;
         this.name = name;
         this.locationType = locationType;
         this.description = description;
         this.onCampus = onCampus;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -30,19 +33,19 @@ $(function () {
      */
     var taylor = new Location("#taylor", "Taylor Hall", "academic",
                               "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
-                              "auditorium and theater.", true);
+                              "auditorium and theater.", true, 1905, 1200);
     var quigley = new Location("#quigley", "Quigley Hall", "academic",
-                               "Home of the Music and Art departments", true);
+                               "Home of the Music and Art departments", true, 2170, 1419);
     var hurst = new Location("#hurst", "Hurst Hall", "academic",
-                             "Home of Science and Mathematics departments", true);
+                             "Home of Science and Mathematics departments", true, 2422, 1227);
     var kelley = new Location("#kelley", "Kelley Hall", "academic",
-                              "Home of Social Sciences and Environment & Sustainability programs", true);
+                              "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
     var library = new Location("#library", "Leslie J. Savage Library", "studentlife",
-                               "The research hub for campus and a great study spot", true);
+                               "The research hub for campus and a great study spot", true, 1918, 994);
     var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
-                                        "The hub of student life on campus", true);
+                                        "The hub of student life on campus", true, 1849, 887);
     var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
-                                       "The world's highest collegiate football stadium", true);
+                                       "The world's highest collegiate football stadium", true, 2023, 644);
     var telluride = new Location("#telluride", "Telluride", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var crestedbutte = new Location("#cb", "Crested Butte", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
@@ -52,14 +55,11 @@ $(function () {
     var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var artscenter = new Location("#artscenter", "Gunnison Arts Center", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var wmountain = new Location("#wmountain", "W Mountain", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true);
-    var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true);
     var elkmountains = new Location("#elkmountains", "Elk Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var sanjuan = new Location("#sanjuan", "San Juan Mountains", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    var hartmanrocks = new Location("#hr", "Hartman Rocks", "recreation", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
-    var cbmr = new Location("#cbmr", "Crested Butte Mountain Resort", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var gunnison = new Location("#gunnison", "Gunnison", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
+    var pathway = new Location('#pathway', "Academic Quad", "walkway", "Pathway to Hurst and Quiqly", true, 2041, 1232);
+    var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true, 2083, 1076);
 
     var locations = [taylor, pathway, pathway2, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
         taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain];
@@ -162,12 +162,12 @@ $(function () {
     var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right");
     var cbmr_to_sanjuan = new Navigation("#cbmr", "cbmr_to_sanjuan", "to San Juan Mountains", "#sanjuan", "left");
 
- var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
-                    hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
-                    pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
-                    universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr,cbmr_to_gunnison,
-                    gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
-                    tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan];
+    var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
+        hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
+    pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
+    universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr,cbmr_to_gunnison,
+    gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
+    tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan];
 
     /**
      *  Render all navigation items at the current location
@@ -212,7 +212,7 @@ $(function () {
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
             $(".map_button").click(function(){
-                $("#map").animate({width:'toggle'}, window.innerWidth*0.2);
+                $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
             });
         }
     }
@@ -248,7 +248,7 @@ $(function () {
     /**
      * Hspot object instances
      */
-    var taylor_hotspot = new Hspot("#taylor", "taylor_panorama_hs", "view Panorama", "panoramas/taylor_panorama/Taylor_Panorama.html", 75, 75);
+    var taylor_hotspot = new Hspot("#taylor", "taylor_panorama_hs", "view Panorama", "panoramas/taylor_panorama/Taylor_Panorama.html", 60, 75);
     var hotspots = [taylor_hotspot];
 
     /**
@@ -307,7 +307,12 @@ $(function () {
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusMap.jpg">';
                     }
                 }
-                prevCampus = locations[i].onCampus;
+                $('.mapImage').load(function ()
+                                    {
+                                        console.log("IMAGE");
+                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                                    });
+                                    prevCampus = locations[i].onCampus;
             }
         }
     }
@@ -323,6 +328,7 @@ $(function () {
         getHspots(location.hash);
         loadMap(location.hash);
         getCIs(location.hash);
+        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
     });
 
     if(window.location.hash) {

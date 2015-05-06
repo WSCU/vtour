@@ -13,11 +13,11 @@ body.contextual_navigation
 
 #map{
     position: fixed;
-    width: 15%;
-    height: 25%;
-    right: 0%;
-    opacity:0.75;
+    width: 25%;
+    height: 38%;
+    right: 0;
     overflow: hidden;
+    z-index: 5;
 }
 
 .mapImage{
@@ -91,7 +91,7 @@ section:target, .show{
     position: fixed;
     z-index: 1;
     right: 0%;
-    top: 20%;
+    top: 33%;
     max-height: 7%;
 }
 
