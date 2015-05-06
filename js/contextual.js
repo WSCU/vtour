@@ -44,7 +44,7 @@ $(function () {
             "The research hub for campus and a great study spot", true, 1918, 994);
     var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
             "The hub of student life on campus", true, 1849, 887);
-    var fieldhouse = new Location("#fieldhouse", "Mountaineer Field House", "athletics", "65,000-square-foot LEED-Gold certified field house.",
+    var fieldhouse = new Location("#fieldhouse", "Mountaineer Field House", "athletic", "65,000-square-foot LEED-Gold certified field house.",
             true, 1850, 1200);
     var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
             "The world's highest collegiate football stadium", true, 2023, 644);
@@ -128,11 +128,10 @@ $(function () {
     var kelley_to_pathway2 = new Navigation("#kelley", "kelley_to_pathway2", "to pathway", "#pathway2", "left", 42, 12);
     var pathway2_to_library = new Navigation("#pathway2", "pathway2_to_library", "to Library", "#library", "forward", 47, 12);
     var pathway2_to_kelley = new Navigation("#pathway2", "pathway2_to_kelley", "to Kelley Hall", "#kelley", "back", 50, 2);
-    var library_to_pathway2 = new Navigation("#library", "library_to_pathway2", "to pathway", "#pathway2", "back", 50, 2);
     var library_to_universitycenter = new Navigation("#library", "library_to_universitycenter", "to University Center", "#universitycenter", "forward", 47, 12);
-    var universitycenter_to_library = new Navigation("#universitycenter", "universitycenter_to_library", "to Library", "#library", "right", 58, 12);
+    var universitycenter_to_library = new Navigation("#universitycenter", "universitycenter_to_library", "to Library", "#library", "back", 50, 2);
     var fieldhouse_to_mountaineerbowl = new Navigation("#fieldhouse", "fieldhouse_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "forward", 47, 12);
-    var mountaineerbowl_to_universitycenter = new Navigation("#mountaineerbowl", "mountaineerbowl_to_universitycenter", "to University Center", "#universitycenter", "right", 58, 12);
+    var mountaineerbowl_to_fieldhouse = new Navigation("#mountaineerbowl", "mountaineerbowl_to_fieldhouse", "to Field House", "#fieldhouse", "back", 50, 2);
 
     var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 800, 130);
     var telluride_to_cbmr = new Navigation("#telluride", "telluride_to_cbmr", "to CBMR", "#cbmr", "left");
@@ -167,8 +166,8 @@ $(function () {
 
     var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
         hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
-        pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
-        fieldhouse_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr, cbmr_to_gunnison,
+        pathway2_to_kelley, library_to_universitycenter, universitycenter_to_library,
+        fieldhouse_to_mountaineerbowl, mountaineerbowl_to_fieldhouse, hr_to_tc, tc_to_hr, cbmr_to_gunnison,
         gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
         tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan];
 
@@ -178,15 +177,42 @@ $(function () {
      */
     function getNavs(locationTag) {
         $('.tipsy:last').remove();
-        alert(currentLocation.locationType);
-        if (currentLocation.locationType === "academic" || currentLocation.locationType == "studentlife") {
+        if (currentLocation.locationType === "academic" || currentLocation.locationType === "walkway") {
             var inner_html = "<img onclick=javascript:window.location.hash='#fieldhouse' class='to_athletics " +
                     "arrow' src='imgs/nav_arrows/right_slate.png' " +
-                    "onmouseover=this.src='imgs/nav_arrows/right_hover.png'" +
-                    " onmouseout=this.src='imgs/nav_arrows/right_slate.png' ";
+                    "onmouseover=this.src='imgs/nav_arrows/right_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_slate.png' " + 
+                    "title = 'to Athletics' />" + 
+                    "<img onclick=javascript:window.location.hash='#library' class='to_studentlife " +
+                    "arrow' src='imgs/nav_arrows/left_crimson.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/left_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/left_crimson.png' " + 
+                    "title = 'to Student Life' />";
         }
-        else
-            inner_html = "";
+        if (currentLocation.locationType === "studentlife") {
+            inner_html = "<img onclick=javascript:window.location.hash='#fieldhouse' class='studentlife_to_athletics " +
+                    "arrow' src='imgs/nav_arrows/left_slate.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/left_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/left_slate.png' " + 
+                    "title = 'to Athletics' />" + 
+                    "<img onclick=javascript:window.location.hash='#taylor' class='to_academics " +
+                    "arrow' src='imgs/nav_arrows/right_blue.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/right_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_blue.png' " + 
+                    "title = 'to Academics' />";
+        }
+        if (currentLocation.locationType === "athletic") {
+            inner_html = "<img onclick=javascript:window.location.hash='#library' class='to_studentlife " +
+                    "arrow' src='imgs/nav_arrows/left_crimson.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/left_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/left_crimson.png' " + 
+                    "title = 'to Student Life' />" + 
+                    "<img onclick=javascript:window.location.hash='#taylor' class='to_academics " +
+                    "arrow' src='imgs/nav_arrows/right_blue.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/right_newtype_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_blue.png' " + 
+                    "title = 'to Academics' />";
+        }
         var items = [];
         for (var i in navs) {
             if (currentLocation.onCampus) {
