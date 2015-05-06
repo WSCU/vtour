@@ -4,7 +4,7 @@ $(function () {
     }
     $("#start").find("a").on("click", function () {
         $("#start").removeClass("show");
-        $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
+        $("#map").animate({width: 'toggle'}, window.innerWidth * 0.25);
         $(this).off("click");
     });
 
@@ -32,20 +32,22 @@ $(function () {
      * Location object instances
      */
     var taylor = new Location("#taylor", "Taylor Hall", "academic",
-                              "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
-                              "auditorium and theater.", true, 1905, 1200);
+            "Home of administrative offices, classrooms, faculty offices, computer labs, as well as an " +
+            "auditorium and theater.", true, 1905, 1200);
     var quigley = new Location("#quigley", "Quigley Hall", "academic",
-                               "Home of the Music and Art departments", true, 2170, 1419);
+            "Home of the Music and Art departments", true, 2170, 1419);
     var hurst = new Location("#hurst", "Hurst Hall", "academic",
-                             "Home of Science and Mathematics departments", true, 2422, 1227);
+            "Home of Science and Mathematics departments", true, 2422, 1227);
     var kelley = new Location("#kelley", "Kelley Hall", "academic",
-                              "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
+            "Home of Social Sciences and Environment & Sustainability programs", true, 2288, 1100);
     var library = new Location("#library", "Leslie J. Savage Library", "studentlife",
-                               "The research hub for campus and a great study spot", true, 1918, 994);
+            "The research hub for campus and a great study spot", true, 1918, 994);
     var universitycenter = new Location("#universitycenter", "University Center", "studentlife",
-                                        "The hub of student life on campus", true, 1849, 887);
+            "The hub of student life on campus", true, 1849, 887);
+    var fieldhouse = new Location("#fieldhouse", "Mountaineer Field House", "athletics", "65,000-square-foot LEED-Gold certified field house.",
+            true, 1850, 1200);
     var mountaineerbowl = new Location("#mountaineerbowl", "Mountaineer Bowl", "athletic",
-                                       "The world's highest collegiate football stadium", true, 2023, 644);
+            "The world's highest collegiate football stadium", true, 2023, 644);
     var telluride = new Location("#telluride", "Telluride", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var taylorcanyon = new Location("#tc", "Taylor Canyon", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
     var crestedbutte = new Location("#cb", "Crested Butte", "offcampus", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", false);
@@ -62,7 +64,7 @@ $(function () {
     var pathway2 = new Location("#pathway2", "Kelley Steps", "walkway", "Pathway to Taylor", true, 2083, 1076);
 
     var locations = [taylor, pathway, pathway2, quigley, hurst, kelley, library, universitycenter, mountaineerbowl, telluride,
-        taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain];
+        taylorcanyon, crestedbutte, monarchmountain, taylorreservoir, hartmanrocks, cbmr, artscenter, wmountain, fieldhouse];
 
     var currentLocation;
     var previousLocation;
@@ -73,11 +75,11 @@ $(function () {
         for (var i in locations) {
             if (locationTag === locations[i].tag) {
                 inner_html = "<div class='caption_wrapper'><div class='caption'><div id='caption_title'>" +
-                    locations[i].name + "</div><div id='caption_text' class='description'>" + locations[i].description +
-                    "</div></div></div>";
+                        locations[i].name + "</div><div id='caption_text' class='description'>" + locations[i].description +
+                        "</div></div></div>";
                 $('#text_overlay').html(inner_html);
                 $('.description').delay(5000).slideUp("slow");
-                $("#caption_title").click(function(){
+                $("#caption_title").click(function () {
                     $(".description").slideToggle("slow");
                 });
                 if (currentLocation && currentLocation.onCampus) {
@@ -115,6 +117,7 @@ $(function () {
      * Navigation object instances
      */
     var taylor_to_pathway = new Navigation("#taylor", "taylor_to_pathway", "to pathway", "#pathway", "forward", 47, 10); //
+    var to_athletics = new Navigation(null, "to_athletics", "view Athletic building", "#fieldhouse", "left", 32, 12);
     var pathway_to_hurst = new Navigation("#pathway", "pathway_to_hurst", "to Hurst", "#hurst", "forward", 47, 12);
     var pathway_to_taylor = new Navigation("#pathway", "pathway_to_taylor", "back to Taylor", "#taylor", "back", 50, 2); //
     var pathway_to_quigly = new Navigation("#pathway", "pathway_to_quigly", "to Quigly", "#quigley", "right", 58, 12);
@@ -128,7 +131,7 @@ $(function () {
     var library_to_pathway2 = new Navigation("#library", "library_to_pathway2", "to pathway", "#pathway2", "back", 50, 2);
     var library_to_universitycenter = new Navigation("#library", "library_to_universitycenter", "to University Center", "#universitycenter", "forward", 47, 12);
     var universitycenter_to_library = new Navigation("#universitycenter", "universitycenter_to_library", "to Library", "#library", "right", 58, 12);
-    var universitycenter_to_mountaineerbowl = new Navigation("#universitycenter", "universitycenter_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "left", 42, 12);
+    var fieldhouse_to_mountaineerbowl = new Navigation("#fieldhouse", "fieldhouse_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "forward", 47, 12);
     var mountaineerbowl_to_universitycenter = new Navigation("#mountaineerbowl", "mountaineerbowl_to_universitycenter", "to University Center", "#universitycenter", "right", 58, 12);
 
     var cbmr_to_telluride = new Navigation("#cbmr", "cbmr_to_telluride", "to Telluride", "#telluride", "right", 800, 130);
@@ -164,10 +167,10 @@ $(function () {
 
     var navs = [taylor_to_pathway, pathway_to_hurst, pathway_to_taylor, pathway_to_quigly, hurst_to_pathway,
         hurst_to_kelley, quigly_to_pathway, kelley_to_hurst, kelley_to_pathway2, pathway2_to_library,
-    pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
-    universitycenter_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr,cbmr_to_gunnison,
-    gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
-    tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan];
+        pathway2_to_kelley, library_to_pathway2, library_to_universitycenter, universitycenter_to_library,
+        fieldhouse_to_mountaineerbowl, mountaineerbowl_to_universitycenter, hr_to_tc, tc_to_hr, cbmr_to_gunnison,
+        gunnison_to_cbmr, gunnison_to_elkmountains, elkmountains_to_gunnison, elkmountains_to_hr, hr_to_elkmountains,
+        tc_to_sanjuan, sanjuan_to_tc, sanjuan_to_cbmr, cbmr_to_sanjuan];
 
     /**
      *  Render all navigation items at the current location
@@ -175,19 +178,27 @@ $(function () {
      */
     function getNavs(locationTag) {
         $('.tipsy:last').remove();
-        var inner_html = "";
+        alert(currentLocation.locationType);
+        if (currentLocation.locationType === "academic" || currentLocation.locationType == "studentlife") {
+            var inner_html = "<img onclick=javascript:window.location.hash='#fieldhouse' class='to_athletics " +
+                    "arrow' src='imgs/nav_arrows/right_slate.png' " +
+                    "onmouseover=this.src='imgs/nav_arrows/right_hover.png'" +
+                    " onmouseout=this.src='imgs/nav_arrows/right_slate.png' ";
+        }
+        else
+            inner_html = "";
         var items = [];
         for (var i in navs) {
             if (currentLocation.onCampus) {
                 if (navs[i].tag === locationTag) {
                     inner_html += "<button class='map_button'>Map</button>" +
-                        "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
-                        "<button class='restart_button' onclick=javascript:window.location=''>Restart Tour</button>" +
-                        "<img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
-                        navs[i].styleClass + " arrow' src='imgs/nav_arrows/" + navs[i].direction + "_white.png'" +
-                        "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_hover.png'" +
-                        " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_white.png' " +
-                        "title='" + navs[i].ttip + "' />";
+                            "<button class='switch_button' onclick=javascript:window.location.hash='#cb'>Go Off Campus</button>" +
+                            "<button class='restart_button' onclick=javascript:window.location=''>Restart Tour</button>" +
+                            "<img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
+                            navs[i].styleClass + " arrow' src='imgs/nav_arrows/" + navs[i].direction + "_white.png'" +
+                            "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_hover.png'" +
+                            " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_white.png' " +
+                            "title='" + navs[i].ttip + "' />";
                     items.push(navs[i].styleClass);
                 }
                 $("#navigation").html(inner_html);
@@ -202,17 +213,17 @@ $(function () {
             }
             else {
                 if (navs[i].tag === locationTag) {
-                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='"+previousLocation.tag+"'>Go On Campus</button><img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
-                        navs[i].direction + "_offcampus arrow' src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png'" +
-                        "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus_hover.png'" +
-                        " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png' " +
-                        "title='" + navs[i].ttip + "' />";
+                    inner_html += "<button class='switch_button' onclick=javascript:window.location.hash='" + previousLocation.tag + "'>Go On Campus</button><img onclick=javascript:window.location.hash='" + navs[i].dest + "' class='" +
+                            navs[i].direction + "_offcampus arrow' src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png'" +
+                            "onmouseover=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus_hover.png'" +
+                            " onmouseout=" + "this.src='imgs/nav_arrows/" + navs[i].direction + "_offcampus.png' " +
+                            "title='" + navs[i].ttip + "' />";
                 }
                 $("#navigation").html(inner_html);
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
-            $(".map_button").click(function(){
-                $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
+            $(".map_button").click(function () {
+                $("#map").animate({width: 'toggle'}, window.innerWidth * 0.25);
             });
         }
     }
@@ -262,10 +273,10 @@ $(function () {
         for (var i in hotspots) {
             if (hotspots[i].tag === locationTag) {
                 inner_html += "<a href=" + hotspots[i].dest + " " + "target='_blank'><img class='" +
-                    hotspots[i].styleClass + " hotspot' src='imgs/logo_hotspot.png'" +
-                    "onmouseover=" + "this.src='imgs/logo_hotspot_hover.png'" +
-                    " onmouseout=" + "this.src='imgs/logo_hotspot.png' " +
-                    "title='" + hotspots[i].ttip + "' /></a>";
+                        hotspots[i].styleClass + " hotspot' src='imgs/logo_hotspot.png'" +
+                        "onmouseover=" + "this.src='imgs/logo_hotspot_hover.png'" +
+                        " onmouseout=" + "this.src='imgs/logo_hotspot.png' " +
+                        "title='" + hotspots[i].ttip + "' /></a>";
                 items.push(hotspots[i].styleClass);
             }
             $("#hotspots").html(inner_html);
@@ -296,23 +307,23 @@ $(function () {
 
     var prevCampus = true;
 
-    function loadMap(locationTag){
-        for(var i in locations){
-            if(locations[i].tag === locationTag){
-                if(prevCampus != locations[i].onCampus) {
+    function loadMap(locationTag) {
+        for (var i in locations) {
+            if (locations[i].tag === locationTag) {
+                if (prevCampus != locations[i].onCampus) {
                     if (!locations[i].onCampus) {
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/library_main.jpg">';
                     }
-                    else{
+                    else {
                         document.getElementById("map").innerHTML = '<img class="mapImage" src="imgs/oncampusMap.jpg">';
                     }
                 }
                 $('.mapImage').load(function ()
-                                    {
-                                        console.log("IMAGE");
-                                        $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
-                                    });
-                                    prevCampus = locations[i].onCampus;
+                {
+                    console.log("IMAGE");
+                    $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                });
+                prevCampus = locations[i].onCampus;
             }
         }
     }
@@ -331,13 +342,13 @@ $(function () {
         $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
     });
 
-    if(window.location.hash) {
+    if (window.location.hash) {
         dispMainMenu();
         $('#drilldown-1').dcDrilldown({
-            speed : 'fast',
-            saveState : true,
-            showCount : false,
-            linkType : 'backlink',
+            speed: 'fast',
+            saveState: true,
+            showCount: false,
+            linkType: 'backlink',
             defaultText: ''
         });
         $(window).trigger('hashchange');

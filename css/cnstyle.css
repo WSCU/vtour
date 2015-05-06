@@ -24,6 +24,11 @@ body.contextual_navigation
 
 }
 
+.to_athletics {
+    bottom: 20%;
+    left: 65%; 
+}
+
 .contextual_assets{
     position: fixed;
     width: 100%;
