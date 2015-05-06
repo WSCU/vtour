@@ -1,4 +1,7 @@
 $(function () {
+
+    var mapState = 1;
+
     if (location.hash !== "") {
         $("#start").removeClass("show");
     }
@@ -6,6 +9,7 @@ $(function () {
         $("#start").removeClass("show");
         $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
         $(this).off("click");
+        mapState = 0;
     });
 
     /**
@@ -212,8 +216,30 @@ $(function () {
                 $(".arrow").tipsy({gravity: 's', fade: true, html: true});
             }
             $(".map_button").click(function(){
-                $("#map").animate({width:'toggle'}, window.innerWidth*0.25);
-                $('#map').animate({scrollLeft: currentLocation.x - ($('#map').width() / 2), scrollTop: currentLocation.y - ($('#map').height() / 2)}, 1500, 'easeOutQuad');
+                if(mapState === 0) {
+                    $("#map").animate({width: window.innerWidth * 0.25, height: window.innerHeight * 0.38}, function(){
+                        $('#map').animate({
+                            scrollLeft: currentLocation.x - ($('#map').width() / 2),
+                            scrollTop: currentLocation.y - ($('#map').height() / 2)
+                        }, 1500, 'easeOutQuad');
+                    });
+                    mapState += 1;
+                }
+                else if(mapState === 1) {
+                    $("#map").animate({width: window.innerWidth * 0.75, height: window.innerHeight * 0.85}, function() {
+                        $('#map').animate({
+                            scrollLeft: currentLocation.x - ($('#map').width() / 2),
+                            scrollTop: currentLocation.y - ($('#map').height() / 2)
+                        }, 1500, 'easeOutQuad');
+                    });
+                    $(".map_button").animate({right: window.innerWidth * 0.75});
+                    mapState += 1;
+                }
+                else if(mapState === 2) {
+                    $("#map").animate({width: '0', height: '0'});
+                    $(".map_button").animate({right: window.innerWidth * 0.001});
+                    mapState = 0;
+                }
             });
         }
     }

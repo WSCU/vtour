@@ -21,7 +21,7 @@ body.contextual_navigation
 }
 
 .mapImage{
-
+    z-index: 5;
 }
 
 .contextual_assets{
@@ -93,6 +93,7 @@ section:target, .show{
     right: 0%;
     top: 33%;
     max-height: 7%;
+    z-index: 10;
 }
 
 .switch_button {

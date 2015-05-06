@@ -34,3 +34,25 @@ $('.mapImage').load(function () {
         }
     });
 });
+
+/********************************
+ *  Map Toggle                  *
+ ********************************/
+
+//var mapState = 0;
+//
+//$(".map_button").click(function(){
+//
+//    if(mapState == 0) {
+//        $("#map").animate({width: window.innerWidth * 0.25, height: window.innerHeight * 0.38});
+//        mapState += 1;
+//    }
+//    else if(mapState == 1){
+//        $("#map").animate({width: window.innerWidth * 0.75, height: window.innerHeight * 0.80});
+//        mapState += 1;
+//    }
+//    else if(mapState == 2){
+//        $("#map").animate({width: 0, height: 0});
+//        mapState = 0;
+//    }
+//});
