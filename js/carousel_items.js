@@ -1,10 +1,20 @@
 // JavaScript Document
 function CarouselItem(tags, full, thumb, ttip, html) {
-    this.tags = tags;
-    this.full = full;
-    this.thumb = thumb;
-    this.ttip = ttip;
-    this.html = html;
+    if (html === undefined) {
+        this.video = true;
+        this.html = ttip;
+        this.ttip = thumb;
+        this.thumb = full;
+        this.full = null;
+        this.tags = tags;
+    }
+    else {
+        this.tags = tags;
+        this.full = full;
+        this.thumb = thumb;
+        this.ttip = ttip;
+        this.html = html;
+    }
 }
 
 function Image(name, fname) {
@@ -41,7 +51,7 @@ var Taylor_STChristina = new CarouselItem(["#taylor"], Taylor_STChristinaFull, T
 
 
 var Taylor_MovieThumb = new Image("Taylor_MovieThumb", "imgs/Taylor_MovieThumb.png");
-var Taylor_Movie = new CarouselItem(["#taylor"], Taylor_MovieThumb, "Taylor Movie", '<a class="iframe" href="https://www.youtube.com/watch?v=NyYG2YRohp8"target="_blank" ><div class="Thumbimage"><img src="imgs/Taylor_MovieThumb.png" alt="" />');
+var Taylor_Movie = new CarouselItem(["#taylor"], Taylor_MovieThumb, "Taylor Movie", '<a class="iframe" href="https://www.youtube.com/watch?v=NyYG2YRohp8"target="_blank" >');
 
 
 //Hurst___________________________________________________________
@@ -178,6 +188,17 @@ var Mainstreet_Movie = new CarouselItem(["#mainstreet"], Mainstreet_MovieThumb.j
 
 var CIs = [FieldHouse_AquaCenter, FieldHouse_ClimbingWall, FieldHouse_FitCenter, FieldHouse_HaaPLab, FieldHouse_InfoGymFishEye, FieldHouse_Movie, Hurst_Quinn,Hurst_STKendricEvans,Hurst_Robots, Hurst_STAlanCleary, Hurst_Movie, Hurst_STKevinSears, Taylor_WildPursuits, Taylor_STChrisNoah, Taylor_Movie, Taylor_STBradArcher, Taylor_STChristina, Taylor_STZoeSmith, Hartmans_MountainRescue, Hartmans_STBillMurray, Hartmans_STJaneSmith, Hartmans_STJohnJones, Hartmans_STTammyHanks, Hartmans_Movie,  CB_STJDennis, CB_Paddler, CB_STChastityMorgan, CB_STChrisSwartz, CB_STTimTodd, CB_Movie, Mainstreet_ChristmasTrees, Mainstreet_RailJam, Mainstreet_Farm2Table,  Mainstreet_Garden, Mainstreet_Sustainability, Mainstreet_Movie];
 
+var ciCount = 0;
+
+function killCarousel() {
+    if (ciCount > 0) {
+        for (var i = 0; i < ciCount; i++) {
+            $('#owl-demo').data('owlCarousel').removeItem();
+        }
+        ciCount = 0;
+    }
+}
+
 function getCIs(tag) /*Carousel Items*/{
     var inner, ci, i, j, a;
     inner = "";
@@ -186,23 +207,25 @@ function getCIs(tag) /*Carousel Items*/{
         for (j in ci.tags) {
             if (ci.tags[j] === tag) {
                 //build carousel item
-                a = "<a class='fancybox' href = 'imgs/"+ci.full.fname+"' data-fancybox-group='gallery' title='"+ci.html+"' rel='gallery'>";
+                a = "<div class='item'>";
+                if (ci.video) {
+                    a += ci.html;
+                } else {
+                    a += "<a class='fancybox' href = '"+ci.full.fname+"' data-fancybox-group='gallery' title='"+ci.html+"' rel='gallery'>";
+                }
                 a += "<div class='Thumbimage'>";
-                a += "<img src='"+ci.thumb.fname+"' alt=''/>";
+                a += "<img src='"+ci.thumb.fname+"' alt=''>";
                 a += "<div class='Thumbcaption'>";
                 a += "<p>'"+ci.ttip+"'</p>";
-                a += "</div></div></a>";
-                inner += "<div class='citem'>" + a + "</div>";
+                a += "</div></div></a></div>";
+
+                ciCount += 1;
+
+                $('#owl-demo').owlCarousel('add', a).owlCarousel('refresh');
+
                 break;
             }
         }
     }
-    $("#owl-demo").html(inner);
-    $("#owl-demo").owlCarousel({
-        autoPlay: 2000,
-        itemsDesktop : [1250,6],
-        itemsDesktopSmall : [979,4],
-        items : 9
-    });
     $(".fancybox").fancybox();
 }
