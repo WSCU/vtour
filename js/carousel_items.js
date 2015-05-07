@@ -22,6 +22,8 @@ function Image(name, fname) {
     this.fname = fname;
 }
 
+
+
 var Taylor_WMountainFull = new Image("Taylor_WMountainFull", "imgs/Taylor_WMountainFull.jpg");
 var Taylor_WMountainThumb = new Image("Taylor_WMountainThumb", "imgs/Taylor_WMountainThumb.jpg");
 var Taylor_WMountain = new CarouselItem(["#taylor"], Taylor_WMountainFull, Taylor_WMountainThumb, "W Mountain", '<b>Student Testimonials - Tim Timderson</b><br />W Mountain, hosting the largest collegiate letter in the world, is one of the many reasons Tim Timderson decided to go to western. He says he came to Western from his home of Milliken, Colo., to indulge his fascination with people. He had been a state officer in the Family, Career and Community Leaders of America, as well as an active citizen in the Potawatomi Nation of American Indians.<br /></br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
@@ -215,6 +217,35 @@ var Mainstreet_Movie = new CarouselItem(["#mainstreet"], Mainstreet_MovieThumb, 
 
 
 var CIs = [FieldHouse_AquaCenter, FieldHouse_ClimbingWall, FieldHouse_FitCenter, FieldHouse_HaaPLab, FieldHouse_InfoGymFishEye, FieldHouse_Movie, Hurst_Quinn,Hurst_STKendricEvans,Hurst_Robots, Hurst_STAlanCleary, Hurst_Movie, Hurst_STKevinSears, Taylor_WildPursuits, Taylor_STChrisNoah, Taylor_Movie, Taylor_STBradArcher, Taylor_STChristina, Taylor_STZoeSmith, Hartmans_MountainRescue, Hartmans_STBillMurray, Hartmans_STJaneSmith, Hartmans_STJohnJones, Hartmans_STTammyHanks, Hartmans_Movie,  CB_STJDennis, CB_Paddler, CB_STChastityMorgan, CB_STChrisSwartz, CB_STTimTodd, CB_Movie, Mainstreet_ChristmasTrees, Mainstreet_RailJam, Mainstreet_Farm2Table,  Mainstreet_Garden, Mainstreet_Sustainability, Mainstreet_Movie, RockyMountains_Bikes, RockyMountains_Trail, RockyMountains_Freestyle, RockyMountains_Endurance, RockyMountains_Freeride, RockyMountains_Movie];
+
+
+//Fieldhouse
+
+var Fieldhouse_STJadenFull = new Image("Fieldhouse_STJadenFull", "imgs/Fieldhouse_STJadenFull.jpg");
+var Fieldhouse_STJadenThumb = new Image("Fieldhouse_STJadenThumb", "imgs/Fieldhouse_STJadenThumb.jpg");
+var Fieldhouse_STJaden = new CarouselItem(["#fieldhouse"], Fieldhouse_STJadenFull, Fieldhouse_STJadenThumb, "Football - Jaden Terry", '<b>Student Testimonials - Jaden Terry</b><br />I`m Jaden Terry and I`m a student athlete here at Western. I play football and am studying Computer Science.I have really enjoyed my time here and love the small town atmosphere. Being able to play college football and get my degree has been awesome. My professors have been very supportive and understanding of my athletic career. I have also enjoyed hunting and fishing in the Gunnison Valley. Gunnison is known for some of the best locations for hunting and fishing. I couldn`t ask for a better place to spend my college career than Western.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.gomountaineers.com/index.aspx?path=football&#x27;&quot;   href=`http://www.gomountaineers.com/index.aspx?path=football`&gt;Click here to read more...&lt;/a&gt;">');
+
+
+CIs.push(Fieldhouse_STJaden);
+
+var Fieldhouse_STCaliFull = new Image("Fieldhouse_STCaliFull", "imgs/Fieldhouse_STCaliFull.jpg");
+var Fieldhouse_STCaliThumb = new Image("Fieldhouse_STCaliThumb", "imgs/Fieldhouse_STCaliThumb.jpg");
+var Fieldhouse_STCali = new CarouselItem(["#fieldhouse"], Fieldhouse_STCaliFull, Fieldhouse_STJadenThumb, "Gym Fish Eye", '<b>Student Testimonials - CaliAntolini </b> <br />Hey there I`m a cross country runner here at western and I cannot imagine being anywhere else chasing my dream! Gunnison gives me the chance to train at the highest elevation, giving me an advantage over any other college competitor. Although cross country is fun, I love the fact that I know a lot of people around here and can make connections since it`s a small friendly town!</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.gomountaineers.com/index.aspx?path=football&#x27;&quot;   href=`http://www.gomountaineers.com/index.aspx?path=football`&gt;Click here to read more...&lt;/a&gt;">');
+
+CIs.push(Fieldhouse_STCali);
+
+//Hurst
+
+var Hurst_Movie2Thumb = new Image("Hurst_Movie2Thumb", "imgs/Field_Movie2Thumb.jpg");
+var Hurst_Movie2 = new CarouselItem(["#hurst"], Hurst_Movie2Thumb, "Merry-Go-Round Movie",  '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=wps2lhtbH_E&feature=youtu.be"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_Movie2Thumb.jpg" alt="" />');
+
+CIs.push(Hurst_MovieThumb);
+
+var RockyMountains_STRobinBingFull = new Image("RockyMountains_STRobinBingFull", "imgs/RockyMountains_STRobinBingFull.jpg");
+var RockyMountains_STRobinBingThumb = new Image("RockyMountains_STRobinBingThumb", "imgs/RockyMountains_STRobinBingThumb.jpg");
+var RockyMountains_STRobinBing = new CarouselItem(["#rockymountains"], RockyMountains_STRobinBingFull, RockyMountains_STRobinBingThumb, "Robin Bing Testimonial", '<b>Student Testimonials - Robin Bing</b><br />’m Chris Hicks, a new student at Western.  I’m Robin Bing, a wildlife biology student.  Western is surrounded by amazing mountains with all sorts of wildlife.  Last summer Dr. Kevin Alexander invited me to hunt for rare butterflies in the San Juan Mountains just south of Gunnison.    The adult butterflies only live for a few days so it’s essential to be in the right place at the right time to see them.  At Western, the mountains are my classroom and I get real field experience as part of my education.</br>&lt;a target="_self"onClick=&quot;window.location.href=&#x27;  http://www.western.edu/news/butterfly-leads-research-team-peaks&#x27;&quot;   href="  http://www.western.edu/news/butterfly-leads-research-team-peaks"&gt;You can learn more about these butterflies  here...&lt;/a&gt;">');
+
+CIs.push(RockyMountains_STRobinBing);
 
 var ciCount = 0;
 
