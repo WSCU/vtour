@@ -68,7 +68,7 @@ var Hurst_STAlanClearyThumb = new Image("Hurst_STAlanClearyThumbs", "imgs/Hurst_
 var Hurst_STAlanCleary = new CarouselItem(["#hurst"], Hurst_STAlanClearyFull, Hurst_STAlanClearyThumb, "Alan Cleary Testimonial", '<b>Student Testimonials- Alan Cleary</b><br />I`m currently a Computer Science PhD student at Montana State University, Bozeman. I graduated from Western with degrees in Mathematics and Computer Science. I chose to pursue a PhD because as an undergraduate I found that I enjoyed research and that there were many advanced Math and Computer Science topics I wanted to study.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/alan-cleary&#x27;&quot;   href="http://www.western.edu/profile/alumnus/alan-cleary"&gt;Click here to read more...&lt;/a&gt;">');
 
 var Hurst_MovieThumb = new Image("Hurst_MovieThumb", "imgs/Hurst_MovieThumb.png");
-var Hurst_Movie = new CarouselItem(["#hurst"], Hurst_MovieThumb, "Hurst Movie",  '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=z_PmLcZ5KSQ"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_MovieThumb.jpg" alt="" />');
+var Hurst_Movie = new CarouselItem(["#hurst"], Hurst_MovieThumb, "Hurst Movie",  '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=z_PmLcZ5KSQ"target="_blank" >');
 
 var Hurst_RobotsFull = new Image("Hurst_RobotsFull", "imgs/Hurst_RobotsFull.jpg");
 var Hurst_RobotsThumb = new Image("Hurst_RobotsThumb", "imgs/Hurst_RobotsThumb.png");
@@ -212,7 +212,7 @@ function getCIs(tag) /*Carousel Items*/{
                 if (ci.video) {
                     a += ci.html;
                 } else {
-                    a += "<a class='fancybox' href = '"+ci.full.fname+"' data-fancybox-group='gallery' title='"+ci.html+"' rel='gallery'>";
+                    a += "<a class='fancybox' href = '"+ci.full.fname+"' title='"+ci.html+"' rel='gallery'>";
                 }
                 a += "<div class='Thumbimage'>";
                 a += "<img src='"+ci.thumb.fname+"' alt=''>";
@@ -227,8 +227,6 @@ function getCIs(tag) /*Carousel Items*/{
     }
     width = window.innerWidth - (ciCount * 160)
     margin = width / (ciCount-1) * .75;
-
     $("#carousel").html(inner);
-    $(".fancybox").fancybox();
     $(".citem").css("margin-left", margin);
 }
