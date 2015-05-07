@@ -15,6 +15,10 @@ $(function () {
         $("#video").click(function () {
             $("#video").remove();
             $("#map").show();
+            $('#map').animate({
+                scrollLeft: currentLocation.x - ($('#map').width() / 2),
+                scrollTop: currentLocation.y - ($('#map').height() / 2)
+            }, 1500, 'easeInOutQuad');
             $("#carousel").show();
         });
 
