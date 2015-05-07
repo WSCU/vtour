@@ -10,10 +10,12 @@ $(function () {
         document.getElementById('video').innerHTML = '<video z-index="10000" width="100%" height="100%"  controls autoplay>' +
             '<source src="video/output.webm" type="video/webm"></video>';
         $("#map").hide('blind');
+        $("#carousel").hide('blind');
         $(this).off("click");
         $("#video").click(function () {
             $("#video").remove();
             $("#map").show();
+            $("#carousel").show();
         });
 
         $(function () {
@@ -24,6 +26,7 @@ $(function () {
                     scrollLeft: currentLocation.x - ($('#map').width() / 2),
                     scrollTop: currentLocation.y - ($('#map').height() / 2)
                 }, 1500, 'easeInOutQuad');
+                $("#carousel").show();
             }, 11740);
         });
     });
