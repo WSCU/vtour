@@ -7,7 +7,25 @@ $(function () {
     }
     $("#start").find("a").on("click", function () {
         $("#start").removeClass("show");
+        document.getElementById('video').innerHTML = '<video z-index="10000" width="100%" height="100%"  controls autoplay>' +
+            '<source src="video/output.webm" type="video/webm"></video>';
+        $("#map").hide('blind');
         $(this).off("click");
+        $("#video").click(function () {
+            $("#video").remove();
+            $("#map").show();
+        });
+
+        $(function () {
+            setTimeout(function () {
+                $("#video").remove();
+                $("#map").show();
+                $('#map').animate({
+                    scrollLeft: currentLocation.x - ($('#map').width() / 2),
+                    scrollTop: currentLocation.y - ($('#map').height() / 2)
+                }, 1500, 'easeInOutQuad');
+            }, 11740);
+        });
     });
 
     /**
@@ -134,7 +152,7 @@ $(function () {
     var library_to_universitycenter = new Navigation("#library", "library_to_universitycenter", "to University Center", "#universitycenter", "forward", 47, 27);
     var library_to_pathway2 = new Navigation("#library", "library_to_pathway2", "to Pathwat", "#pathway2", "back", 50, 17);
     var universitycenter_to_library = new Navigation("#universitycenter", "universitycenter_to_library", "to Library", "#library", "back", 50, 17);
-    var universitycenter_to_fieldhouse = new Navigation("#universitycenter", "universitycenter_to_fieldhouse", "to Fieldhouse", "#fieldhouse", "#forward", 47, 27);
+    var universitycenter_to_fieldhouse = new Navigation("#universitycenter", "universitycenter_to_fieldhouse", "to Fieldhouse", "#fieldhouse", "forward", 47, 27);
     var fieldhouse_to_mountaineerbowl = new Navigation("#fieldhouse", "fieldhouse_to_mountaineerbowl", "to Mountaineer Bowl", "#mountaineerbowl", "forward", 47, 27);
     var mountaineerbowl_to_fieldhouse = new Navigation("#mountaineerbowl", "mountaineerbowl_to_fieldhouse", "to Field House", "#fieldhouse", "back", 50, 17);
     var fieldhouse_to_universitycenter = new Navigation("#fieldhouse", "fieldhouse_to_universitycenter", "to University Center", "#universitycenter", "back", 50, 17);
