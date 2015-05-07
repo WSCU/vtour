@@ -173,10 +173,10 @@ $(function () {
     var mm_to_cb = new Navigation("#mm", "mm_to_cb", "to Crested Butte", "#cb", "left", 0, 50);
     var mm_to_tr = new Navigation("#mm", "mm_to_tr", "to Taylor Resevoir", "#tr", "right", 75, 50);
     var tr_to_mm = new Navigation("#tr", "tr_to_mm", "to Monarch Mountain", "#mm", "left", 0, 50);
-    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hr", "right", 75, 50);
-    var hr_to_tr = new Navigation("#hr", "hr_to_tr", "to Taylor Resevoir", "#tr", "left", 0, 50);
-    var hr_to_tc = new Navigation("#hr", "hr_to_tc", "to Taylor Canyon", "#tc", "right", 75, 50);
-    var tc_to_hr = new Navigation("#tc", "tc_to_hr", "to Hartman's Rocks", "#hr", "left", 0, 50);
+    var tr_to_hr = new Navigation("#tr", "tr_to_hr", "to Hartman's Rocks", "#hartmans", "right", 75, 50);
+    var hr_to_tr = new Navigation("#hartmans", "hr_to_tr", "to Taylor Resevoir", "#tr", "left", 0, 50);
+    var hr_to_tc = new Navigation("#hartmans", "hr_to_tc", "to Taylor Canyon", "#tc", "right", 75, 50);
+    var tc_to_hr = new Navigation("#tc", "tc_to_hr", "to Hartman's Rocks", "#hartmans", "left", 0, 50);
     var tc_to_wmountain = new Navigation("#tc", "tc_to_wmountain", "to W Mountain", "#wmountain", "right", 75, 50);
     var wmountain_to_tc = new Navigation("#wmountain", "wmountain_to_tc", "to Taylor Canyon", "#tc", "left", 0, 50);
     var wmountain_to_artscenter = new Navigation("#wmountain", "wmountain_to_artscenter", "to Arts Center", "#artscenter", "right", 75, 50);
@@ -187,8 +187,8 @@ $(function () {
     var gunnison_to_cbmr = new Navigation("#gunnison", "telluride_to_gunnison", "to CBMR", "#cbmr", "left", 0, 50);
     var gunnison_to_elkmountains = new Navigation("#gunnison", "gunnison_to_elkmountains", "to Elk Mountains", "#elkmountains", "right", 75, 50);
     var elkmountains_to_gunnison = new Navigation("#elkmountains", "elkmountains_to_gunnison", "to Gunnison", "#gunnison", "left", 0, 50);
-    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hr", "right", 75, 50);
-    var hr_to_elkmountains = new Navigation("#hr", "hr_to_elkmountains", "to Elk Mountains", "#elkmountains", "left", 0, 50);
+    var elkmountains_to_hr = new Navigation("#elkmountains", "elkmountains_to_hr", "to Hartman's Rocks", "#hartmans", "right", 75, 50);
+    var hr_to_elkmountains = new Navigation("#hartmans", "hr_to_elkmountains", "to Elk Mountains", "#elkmountains", "left", 0, 50);
     var tc_to_sanjuan = new Navigation("#tc", "tc_to_sanjuan", "to San Juan Mountains", "#sanjuan", "right", 75, 50);
     var sanjuan_to_tc = new Navigation("#sanjuan", "sanjuan_to_tc", "to Taylor Canyon", "#tc", "left", 0, 50);
     var sanjuan_to_cbmr = new Navigation("#sanjuan", "sanjuan_to_cbmr", "to CBMR", "#cbmr", "right", 75, 50);

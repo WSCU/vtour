@@ -108,23 +108,23 @@ var Hurst_STKendricEvans = new CarouselItem(["#hurst"], Hurst_KendricEvansFull, 
 
 //Fieldhouse___________________________________________________________
 var FieldHouse_AquaCenterFull = new Image("FieldHouse_AquaCenterFull", "imgs/FieldHouse_AquaCenterFull.jpg");
-var FieldHouse_AquaCenterThumb = new Image("FieldHouse_AquaCenterThumb", "imgs/FieldHouse_AquaCenterCarThumb.jpg");
+var FieldHouse_AquaCenterThumb = new Image("FieldHouse_AquaCenterThumb", "imgs/FieldHouse_AquaCenterThumb.jpg");
 var FieldHouse_AquaCenter = new CarouselItem(["#fieldhouse"], FieldHouse_AquaCenterFull, FieldHouse_AquaCenterThumb, "Aqua Center", '<b>Western Swim Team</b><br />In mid-April, the Western State Colorado University Mountain Rescue Team earned its sixth, five-year recertification from the national Mountain Rescue Association.“We passed with flying colors,” reports Anna Boyle, team communications officer and fundraising coordinator.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/western-mountain-rescue-recertified&#x27;&quot; href=`http://www.western.edu/news/western-mountain-rescue-recertified`&gt;Click here to read more...&lt;/a&gt;">');
 
 var FieldHouse_ClimbingWallFull = new Image("FieldHouse_ClimbingWallFull", "imgs/FieldHouse_ClimbingWallFull.jpg");
 var FieldHouse_ClimbingWallThumb = new Image("FieldHouse_ClimbingWallThumb", "imgs/FieldHouse_ClimbingWallThumb.jpg");
 var FieldHouse_ClimbingWall = new CarouselItem(["#fieldhouse"], FieldHouse_ClimbingWallFull, FieldHouse_ClimbingWallThumb, "Climbing Wall", '<b>Student Testimonials - Sarah Stevens</b><br />Western’s team, founded in 1973 and MRA-certified since 1987, remains one of the strongest certified, college-based teams in the country. About three-fourths of team members are Western students, with the rest neighbors in the Gunnison Valley. <br /></br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href=`http://www.western.edu/future-students/student-testimonials-and-profiles`&gt;Click here to read more...&lt;/a&gt;">');
 
-var FieldHouse_FitCenterFull = new Image("FieldHouse_FitCenterFull", "imgs/FieldHouse_FitCenter.jpg");
-var FieldHouse_FitCenterThumb = new Image("FieldHouse_FitCenterThumb", "imgs/FieldHouse_FitCenter.jpg");
+var FieldHouse_FitCenterFull = new Image("FieldHouse_FitCenterFull", "imgs/FieldHouse_FitCenterFull.jpg");
+var FieldHouse_FitCenterThumb = new Image("FieldHouse_FitCenterThumb", "imgs/FieldHouse_FitCenterThumb.jpg");
 var FieldHouse_FitCenter = new CarouselItem(["#fieldhouse"], FieldHouse_FitCenterFull, FieldHouse_FitCenterThumb, "Fit Center",  '<b>Student Testimonials - Jane Smith</b>The fitness center allows me to keep in shape during the school year. They offer different classes that are awesome and encourage everybody to participate. </br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;href=`http://www.western.edu/future-students/student-testimonials-and-profiles`&gt;Click here to read more...&lt;/a&gt;">');
 
-var FieldHouse_HaaPLabFull = new Image("Fieldhouse_HaaPLabFull", "imgs/Fieldhouse_HaaPLabFull.png");
-var FieldHouse_HaaPLabThumb = new Image("Fieldhouse_HaaPLabThumb", "imgs/Fieldhouse_HaaPLabThumb.jpg");
+var FieldHouse_HaaPLabFull = new Image("Fieldhouse_HaaPLabFull", "imgs/FieldHouse_HaaPLabFull.png");
+var FieldHouse_HaaPLabThumb = new Image("Fieldhouse_HaaPLabThumb", "imgs/FieldHouse_HaaPLabThumb.jpg");
 var FieldHouse_HaaPLab = new CarouselItem(["#fieldhouse"], FieldHouse_HaaPLabFull, FieldHouse_HaaPLabThumb, "HaaP Lab", '<b>Student Testimonials - Samantha Phillip - HaAP Lab</b><br />The HaAP lab has allowed me to really emmerce myself into my studies. Wilderness Pursuits trips are led by students and designed to meet the needs of a broad range of abilities and interests, while developing outdoor skills and fostering community, citizenry, environmental stewardship and healthy living.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips&#x27;&quot;   href=`http://www.western.edu/current-students/wilderness-pursuits/wp-2014-15-trips`&gt;Click here to read more...&lt;/a&gt;">');
 
-var FieldHouse_InfoGymFishEyeFull = new Image("Fieldhouse_InfoGymFishEyeFull", "imgs/Fieldhouse_InfoGymFishEyeFull.jpg");
-var FieldHouse_InfoGymFishEyeThumb = new Image("Fieldhouse_InfoGymFishEyeThumb", "imgs/Fieldhouse_InfoGymFishEyeThumb.jpg");
+var FieldHouse_InfoGymFishEyeFull = new Image("Fieldhouse_InfoGymFishEyeFull", "imgs/FieldHouse_GymFishEyeFull.jpg");
+var FieldHouse_InfoGymFishEyeThumb = new Image("Fieldhouse_InfoGymFishEyeThumb", "imgs/FieldHouse_InfoGymFishEyeThumb.jpg");
 var FieldHouse_InfoGymFishEye = new CarouselItem(["#fieldhouse"], FieldHouse_InfoGymFishEyeFull, FieldHouse_InfoGymFishEyeThumb, "Gym Fish Eye", '<b>Student Testimonials - Garen Hanks</b><br />It`s been a year since Westerns Track & Field team held its first practice in Mountaineer Field House, less than that since the building opened to the public. And during the past few weeks, the vast, energy-efficient structure, which could accommodate a jetliner, welcomed regional Track & Field teams to compete in the rare air of a track 7,700 feet above sea level.</br>&lt;a target=`_self` onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/student/chris-noah&#x27;&quot;   href=`http://www.western.edu/profile/student/chris-noah`&gt;Click here to read more...&lt;/a&gt;">');
 
 var FieldHouse_MovieThumb = new Image("Field_MovieThumb", "imgs/Field_MovieThumb.jpg");
