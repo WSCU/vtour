@@ -22,7 +22,34 @@ function Image(name, fname) {
     this.fname = fname;
 }
 
+var Taylor_WMountainFull = new Image("Taylor_WMountainFull", "imgs/Taylor_WMountainFull.jpg");
+var Taylor_WMountainThumb = new Image("Taylor_WMountainThumb", "imgs/Taylor_WMountainThumb.jpg");
+var Taylor_WMountain = new CarouselItem(["#taylor"], Taylor_WMountainFull, Taylor_WMountainThumb, "W Mountain", '<b>Student Testimonials - Tim Timderson</b><br />W Mountain, hosting the largest collegiate letter in the world, is one of the many reasons Tim Timderson decided to go to western. He says he came to Western from his home of Milliken, Colo., to indulge his fascination with people. He had been a state officer in the Family, Career and Community Leaders of America, as well as an active citizen in the Potawatomi Nation of American Indians.<br /></br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot;   href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
 
+//Rocky Mountain Items
+
+var RockyMountains_BikesFull = new Image("RockyMountains_BikesFull", "imgs/RockyMountains_BikesFull.jpg");
+var RockyMountains_BikesThumb = new Image("RockyMountains_BikesThumb", "imgs/RockyMountains_BikesThumb.jpg");
+var RockyMountains_Bikes = new CarouselItem(["#rockymountains"], RockyMountains_BikesFull.jpg, RockyMountains_BikesThumb.jpg, "Mountain Biking", '<b>Student Testimonials - Hank Hill - Mountain Biking</b><br />The Western Mountain Sports Mountain Biking Team competes primarily in gravity and endurance mountain biking, but cyclocross and road racing are also in the mix. The Mountain Biking team competes in the Rocky Mountain Collegiate Cycling Conference (RMCCC). </br>&lt;a target=_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
+
+var RockyMountains_TrailFull = new Image("RockyMountains_TrailFull", "imgs/RockyMountains_TrailFull.jpg");
+var RockyMountains_TrailThumb = new Image("RockyMountains_TrailThumb", "imgs/RockyMountains_TrailThumb.jpg");
+var RockyMountains_Trail = new CarouselItem(["#rockymountains"], RockyMountains_TrailFull.jpg, RockyMountains_TrailThumb.jpg, "Trail Running", '<b>Student Testimonials - Richard Simmons - Trail</b><br />Athletes pick their distances from shorter 5k races all the way up to elite 100 mile races and everything in between. This is not your high school cross-country team; with the Western Trail Running Team you will leave the sidewalks and bike paths behind and dive into the hundreds of miles of legendary singletrack that surrounds Western. We operate without the limitations of a national governing body, which gives our athletes the opportunity to pursue their trail running dreams; whether it be their first 10k or their tenth 100 miler.</br>&lt;a target=_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
+
+var RockyMountains_FreestyleFull = new Image("RockyMountains_FreestyleFull", "imgs/RockyMountains_FreestyleFull.jpg");
+var RockyMountains_FreestyleThumb = new Image("RockyMountains_FreestyleThumb", "imgs/RockyMountains_FreestyleThumb.jpg");
+var RockyMountains_Freestyle= new CarouselItem(["#rockymountains"], RockyMountains_FreestyleFull.jpg, RockyMountains_FreestyleThumb.jpg, "Freestyle Skiing and Snowboarding", '<b>Student Testimonials - George Jetson - Freestyle Skiing and Snowboarding</b><br />Mountain Sports student athletes compete in local and regional competitions; as well as in the United States Collegiate Ski and Snowboard Association (USCSA), including the USCSA National Championships. Over the years, the Mountain Sports Program has won, or at least hit the podium, in most events. At USCSA Nationals, the overall title combines Slopestyle, Halfpipe, Skier/Boarder Cross and Snowboard Giant Slalom.</br>&lt;a target=_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
+
+var RockyMountains_EnduranceFull = new Image("RockyMountains_EnduranceFull", "imgs/RockyMountains_EnduranceFull.png");
+var RockyMountains_EnduranceThumb = new Image("RockyMountains_EnduranceThumb", "imgs/RockyMountains_EnduranceThumb.jpg");
+var RockyMountains_Endurance= new CarouselItem(["#rockymountains"], RockyMountains_EnduranceFull.jpg, RockyMountains_EnduranceThumb.jpg, "Endurance Ski Team", '<b>Student Testimonials - Tommy Pickles - Endurance</b><br />If you want to be part of a cutting edge skiing program and are interested in endurance, you should consider the Mountain Sports Endurance Ski Team.There is no other collegiate program in the country like this one. Endurance skiing, also known as Ski Mountaineering or Randonee Racing,  includes backcountry ski races like the Elk Mountains Grand Traverse, the COSMIC Cup, the Gothic Mountain Tour and even events like Seven Hours of the Banana.</br>&lt;a target=_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
+
+var RockyMountains_FreerideFull = new Image("RockyMountains_FreerideFull", "imgs/RockyMountains_FreerideFull.jpg");
+var RockyMountains_FreerideThumb = new Image("RockyMountains_FreerideThumb", "imgs/RockyMountains_FreerideThumb.jpg");
+var RockyMountains_Freeride= new CarouselItem(["#rockymountains"], RockyMountains_FreerideFull.jpg, RockyMountains_FreerideThumb.jpg, "Freeride", '<b>Student Testimonials - Harry Weasley - Freeride</b><br />From established Big Mountain competitors, to athletes looking to do their first Big Mountain comp, our experienced coaches will get you to that next level. We train at Crested Butte Mountain Resort, the premier mountain for steep natural terrain in the state; no other Colorado resort even comes close. Training happens both during the week and on weekends.</br>&lt;a target=_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/future-students/student-testimonials-and-profiles&#x27;&quot; href="http://www.western.edu/future-students/student-testimonials-and-profiles"&gt;Click here to read more...&lt;/a&gt;">');
+
+var RockyMountains_MovieThumb = new Image("RockyMountains_MovieThumb", "imgs/RockyMountains_MovieThumb.jpg");
+var RockyMountains_Movie = new CarouselItem(["#rockymountains"], RockyMountains_MovieThumb, "Rocky Mountains Movie", '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=uMUCVcpGKrA"target="_blank" >');
 //Taylor___________________________________________________________
 
 var Taylor_STZoeSmithFull = new Image("Taylor_STZoeSmithFull", "imgs/Taylor_STZoeSmithFull.png");
@@ -186,7 +213,8 @@ var Mainstreet_Movie = new CarouselItem(["#mainstreet"], Mainstreet_MovieThumb.j
 
 //End of Carousel Items______________________________________________________________
 
-var CIs = [FieldHouse_AquaCenter, FieldHouse_ClimbingWall, FieldHouse_FitCenter, FieldHouse_HaaPLab, FieldHouse_InfoGymFishEye, FieldHouse_Movie, Hurst_Quinn,Hurst_STKendricEvans,Hurst_Robots, Hurst_STAlanCleary, Hurst_Movie, Hurst_STKevinSears, Taylor_WildPursuits, Taylor_STChrisNoah, Taylor_Movie, Taylor_STBradArcher, Taylor_STChristina, Taylor_STZoeSmith, Hartmans_MountainRescue, Hartmans_STBillMurray, Hartmans_STJaneSmith, Hartmans_STJohnJones, Hartmans_STTammyHanks, Hartmans_Movie,  CB_STJDennis, CB_Paddler, CB_STChastityMorgan, CB_STChrisSwartz, CB_STTimTodd, CB_Movie, Mainstreet_ChristmasTrees, Mainstreet_RailJam, Mainstreet_Farm2Table,  Mainstreet_Garden, Mainstreet_Sustainability, Mainstreet_Movie];
+
+var CIs = [FieldHouse_AquaCenter, FieldHouse_ClimbingWall, FieldHouse_FitCenter, FieldHouse_HaaPLab, FieldHouse_InfoGymFishEye, FieldHouse_Movie, Hurst_Quinn,Hurst_STKendricEvans,Hurst_Robots, Hurst_STAlanCleary, Hurst_Movie, Hurst_STKevinSears, Taylor_WildPursuits, Taylor_STChrisNoah, Taylor_Movie, Taylor_STBradArcher, Taylor_STChristina, Taylor_STZoeSmith, Hartmans_MountainRescue, Hartmans_STBillMurray, Hartmans_STJaneSmith, Hartmans_STJohnJones, Hartmans_STTammyHanks, Hartmans_Movie,  CB_STJDennis, CB_Paddler, CB_STChastityMorgan, CB_STChrisSwartz, CB_STTimTodd, CB_Movie, Mainstreet_ChristmasTrees, Mainstreet_RailJam, Mainstreet_Farm2Table,  Mainstreet_Garden, Mainstreet_Sustainability, Mainstreet_Movie, RockyMountains_Bikes, RockyMountains_Trail, RockyMountains_Freestyle, RockyMountains_Endurance, RockyMountains_Freeride, RockyMountains_Movie];
 
 var ciCount = 0;
 
@@ -212,7 +240,7 @@ function getCIs(tag) /*Carousel Items*/{
                 if (ci.video) {
                     a += ci.html;
                 } else {
-                    a += "<a class='fancybox' href = '"+ci.full.fname+"' title='"+ci.html+"' rel='gallery'>";
+                    a += "<a class='fancybox' data-fancybox-group='gallery' href = '"+ci.full.fname+"' title='"+ci.html+"' rel='gallery'>";
                 }
                 a += "<div class='Thumbimage'>";
                 a += "<img src='"+ci.thumb.fname+"' alt=''>";
