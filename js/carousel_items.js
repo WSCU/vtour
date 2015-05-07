@@ -64,18 +64,18 @@ var Hurst_STKevinSearsThumb = new Image("Hurst_STKevinSearsThumb", "imgs/Hurst_S
 var Hurst_STKevinSears = new CarouselItem(["#hurst"], Hurst_STKevinSearsFull, Hurst_STKevinSearsThumb, "Kevin Sears Testimonial", '<b>Student Testimonials- Kevin Sears</b></br>Western`s Computer Science program really game me the skills I needed to work here at CRMCulture, but even more so, it instilled the notion of knowledge share.  I have the drive to learn and to teach every chance I get.  <br />We had a ton of fun hanging out in the library in the evenings, working on computer science tasks together.  I never had to be a shut in student there was always someone willing to help with what ever I was working on.  </br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kevin-sears&#x27;&quot;   href="http://www.western.edu/profile/alumnus/kevin-sears"&gt;Click here to read more...&lt;/a&gt;">');
 
 var Hurst_STAlanClearyFull = new Image("Hurst_STAlanClearyFull", "imgs/Hurst_STAlanClearyFull.jpg");
-var Hurst_STAlanClearyThumb = new Image("Hurst_STAlanClearyThumbs", "imgs/Hurst_STAlanClearyThumbs.png");
+var Hurst_STAlanClearyThumb = new Image("Hurst_STAlanClearyThumbs", "imgs/Hurst_STAlanClearyThumb.png");
 var Hurst_STAlanCleary = new CarouselItem(["#hurst"], Hurst_STAlanClearyFull, Hurst_STAlanClearyThumb, "Alan Cleary Testimonial", '<b>Student Testimonials- Alan Cleary</b><br />I`m currently a Computer Science PhD student at Montana State University, Bozeman. I graduated from Western with degrees in Mathematics and Computer Science. I chose to pursue a PhD because as an undergraduate I found that I enjoyed research and that there were many advanced Math and Computer Science topics I wanted to study.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/alan-cleary&#x27;&quot;   href="http://www.western.edu/profile/alumnus/alan-cleary"&gt;Click here to read more...&lt;/a&gt;">');
 
 var Hurst_MovieThumb = new Image("Hurst_MovieThumb", "imgs/Hurst_MovieThumb.png");
-var Hurst_Movie = new CarouselItem(["#hurst"], Hurst_MovieThumb, "Hurst Movie",  '<a class="iframe"  title="Western State Colorado University"> href="https://www.youtube.com/watch?v=z_PmLcZ5KSQ"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_MovieThumb.jpg" alt="" />');
+var Hurst_Movie = new CarouselItem(["#hurst"], Hurst_MovieThumb, "Hurst Movie",  '<a class="iframe"  title="Western State Colorado University" href="https://www.youtube.com/watch?v=z_PmLcZ5KSQ"target="_blank" ><div class="Thumbimage"><img src="imgs/Hurst_MovieThumb.jpg" alt="" />');
 
 var Hurst_RobotsFull = new Image("Hurst_RobotsFull", "imgs/Hurst_RobotsFull.jpg");
 var Hurst_RobotsThumb = new Image("Hurst_RobotsThumb", "imgs/Hurst_RobotsThumb.png");
 var Hurst_Robots = new CarouselItem(["#hurst"], Hurst_RobotsFull, Hurst_RobotsThumb, "Robots", '<b>Robotics Club</b><br />As part of Western`s involvement in the Colorado Space Grant Consortium – a NASA-affiliated program – a group of students meets Friday afternoons in Hurst Hall to prepare a Mars-Rover-like, autonomous robot.<br />The resulting device will compete with robots from other schools April 5 at Great Sand Dunes National Park, about two hours drive from Western. The device must navigate on its own once it`s released on the sandy course, where it must avoid obstacles to seek a beacon transmitting at a specific frequency.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/news/students-build-robot-compete-sand-dunes&#x27;&quot;   href="http://www.western.edu/news/students-build-robot-compete-sand-dunes"&gt;Click here to read more...&lt;/a&gt;">');
 
 var Hurst_KendricEvansFull = new Image("Hurst_STKendricEvans", "imgs/Hurst_STKendricEvans.jpg");
-var Hurst_KendricEvansThumb = new Image("Hurst_STKendricEvansThumb", "imgs/Hurst_KendricEvansThumb.png");
+var Hurst_KendricEvansThumb = new Image("Hurst_STKendricEvansThumb", "imgs/Hurst_STKendricEvansThumb.png");
 var Hurst_STKendricEvans = new CarouselItem(["#hurst"], Hurst_KendricEvansFull, Hurst_KendricEvansThumb, "Kendric Evans Testimonial",  '<b>Student Testimonials- Kendirc Evans </b></br>I work for CRMCulture, a company in the Boulder area that was founded by a Western grad.  I had found a good job right after graduation but when friends I had made at Western invited me to interview here I realized this was where I wanted to be.</br>While attending Western, I was able to be a Computer Science tutor.  This provided the opportunity to really immerse myself in the material, as well as forge close partnerships with the other students that I still have today.</br>&lt;a target="_self" onClick=&quot;window.location.href=&#x27;http://www.western.edu/profile/alumnus/kendric-evans&#x27;&quot;   href="http://www.western.edu/profile/alumnus/kendric-evans"&gt;Click here to read more...&lt;/a&gt;">');
 
 
@@ -201,13 +201,14 @@ function killCarousel() {
 
 function getCIs(tag) /*Carousel Items*/{
     var inner, ci, i, j, a;
+    ciCount = 0;
     inner = "";
     for(i in CIs) {
         ci = CIs[i];
         for (j in ci.tags) {
             if (ci.tags[j] === tag) {
                 //build carousel item
-                a = "<div class='item'>";
+                a = "<div class='citem'>";
                 if (ci.video) {
                     a += ci.html;
                 } else {
@@ -218,14 +219,16 @@ function getCIs(tag) /*Carousel Items*/{
                 a += "<div class='Thumbcaption'>";
                 a += "<p>'"+ci.ttip+"'</p>";
                 a += "</div></div></a></div>";
-
+                inner += a;
                 ciCount += 1;
-
-                $('#owl-demo').owlCarousel('add', a).owlCarousel('refresh');
-
                 break;
             }
         }
     }
+    width = window.innerWidth - (ciCount * 160)
+    margin = width / (ciCount-1) * .75;
+
+    $("#carousel").html(inner);
     $(".fancybox").fancybox();
+    $(".citem").css("margin-left", margin);
 }
