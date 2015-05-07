@@ -1,12 +1,12 @@
-#owl-demo .item{
-  display: block;
-  padding: 54px 0px;
-  margin: 5px;
-  color: #FFF;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
+#carousel {
+    position: fixed;
+    top: 85%;
+    height: 15%;
+    width: 100%;
+}
+
+.citem {
+    float: left;
 }
 
 .Thumbimage { 
@@ -22,7 +22,7 @@
   text-shadow: 1px 1px #000;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  bottom: 0px;
+  bottom: 60px;
   left: 10px;
   right: 10px;
   width: 125px;
