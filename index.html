@@ -85,28 +85,6 @@
       $(document).ready(function($){
         dispMainMenu();
 
-        $("#carousel").on("focusin", function() {
-
-          $(".fancybox").fancybox({
-            openEffect : 'elastic',
-            openSpeed  : 150,
-            closeEffect : 'elastic',
-            closeSpeed  : 150,
-            closeBtn  : true,
-            arrows    : true,
-            nextClick : true,
-            helpers : {
-              title : {
-                thumbs : {
-                  width  : 100,
-                  height : 100
-                },
-                type : 'over'
-              }
-            }
-          });
-        });
-
         $('#drilldown-1').dcDrilldown({
           speed : 'fast',
           saveState : true,

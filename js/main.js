@@ -58,4 +58,19 @@ $(function() {
 //    }
 //});
 
+    /*
+    fancy box things
+     */
+
+    $(document).on('click', '.fancybox', function(event) {
+        event.preventDefault()
+        console.log("in there");
+        console.log(this.href);
+        $.fancybox.open({
+            type: 'iframe',
+            href: this.href,
+            title: this.title
+    })
+});
+
 });
