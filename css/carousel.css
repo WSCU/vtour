@@ -18,13 +18,11 @@
   font-family:Arial, Helvetica, sans-serif;
   color:#FFF;
   text-align:center;
-  font-size:10px;
+  font-size:12px;
   text-shadow: 1px 1px #000;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
-  bottom: 60px;
-  left: 10px;
-  right: 10px;
-  width: 125px;
+  top: 0%;
+  width: 100%;
 
 }
