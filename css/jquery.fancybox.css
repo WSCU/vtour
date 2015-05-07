@@ -206,6 +206,7 @@
 	position: relative;
 	text-shadow: none;
 	z-index: 8050;
+	max-width: 100%;
 }
 
 .fancybox-opened .fancybox-title {
@@ -213,17 +214,17 @@
 }
 
 .fancybox-title-float-wrap {
-	position: absolute;
-	bottom: 0;
-	right: 50%;
+	position: relative;
+	bottom: 10%;
+	max-width: 100%;
 	margin-bottom: -35px;
 	z-index: 8050;
 	text-align: center;
+	overflow: scroll;
 }
 
 .fancybox-title-float-wrap .child {
 	display: inline-block;
-	margin-right: -100%;
 	padding: 2px 20px;
 	background: transparent; /* Fallback for web browsers that doesn't support RGBa */
 	background: rgba(0, 0, 0, 0.8);
@@ -234,7 +235,7 @@
 	color: #FFF;
 	font-weight: bold;
 	line-height: 24px;
-	white-space: nowrap;
+	white-space: normal;
 }
 
 .fancybox-title-outside-wrap {
